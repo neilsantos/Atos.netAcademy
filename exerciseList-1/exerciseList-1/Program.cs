@@ -8,6 +8,7 @@ using System.Net.WebSockets;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using System.Net.NetworkInformation;
+using System.Runtime.InteropServices;
 
 namespace exerciseList_1
 {
@@ -156,6 +157,8 @@ namespace exerciseList_1
                 //isto é, o código, a quantidade de peças e o valor unitário de cada parafuso e a porcentagem
                 //de IPI(única) a ser acrescentada.
 
+                
+
                 Dictionary<String, string> dic1 = new Dictionary<string, string>()
                  {
                     {"Código",""},
@@ -192,6 +195,20 @@ namespace exerciseList_1
                 //7) Escreva um programa em C# e no Visual Studio que leia o número de um vendedor, o seu salário fixo, 
                 //o total de vendas por ele efetuadas e o percentual que ganha sobre o total de vendas. 
                 //Calcule o salário total do vendedor.Escreva o número do vendedor e o salário total do vendedor.
+
+                Console.WriteLine("Informe ao sistema:\n");
+
+
+                Console.Write("Salário Fixo");
+                float salario = float.Parse(Console.ReadLine());
+
+                Console.Write("Total de vendas: ");
+                int totalVendas = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Percentual sobre vendas");
+                float percentual = float.Parse(Console.ReadLine());
+
+
 
             }
             void exercise8()
