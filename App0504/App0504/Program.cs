@@ -81,29 +81,7 @@ namespace App0504
 
             //Escrever um algoritmo para ler quatro valores, calcular a sua média, e escrever na tela os que são superiores à média
 
-            //int qtd = 4;
-            //int[] valores = new int[qtd];
-            //for (int i = 0; i < qtd; i++)
-            //{
-            //    Console.Write("Informe o " + (i+1) + "º valor: ");
-            //    valores[i] = int.Parse(Console.ReadLine());
-            //}
-            //float soma = 0;
-            //foreach (int i in valores)
-            //{
-            //    soma = +i;
-                
-            //}
-            //Console.WriteLine("A média dos valores lidos é: "+ (soma/qtd));
-            //foreach (int i in valores)
-            //{
-            //    if(i> (soma / qtd))
-            //    {
-            //        Console.WriteLine(i + " é maior que a média");
-            //    }
-
-            //}
-
+      
 
 
 

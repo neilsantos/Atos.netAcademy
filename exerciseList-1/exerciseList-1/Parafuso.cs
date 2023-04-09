@@ -8,9 +8,19 @@ namespace exerciseList_1
 {
     public class Parafuso
     {
-        public int Codigo { get; set; }
-        public int Quantidade { get; set; }
-        public float ValorUnitário { get; set; }
-        public float PorcentagemIPI { get; set; }
+        public int codigo { get; set; }
+        public int quantidade { get; set; }
+        public float valorUnitario { get; set; }
+        public float porcentagemIPI { get; set; }
+
+        public Parafuso(int codigo, int quantidade, float valorUnitario, float porcentagemIPI)
+        {
+            this.codigo = codigo;
+            this.quantidade = quantidade;   
+            this.valorUnitario = valorUnitario;
+            this.porcentagemIPI = porcentagemIPI;
+        }
+
     }
+    
 }

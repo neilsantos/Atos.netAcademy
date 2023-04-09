@@ -83,15 +83,43 @@ namespace exerciseList_2
                 //Área do triangulo = (base * altura) / 2;
                 //Teste se a base ou a altura digitada não foi igual a zero.
 
+                Console.WriteLine("Informe a dimensão da base");
+                int baseTriangulo = int.Parse(Console.ReadLine());
+                Console.WriteLine("Informe a Altura");
+                int alturaTriangulo = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("A Area deste triangulo é: " + ((baseTriangulo * alturaTriangulo) / 2));
+
             }
             void exercise2()
             {
                 //2 - Faça um algoritmo para ler um número e verificar se ele é par ou ímpar. 
-
+                Console.WriteLine("Informe o número inteiro");
+                int numero = int.Parse(Console.ReadLine());
+                if(numero%2 == 0) Console.WriteLine("O numero é par");
+                if(numero%2 != 0) Console.WriteLine("O numero é impar");
             }
             void exercise3()
             {
                 //3 - Escrever um algoritmo para ler quatro valores inteiros, calcular a sua média, e escrever na tela os que são superiores à média.
+                int quantidade = 4;
+                int[] valores = new int[quantidade];
+                for (int i = 0; i < quantidade; i++)
+                {
+                    Console.Write("Informe o " + (i + 1) + "º valor: ");
+                    valores[i] = int.Parse(Console.ReadLine());
+                }
+
+                Console.WriteLine("A média dos valores lidos é: " + (valores.Sum() / quantidade));
+                
+                foreach (int i in valores)
+                {
+                    if (i > (valores.Sum() / quantidade))
+                    {
+                        Console.WriteLine(i + " é maior que a média");
+                    }
+
+                }
 
 
 
@@ -216,6 +244,7 @@ namespace exerciseList_2
                 //Além disso, o programa deve fazer a média dos 3 valores de glicemia coletados.E se a média for
                 //menor que 80, avisá - lo que é preciso diminuir 2 unidades de insulina.Se a média for maior que
                 //150, avisá - lo que será necessário adicionar 2 unidades de insulina.
+
                 int quantidade = 3;
                 int[] amostras = new int[quantidade];
                 for (int i = 0; i < quantidade; i++)
