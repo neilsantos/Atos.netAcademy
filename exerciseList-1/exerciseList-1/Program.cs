@@ -123,7 +123,6 @@ namespace exerciseList_1
 
 
             }
-
             void exercise4()
             {
                 //4) Faça um programa em C# e no Visual Studio que receba a data na forma DDMMAAAA e imprima na 
@@ -139,7 +138,6 @@ namespace exerciseList_1
                 Console.WriteLine("Formato AAAMMDD: " + ano + mes + dia);
                 Console.WriteLine("Formato AAMMDD: " + ano.Substring(2) + mes + dia);
             }
-
             void exercise5()
             {
                 //5) Escreva um programa em C# e no Visual Studio para calcular o consumo médio de um automóvel 
@@ -153,7 +151,6 @@ namespace exerciseList_1
                 Console.WriteLine("Seu Consumo foi de " + distanciaPercorrida / combustivelConsumido + "KM/L");
 
             }
-
             void exercise6()
             {
                 //6) Escreva um programa em C# e no Visual Studio que leia os dados para o parafuso A e para o parafuso B, 
@@ -228,12 +225,25 @@ namespace exerciseList_1
             {
                 //9) Uma loja vende seus produtos no sistema de entrada mais duas prestações, sendo a entrada maior
                 //do que ou igual às prestações, que devem ser iguais, inteiras e as maiores possíveis.
-                //Por exemplo, se o valor da mercadoria for R$ 270, 00, a entrada e as duas prestações são iguais a R$ 90, 00;
-                //se o valor da mercadoria for R$ 302, 75 a entrada é de R$ 102, 75 e as duas prestações são iguais a R$ 100, 00.
+
+                //Por exemplo, se o valor da mercadoria for R$270,00 a entrada e as duas prestações são iguais a R$ 90,00;
+
+                //Se o valor da mercadoria for R$302,75 a entrada é de R$ 102, 75 e as duas prestações são iguais a R$ 100,00.
+
                 //Escreva um programa em C# e no Visual Studio que receba o valor da mercadoria e forneça o valor 
                 //da entrada e das duas prestações, de acordo com as regras acima.
                 //Observe que uma justificativa para a adoção desta regra é que ela facilita a confecção e o
                 //conseqüente pagamento dos boletos das duas prestações.
+
+                Console.WriteLine("Informe o valor da mercadoria");
+                float valorMercadoria = float.Parse(Console.ReadLine());
+
+                float restante = valorMercadoria % 3;
+                float parcelas = valorMercadoria/3;
+
+                Console.WriteLine("Sua entrada é de: " + parcelas + restante);
+                Console.WriteLine("Suas parcelas são 2X de " + parcelas);
+
 
             }
             void exercise10()
@@ -283,7 +293,6 @@ namespace exerciseList_1
                 Console.WriteLine(((votosBrancos*100) / quantidadeEleitores) + "% de votos Brancos");
                 Console.WriteLine(((votosValidos*100) / quantidadeEleitores) + "% de votos Válidos");
 
-
             }
             void exercise12()
             {
@@ -296,12 +305,22 @@ namespace exerciseList_1
 
                 //Lucro do dia = Valor total recebido - (quantidade de combustível gasto * 6,90)
 
+                Console.Write("Informe a quilometragem inicial: ");
+                double kmInicial = double.Parse(Console.ReadLine());
 
+                Console.Write("Informe a quilometragem final: ");
+                double kmfinal = double.Parse(Console.ReadLine());
 
+                Console.Write("Informe quantidade gasta de combustível (L): ");
+                double combustivelGasto = double.Parse(Console.ReadLine());
 
+                Console.Write("Informe o valor total recebido no dia: ");
+                double valorBruto = double.Parse(Console.ReadLine());
+
+                Console.WriteLine("Seu média de consumo diário foi: " + ((kmfinal - kmInicial) / combustivelGasto));
+                Console.WriteLine("Seu Lucro foi: " + (valorBruto - combustivelGasto*6.90));
 
             }
-
             void exercise13()
             {
                 //13) Uma loja vende bicicletas com um acréscimo de 50 % sobre o preço de custo.
