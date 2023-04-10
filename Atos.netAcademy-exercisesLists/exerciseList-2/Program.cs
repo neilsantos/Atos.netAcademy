@@ -157,6 +157,36 @@ namespace exerciseList_2
                         exercise23();
                         Console.ReadKey();
                         break;
+                    case 24:
+                        Console.Clear();
+                        exercise24();
+                        Console.ReadKey();
+                        break;
+                    case 25:
+                        Console.Clear();
+                        exercise25();
+                        Console.ReadKey();
+                        break;
+                    case 26:
+                        Console.Clear();
+                        exercise26();
+                        Console.ReadKey();
+                        break;
+                    case 27:
+                        Console.Clear();
+                        exercise27();
+                        Console.ReadKey();
+                        break;
+                    case 28:
+                        Console.Clear();
+                        exercise28();
+                        Console.ReadKey();
+                        break;
+                    case 29:
+                        Console.Clear();
+                        exercise29();
+                        Console.ReadKey();
+                        break;
                     default:
                         Console.WriteLine("Precisa escolher um dos itens do menu");
                         break;
@@ -455,6 +485,26 @@ namespace exerciseList_2
                 //17 - Faça um algoritmo que leia o tamanho dos lados de um triangulo(lado a, b e c), e então diga se esses lados podem ou não formar um triangulo. Para que os lados
                 //formem um triângulo, todos os lados devem ser menores ou iguais a soma dos outros dois lados. Caso os lados formem um triangulo, diga se o mesmo é equilátero(todos
                 //os lados iguais), isoceles(somente 2 lados são iguais) ou escaleno(os 3 lados são diferentes).
+                Console.Write("Digite o valor do lado a: ");
+                int a = int.Parse(Console.ReadLine());
+                Console.Write("Digite o valor do lado b: ");
+                int b = int.Parse(Console.ReadLine());
+                Console.Write("Digite o valor do lado c: ");
+                int c = int.Parse(Console.ReadLine());
+
+                if (a + b > c && a + c > b && b + c > a)
+                {
+                    Console.Write("Os 3 lados formam um triangulo ");
+                    if (a == b && a == c)
+                        Console.WriteLine("Equilatero\n");
+                    else if (a == b || a == c || b == c)
+                        Console.WriteLine("Isosceles\n");
+                    else
+                        Console.WriteLine("Escaleno\n");
+                }
+                else
+                    Console.WriteLine("Os 3 lados NAO formam um trinagulo!\n");
+
             }
             void exercise18()
             {
@@ -501,7 +551,6 @@ namespace exerciseList_2
                 //valor para a unidade de saída selecionada
 
             }
-
             void exercise22()
             {
                 //Escreva um algoritmo que mostre todos os números de 20 a 5.
@@ -527,7 +576,7 @@ namespace exerciseList_2
                 }
                 else
                 {
-                    for (int i = valorFinal; i <= valorInicial; i++)
+                    for (int i = valorInicial; i >= valorFinal; i--)
                     {
                         Console.WriteLine("I: " + i);
                     }
@@ -538,15 +587,19 @@ namespace exerciseList_2
 
                 
             }
+            void exercise24()
+            {
+                //•Escreva um algoritmo leia pelo teclado um valor inteiro chamado x, e então mostre na tela todos os números de 0 a 100, pulando de x em x.
+                Console.Write("Informe o valor para x: ");
+                int x = int.Parse(Console.ReadLine());
 
+                for (int i = 0; i < 100; i+=x)
+                {
+                    Console.WriteLine("I: " + i);
 
-
-
-
-
-
-
-
+                }
+            }
+            
 
 
 
