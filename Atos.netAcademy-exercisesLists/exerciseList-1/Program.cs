@@ -37,42 +37,55 @@ namespace exerciseList_1
 
                     case 1:
                         exercise1();
+                        Console.Clear();
                         break;
                     case 2:
                         exercise2();
+                        Console.Clear();
                         break;
                     case 3:
                         exercise3();
+                        Console.Clear();
                         break;
                     case 4:
                         exercise4();
+                        Console.Clear();
                         break;
                     case 5:
                         exercise5();
+                        Console.Clear();
                         break;
                     case 6:
                         exercise6();
+                        Console.Clear();
                         break;
                     case 7:
                         exercise7();
+                        Console.Clear();
                         break;
                     case 8:
                         exercise8();
+                        Console.Clear();
                         break;
                     case 9:
                         exercise9();
+                        Console.Clear();
                         break;
                     case 10:
                         exercise10();
+                        Console.Clear();
                         break;
                     case 11:
                         exercise11();
+                        Console.Clear();
                         break;
                     case 12:
                         exercise12();
+                        Console.Clear();
                         break;
                     case 13:
                         exercise13();
+                        Console.Clear();
                         break;
                     default:
                         Console.WriteLine("Precisa escolher um dos itens do menu");

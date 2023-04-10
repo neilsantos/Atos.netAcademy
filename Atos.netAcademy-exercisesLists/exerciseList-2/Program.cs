@@ -16,7 +16,7 @@ using System.IO;
 using System.Net;
 using System.Runtime.Intrinsics.Arm;
 using System.Threading.Channels;
-
+using System.Collections.Concurrent;
 
 namespace exerciseList_2
 {
@@ -27,9 +27,10 @@ namespace exerciseList_2
             int sair = 1;
             while (sair != 0)
             {
+                Console.Clear();
 
                 Console.WriteLine("MENU\n");
-                for (int i = 1; i <= 13; i++)
+                for (int i = 1; i <= 21; i++)
                 {
                     Console.WriteLine(i + " - Exercício " + i);
                 }
@@ -42,34 +43,119 @@ namespace exerciseList_2
                     case 0: sair = option; break;
 
                     case 1:
+                        Console.Clear();
                         exercise1();
+                        Console.ReadKey();
                         break;
                     case 2:
+                        Console.Clear();
                         exercise2();
+                        Console.ReadKey();
                         break;
                     case 3:
+                        Console.Clear();
                         exercise3();
+                        Console.ReadKey();
                         break;
                     case 4:
+                        Console.Clear();
                         exercise4();
+                        Console.ReadKey();
                         break;
                     case 5:
+                        Console.Clear();
                         exercise5();
+                        Console.ReadKey();
                         break;
                     case 6:
+                        Console.Clear();
                         exercise6();
+                        Console.ReadKey();
                         break;
                     case 7:
+                        Console.Clear();
                         exercise7();
+                        Console.ReadKey();
                         break;
                     case 8:
+                        Console.Clear();
                         exercise8();
+                        Console.ReadKey();
                         break;
                     case 9:
+                        Console.Clear();
                         exercise9();
+                        Console.ReadKey();
                         break;
                     case 10:
+                        Console.Clear();
                         exercise10();
+                        Console.ReadKey();
+                        break;
+                    case 11:
+                        Console.Clear();
+                        exercise11();
+                        Console.ReadKey();
+                        break;
+                    case 12:
+                        Console.Clear();
+                        exercise12();
+                        Console.ReadKey();
+                        break;
+                    case 13:
+                        Console.Clear();
+                        exercise13();
+                        Console.ReadKey();
+                        break;
+                    case 14:
+                        Console.Clear();
+                        exercise14();
+                        Console.ReadKey();
+                        break;
+                    case 15:
+                        Console.Clear();
+                        exercise15();
+                        Console.ReadKey();
+                        break;
+                    case 16:
+                        Console.Clear();
+                        exercise16();
+                        Console.ReadKey();
+                        break;
+                    case 17:
+                        Console.Clear();
+                        exercise17();
+                        Console.ReadKey();
+                        break;
+                    case 18:
+                        Console.Clear();
+                        exercise18();
+                        Console.ReadKey();
+                        break;
+                    case 19:
+                        Console.Clear();
+                        exercise19();
+                        Console.ReadKey();
+                        break;
+                    case 20:
+                        Console.Clear();
+                        exercise20();
+                        Console.ReadKey();
+                        break;
+                    case 21:
+                        Console.Clear();
+                        exercise21();
+                        Console.ReadKey();
+                        break;
+                    case 22:
+                        Console.Clear();
+                        exercise22();
+                        Console.ReadKey();
+                        break;
+                    case 23:
+                        Console.Clear();
+                        exercise23();
+                        Console.ReadKey();
                         break;
                     default:
                         Console.WriteLine("Precisa escolher um dos itens do menu");
@@ -96,8 +182,8 @@ namespace exerciseList_2
                 //2 - Faça um algoritmo para ler um número e verificar se ele é par ou ímpar. 
                 Console.WriteLine("Informe o número inteiro");
                 int numero = int.Parse(Console.ReadLine());
-                if(numero%2 == 0) Console.WriteLine("O numero é par");
-                if(numero%2 != 0) Console.WriteLine("O numero é impar");
+                if (numero % 2 == 0) Console.WriteLine("O numero é par");
+                if (numero % 2 != 0) Console.WriteLine("O numero é impar");
             }
             void exercise3()
             {
@@ -111,7 +197,7 @@ namespace exerciseList_2
                 }
 
                 Console.WriteLine("A média dos valores lidos é: " + (valores.Sum() / quantidade));
-                
+
                 foreach (int i in valores)
                 {
                     if (i > (valores.Sum() / quantidade))
@@ -150,7 +236,7 @@ namespace exerciseList_2
                 Console.WriteLine(media >= 7 ? "Aprovado" : "Reprovado");
 
                 float exame = 0;
-                if(media < 7)
+                if (media < 7)
                 {
                     Console.WriteLine("Informe a nota do Exame: ");
                     exame = float.Parse(Console.ReadLine());
@@ -180,7 +266,7 @@ namespace exerciseList_2
                 Console.Write("Informe seu peso (KG): ");
                 float peso = float.Parse(Console.ReadLine());
 
-                Console.WriteLine("Seu IMC é: " + (peso/(altura*altura)));
+                Console.WriteLine("Seu IMC é: " + (peso / (altura * altura)));
 
 
 
@@ -199,7 +285,7 @@ namespace exerciseList_2
                 Console.Write("Escreva a palavra que quer buscar na frase: ");
                 string palavraDeBusca = Console.ReadLine();
 
-                Console.WriteLine( frase.Contains(palavraDeBusca)  ? "A palavra existe na frase":"A palavra não existe na frase");
+                Console.WriteLine(frase.Contains(palavraDeBusca) ? "A palavra existe na frase" : "A palavra não existe na frase");
             }
             void exercise8()
             {
@@ -251,15 +337,15 @@ namespace exerciseList_2
                 {
                     Console.WriteLine("informe o valor da Amostra " + (i + 1));
                     amostras[i] = int.Parse(Console.ReadLine());
-                    if(amostras[i] < 65) Console.WriteLine("Aviso! - Você corre risco de hipoglicemia");
-                    if(amostras[i] > 250 ) Console.WriteLine("Aviso! - Você corre risco de hiperglicemia"); 
+                    if (amostras[i] < 65) Console.WriteLine("Aviso! - Você corre risco de hipoglicemia");
+                    if (amostras[i] > 250) Console.WriteLine("Aviso! - Você corre risco de hiperglicemia");
 
                 }
-               
-                float media = amostras.Sum()/quantidade;
-                Console.WriteLine("A média das amostras é: "+ media);
-                if(media>80) Console.WriteLine("Aviso! - É necessário diminuir 2 unidades de insulina");
-                if(media>80) Console.WriteLine("Aviso! - É necessário adicionar 2 unidades de insulina");
+
+                float media = amostras.Sum() / quantidade;
+                Console.WriteLine("A média das amostras é: " + media);
+                if (media > 80) Console.WriteLine("Aviso! - É necessário diminuir 2 unidades de insulina");
+                if (media > 80) Console.WriteLine("Aviso! - É necessário adicionar 2 unidades de insulina");
 
 
             }
@@ -272,7 +358,7 @@ namespace exerciseList_2
                 int quantidade = 2;
                 for (int i = 0; i < quantidade; i++)
                 {
-                    Console.WriteLine("\n\nPreencha os Dados atleta " + (i+1) + ": ");
+                    Console.WriteLine("\n\nPreencha os Dados atleta " + (i + 1) + ": ");
                     Console.Write("Nome: ");
                     string nome = Console.ReadLine();
                     Console.Write("idade: ");
@@ -289,59 +375,188 @@ namespace exerciseList_2
                 var atletaMaisNovo = Atletas.FirstOrDefault(x => x.idade == menorIdade);
                 var atletaMaisAlto = Atletas.FirstOrDefault(x => x.altura == maiorAltura);
 
-                Console.WriteLine("\nO Atleta mais novo:"+ "\nNome: " + atletaMaisNovo.nome + "\nIdade: " + atletaMaisNovo.idade + "\nAltura: " + atletaMaisNovo.altura);
-                Console.WriteLine("\nO Atleta mais Alto:"+ "\nNome: " + atletaMaisAlto.nome + "\nIdade: " + atletaMaisAlto.idade + "\nAltura: " + atletaMaisAlto.altura);
+                Console.WriteLine("\nO Atleta mais novo:" + "\nNome: " + atletaMaisNovo.nome + "\nIdade: " + atletaMaisNovo.idade + "\nAltura: " + atletaMaisNovo.altura);
+                Console.WriteLine("\nO Atleta mais Alto:" + "\nNome: " + atletaMaisAlto.nome + "\nIdade: " + atletaMaisAlto.idade + "\nAltura: " + atletaMaisAlto.altura);
 
+            }
+            void exercise11()
+            {
+                //11 - Faça um programa no VS que receba uma hora, dividida em 2 variáveis(uma para hora e outra para minutos).
+                //O programa deve exibir se a hora digitada está ou não válida. 
+                //Lembre que usaremos o padrão de hora com 24h, de 0 a 23.
+                Console.Write("Informe a hora: ");
+                int hora = int.Parse(Console.ReadLine());
+                Console.Write("Informe os minutos: ");
+                int minutos = int.Parse(Console.ReadLine());
+                if ((hora >= 0 && hora <= 24) && (minutos >= 0 && minutos <= 60))
+                {
+                    Console.WriteLine("A hora informada é valida!\n Hora: " + hora + ":" + minutos);
+                }
+                else
+                {
+                    Console.WriteLine("A hora informada está incorreta");
+                }
+
+            }
+            void exercise12()
+            {
+                //12 - Elabore um programa em VS que leia as variáveis "codigo" e "numeroHoras", respectivamente código e
+                //número de horas trabalhadas de um operário. Na sequência, calcule o salário sabendo - se que ele ganha
+                //R$ 10,00 por hora. Quando o número de horas exceder a 50 calcule o excesso de pagamento
+                //armazenando - o na variável "extra", caso contrário zerar tal variável.A hora excedente de trabalho vale R$ 20,00.
+                //No final do processamento, exibir o salário total e o salário excedente do operário.
+
+
+            }
+            void exercise13()
+            {
+                //13 - Tendo como dado de entrada a altura(h) de uma pessoa, construa um programa no VS que calcule
+                //seu peso ideal, utilizando as seguintes fórmulas:
+                //            Para homens: (72.7 * h) - 58
+                //Para mulheres: (62.1 * h) - 44.7
+            }
+            void exercise14()
+            {
+                //14 - Faça um programa que peça o tamanho de um arquivo para download(em MB) e a velocidade de um
+                //link de Internet(em Mbps). Em seguida, calcule e informe o tempo aproximado de download
+                //do arquivo usando este link(em minutos).
+            }
+            void exercise15()
+            {
+                //15 - Faça um programa para uma loja de tintas.O programa deverá pedir o tamanho em metros quadrados
+                //da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados
+                //e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00.
+                //Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.
+                /* loja de tintas * ler tamanho em metros quadrados da area para ser pintada * 1l - > 3 metros quadrados * qtd -> area * qtd = area/3; * tinta vendida - 18 litros - * 18 litros custa 80 reais. * ler o tamamho, falar quanto de litros vai de tinta.. * pegar a quantidade de latas e calcular o valor*/
+                double area, qtd, vtotal, qtdlatas, qtdlatasCeiling, qtdlatasFloor;
+                Console.WriteLine("Digite a área a ser pintada: ");
+                area = double.Parse(Console.ReadLine());
+                qtd = area / 3;
+                qtdlatas = qtd / 18;
+                qtdlatasCeiling = Math.Ceiling(qtdlatas);
+                qtdlatasFloor = Math.Floor(qtdlatas);
+                Console.WriteLine("A área de " + area + " precisará de " + qtd + " litros de tinta");
+                Console.WriteLine("Será necessário comprar " + qtdlatas + " latas de tinha");
+                Console.WriteLine("Será necessário comprar " + qtdlatasCeiling + " latas de tinha - Ceiling");
+                Console.WriteLine("Será necessário comprar " + qtdlatasFloor + " latas de tinha - Floor");
+                vtotal = qtdlatasCeiling * 80; Console.WriteLine("Custará " + vtotal);
+            }
+            void exercise16()
+            {
+                //16 - Escreva um algoritmo que leia o placar de um jogo da primeira fase da copa do Brasil.Caso o time de fora tenha ganho o jogo por mais de 2 gols de diferença, mostre
+                //na tela uma mensagem indicando que o time de fora já se classificou para a próxima fase. Caso contrário, mostre uma mensagem indicando que os dois times irão se
+                //enfrentar novamente em um novo jogo.
+                //ex: time da casa 4 x 3 time de fora, mostra "Os dois times se enfrentarão em um novo jogo"
+                //ex2: time da casa 1 x 3 time de fora, mostra "O time de fora já se classificou"
+                //plus: caso ocorra um segundo jogo, leia o placar desse novo jogo e então diga quem passou de fase.
+            }
+            void exercise17()
+            {
+                //17 - Faça um algoritmo que leia o tamanho dos lados de um triangulo(lado a, b e c), e então diga se esses lados podem ou não formar um triangulo. Para que os lados
+                //formem um triângulo, todos os lados devem ser menores ou iguais a soma dos outros dois lados. Caso os lados formem um triangulo, diga se o mesmo é equilátero(todos
+                //os lados iguais), isoceles(somente 2 lados são iguais) ou escaleno(os 3 lados são diferentes).
+            }
+            void exercise18()
+            {
+                //18 - Escreva um algoritmo que leia 3 valores pelo teclado e então informe qual o maior deles.
+                int quantidade = 3;
+                int maior = 0;
+
+                for (int i = 0; i < quantidade; i++)
+                {
+                    Console.WriteLine("Informe o " + (i + 1) + "º valor");
+                    int valor = int.Parse(Console.ReadLine());
+                    if (valor > maior) maior = valor;
+
+                }
+                Console.WriteLine("O maior valor dentre os informados é: " + maior);
+            }
+            void exercise19()
+            {
+                //19 - Ajuste o exercício 18 de maneira que mostre os valores informados em ordem crescente.
+                int quantidade = 3;
+                int[] valores = new int[quantidade];
+
+                for (int i = 0; i < quantidade; i++)
+                {
+                    Console.WriteLine("Informe o " + (i + 1) + "º valor");
+                    valores[i] = int.Parse(Console.ReadLine());
+                }
+                var ordenado = valores.OrderBy(x => x);
+                Console.WriteLine("Os valores em ordem: ");
+                foreach (int valor in ordenado)
+                {
+                    Console.WriteLine(valor);
+                }
+            }
+            void exercise20()
+            {
+                //20 - Escreva um algoritmo para o jogo de adivinhação do número secreto. O jogador tem 3 chances e recebe dicas do tipo “é maior” ou “é menor”. 
+                //plus: você pode gerar o número de forma randomica(função random c#).
+            }
+            void exercise21()
+            {
+                //21 - Crie um programa que permita que o usuário selecione uma unidade de medida de entrada(metros, centímetros, polegadas ou pés) e uma unidade de
+                //medida de saída usando um menu com o comando switch case.O programa deve, em seguida, pedir ao usuário um valor de entrada e converter esse
+                //valor para a unidade de saída selecionada
+
+            }
+
+            void exercise22()
+            {
+                //Escreva um algoritmo que mostre todos os números de 20 a 5.
+                for (int i = 20; i >= 5; i--)
+                {
+                    Console.WriteLine("I: "+ i);
+                }
+            }
+            void exercise23()
+            {
+                //Escreva um algoritmo leia pelo teclado os dois valores inteiros chamados inicio e fim, e então mostre todos os números entre inicio e fim.
+                Console.Write("Informe o valor Inicial: ");
+                int valorInicial = int.Parse (Console.ReadLine());
+                Console.Write("Informe o valor Final: ");
+                int valorFinal = int.Parse(Console.ReadLine());
+                 
+                if(valorInicial < valorFinal)
+                {
+                    for (int i = valorInicial; i <= valorFinal; i++)
+                    {
+                        Console.WriteLine("I: " + i);
+                    }
+                }
+                else
+                {
+                    for (int i = valorFinal; i <= valorInicial; i++)
+                    {
+                        Console.WriteLine("I: " + i);
+                    }
+                }
+                    
+           
+                
+
+                
             }
 
 
 
 
-//            11 - Faça um programa no VS que receba uma hora, dividida em 2 variáveis(uma para hora e outra para minutos).
-//O programa deve exibir se a hora digitada está ou não válida. 
-//Lembre que usaremos o padrão de hora com 24h, de 0 a 23.
 
-//12 - Elabore um programa em VS que leia as variáveis "codigo" e "numeroHoras", respectivamente código e
-//número de horas trabalhadas de um operário. Na sequência, calcule o salário sabendo - se que ele ganha
-//R$ 10,00 por hora. Quando o número de horas exceder a 50 calcule o excesso de pagamento
-//armazenando - o na variável "extra", caso contrário zerar tal variável.A hora excedente de trabalho vale R$ 20,00.
-//No final do processamento, exibir o salário total e o salário excedente do operário.
 
-//13 - Tendo como dado de entrada a altura(h) de uma pessoa, construa um programa no VS que calcule
-//seu peso ideal, utilizando as seguintes fórmulas:
-//            Para homens: (72.7 * h) - 58
-//Para mulheres: (62.1 * h) - 44.7
 
-//14 - Faça um programa que peça o tamanho de um arquivo para download(em MB) e a velocidade de um
-//link de Internet(em Mbps). Em seguida, calcule e informe o tempo aproximado de download
-//do arquivo usando este link(em minutos).
 
-//15 - Faça um programa para uma loja de tintas.O programa deverá pedir o tamanho em metros quadrados
-//da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados
-//e que a tinta é vendida em latas de 18 litros, que custam R$ 80,00.
-//Informe ao usuário a quantidades de latas de tinta a serem compradas e o preço total.
 
-//16 - Escreva um algoritmo que leia o placar de um jogo da primeira fase da copa do Brasil.Caso o time de fora tenha ganho o jogo por mais de 2 gols de diferença, mostre
-//na tela uma mensagem indicando que o time de fora já se classificou para a próxima fase. Caso contrário, mostre uma mensagem indicando que os dois times irão se
-//enfrentar novamente em um novo jogo.
-//ex: time da casa 4 x 3 time de fora, mostra "Os dois times se enfrentarão em um novo jogo"
-//ex2: time da casa 1 x 3 time de fora, mostra "O time de fora já se classificou"
-//plus: caso ocorra um segundo jogo, leia o placar desse novo jogo e então diga quem passou de fase.
 
-//17 - Faça um algoritmo que leia o tamanho dos lados de um triangulo(lado a, b e c), e então diga se esses lados podem ou não formar um triangulo. Para que os lados
-//formem um triângulo, todos os lados devem ser menores ou iguais a soma dos outros dois lados. Caso os lados formem um triangulo, diga se o mesmo é equilátero(todos
-//os lados iguais), isoceles(somente 2 lados são iguais) ou escaleno(os 3 lados são diferentes).
 
-//18 - Escreva um algoritmo que leia 3 valores pelo teclado e então informe qual o maior deles.
 
-//19 - Ajuste o exercício 18 de maneira que mostre os valores informados em ordem crescente.
 
-//20 - Escreva um algoritmo para o jogo de adivinhação do número secreto. O jogador tem 3 chances e recebe dicas do tipo “é maior” ou “é menor”. 
-//plus: você pode gerar o número de forma randomica(função random c#).
 
-//21 - Crie um programa que permita que o usuário selecione uma unidade de medida de entrada(metros, centímetros, polegadas ou pés) e uma unidade de
-//medida de saída usando um menu com o comando switch case.O programa deve, em seguida, pedir ao usuário um valor de entrada e converter esse
-//valor para a unidade de saída selecionada
+
+
+
+
+
 
 
 
