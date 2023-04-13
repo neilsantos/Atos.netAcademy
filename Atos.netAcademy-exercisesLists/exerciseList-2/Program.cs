@@ -162,31 +162,31 @@ namespace exerciseList_2
                         exercise24();
                         Console.ReadKey();
                         break;
-                    case 25:
-                        Console.Clear();
-                        exercise25();
-                        Console.ReadKey();
-                        break;
-                    case 26:
-                        Console.Clear();
-                        exercise26();
-                        Console.ReadKey();
-                        break;
-                    case 27:
-                        Console.Clear();
-                        exercise27();
-                        Console.ReadKey();
-                        break;
-                    case 28:
-                        Console.Clear();
-                        exercise28();
-                        Console.ReadKey();
-                        break;
-                    case 29:
-                        Console.Clear();
-                        exercise29();
-                        Console.ReadKey();
-                        break;
+                    //case 25:
+                    //    Console.Clear();
+                    //    exercise25();
+                    //    Console.ReadKey();
+                    //    break;
+                    //case 26:
+                    //    Console.Clear();
+                    //    exercise26();
+                    //    Console.ReadKey();
+                    //    break;
+                    //case 27:
+                    //    Console.Clear();
+                    //    exercise27();
+                    //    Console.ReadKey();
+                    //    break;
+                    //case 28:
+                    //    Console.Clear();
+                    //    exercise28();
+                    //    Console.ReadKey();
+                    //    break;
+                    //case 29:
+                    //    Console.Clear();
+                    //    exercise29();
+                    //    Console.ReadKey();
+                    //    break;
                     default:
                         Console.WriteLine("Precisa escolher um dos itens do menu");
                         break;
