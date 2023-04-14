@@ -32,145 +32,176 @@ namespace exerciseList_4
                     case 1:
                         Console.Clear();
                         exercise1();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.Clear();
                         exercise2();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 3:
                         Console.Clear();
                         exercise3();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 4:
                         Console.Clear();
                         exercise4();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 5:
                         Console.Clear();
                         exercise5();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 6:
                         Console.Clear();
                         exercise6();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 7:
                         Console.Clear();
                         exercise7();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 8:
                         Console.Clear();
                         exercise8();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 9:
                         Console.Clear();
                         exercise9();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 10:
                         Console.Clear();
                         exercise10();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 11:
                         Console.Clear();
                         exercise11();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 12:
                         Console.Clear();
                         exercise12();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 13:
                         Console.Clear();
                         exercise13();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 14:
                         Console.Clear();
                         exercise14();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 15:
                         Console.Clear();
                         exercise15();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 16:
                         Console.Clear();
                         exercise16();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 17:
                         Console.Clear();
                         exercise17();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 18:
                         Console.Clear();
                         exercise18();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 19:
                         Console.Clear();
                         exercise19();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 20:
                         Console.Clear();
                         exercise20();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 21:
                         Console.Clear();
                         exercise21();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 22:
                         Console.Clear();
                         exercise22();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 23:
                         Console.Clear();
                         exercise23();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 24:
                         Console.Clear();
                         exercise24();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 25:
                         Console.Clear();
                         exercise25();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 26:
                         Console.Clear();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
+
                         exercise26();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 27:
                         Console.Clear();
                         exercise27();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 28:
                         Console.Clear();
                         exercise28();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 29:
                         Console.Clear();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     default:
@@ -189,9 +220,9 @@ namespace exerciseList_4
             int contagemImpar = 0;
             for (int i = 0; i < 10; i++)
             {
-                Console.Write("Informe o valor " + (i+1)+": ");
+                Console.Write("Informe o valor " + (i + 1) + ": ");
                 int valor = int.Parse(Console.ReadLine());
-                if (valor%2 == 0) { contagemPar++; } else { contagemImpar++; }
+                if (valor % 2 == 0) { contagemPar++; } else { contagemImpar++; }
             }
             Console.WriteLine("Quantidade de números pares: " + contagemPar);
             Console.WriteLine("Quantidade de números ímpares: " + contagemImpar);
@@ -216,7 +247,7 @@ namespace exerciseList_4
 
             for (int i = 0; i < 20; i++)
             {
-                Console.WriteLine("Posição "+(i)+": " + vetor1[i] + " + " + vetor2[i] + " = " + vetor3[i]);
+                Console.WriteLine("Posição " + (i) + ": " + vetor1[i] + " + " + vetor2[i] + " = " + vetor3[i]);
             }
 
         }
@@ -284,12 +315,12 @@ namespace exerciseList_4
             for (int i = 0; i < quantidade; i++)
             {
                 Random rnd = new Random();
-                vetor1[i] = rnd.Next(1,500);
-                
+                vetor1[i] = rnd.Next(1, 500);
+
             }
 
             int index = Array.IndexOf(vetor1, vetor1.Min());
-            Console.WriteLine("O menor valor é do indice "+ index + " valor " + vetor1.Min() );
+            Console.WriteLine("O menor valor é do indice " + index + " valor " + vetor1.Min());
         }
         static void exercise6()
         {
@@ -325,7 +356,7 @@ namespace exerciseList_4
                 Random rnd = new Random();
                 vetor1[i] = rnd.Next(1, 10);
             }
-            var ordered = vetor1.OrderBy(x => x%2 == 0);
+            var ordered = vetor1.OrderBy(x => x % 2 == 0);
             foreach (var item in ordered.Reverse())
             {
                 Console.WriteLine(item);
@@ -350,7 +381,7 @@ namespace exerciseList_4
                 if (item > 0)
                 {
                     int index = Array.IndexOf(vetor1, item);
-                    Console.WriteLine(index +" - " + item);
+                    Console.WriteLine(index + " - " + item);
 
                 }
             }
@@ -375,7 +406,7 @@ namespace exerciseList_4
             {
                 aux[i] = vetor1.Max();
                 int index = Array.IndexOf(vetor1, vetor1.Max());
-                vetor1[index] = 0; 
+                vetor1[index] = 0;
             }
 
             Console.WriteLine("\n\nOrdenado: ");
@@ -414,7 +445,7 @@ namespace exerciseList_4
             {
                 Console.WriteLine(item);
             }
-            for (int i = 0; i < quantidade/2; i++)
+            for (int i = 0; i < quantidade / 2; i++)
             {
                 int aux = vetor1[i];
                 vetor1[i] = vetor1[(quantidade - 1) - i];
@@ -431,45 +462,136 @@ namespace exerciseList_4
         static void exercise12()
         {
             //12.	Faça um algoritmo que leia um vetor V de 10 posições e, após, verifica se um número N, fornecido pelo usuário, existe no vetor. Se existir, indicar a(s) posição(ões), senão escrever a mensagem "O número fornecido não existe no vetor!".
+            int quantidade = 10;
+            int[] vetor1 = new int[quantidade];
+            for (int i = 0; i < quantidade; i++)
+            {
+                Random rnd = new Random();
+                vetor1[i] = rnd.Next(1, 10);
 
+            }
+            Console.Write("Escolha um valor: ");
+            int valorEscolhido = int.Parse(Console.ReadLine());
+
+            bool exist = vetor1.Contains(valorEscolhido);
+            Console.WriteLine(exist ? "O valor existe no vetor" : "O valor não existe no vetor");
+
+            foreach (var item in vetor1) Console.WriteLine(item);
         }
         static void exercise13()
         {
-            //13.	Escreva um algoritmo para ler um vetor de inteiros e positivos e imprimir quantas vezes aparecem os números 2, 4 e 8. O vetor terá no máximo 100 posições. Sair do programa quando for digitado -1 ou quando atingir o máximo de posições do vetor.
+            //13.	Escreva um algoritmo para ler um vetor de inteiros e positivos e imprimir quantas vezes aparecem os números 2, 4 e 8.
+            //O vetor terá no máximo 100 posições.
+            //Sair do programa quando for digitado -1 ou quando atingir o máximo de posições do vetor.
 
         }
         static void exercise14()
         {
             //14.	Escreva um algoritmo que leia um código numérico inteiro e um vetor de 50 posições de números. Se o código for zero, termine o algoritmo. Se o código for 1, mostre o vetor na ordem em que foi lido. Se o código for 2, mostre o vetor na ordem inversa, do último elemento até o primeiro.
+            int quantidade = 50;
+            int[] vetor1 = new int[quantidade];
+            for (int i = 0; i < quantidade; i++)
+            {
+                Random rnd = new Random();
+                vetor1[i] = rnd.Next(1, 500);
 
+            }
+            foreach (var item in vetor1) Console.WriteLine(item);
+
+            Console.WriteLine("Escolha: ");
+            Console.WriteLine("0 - sair ");
+            Console.WriteLine("1 - ordem de leitura ");
+            Console.WriteLine("2 - Inverso da leitura ");
+            int opcao = int.Parse(Console.ReadLine());
+
+
+            if (opcao == 1) foreach (var item in vetor1) Console.WriteLine(item);
+            if (opcao == 2) foreach (var item in vetor1.Reverse()) Console.WriteLine(item);
+            if (opcao == 0) return;
 
         }
         static void exercise15()
         {
-            //15.	Faça um programa em C que declare um vetor de 20 elementos inteiros, leia os conteúdos do vetor, e copie estes conteúdos para outro vetor, invertendo sua ordem. Assim, o valor do primeiro elemento do primeiro vetor deve ser o valor do último elemento do segundo vetor, por exemplo. Mostrar os conteúdos do primeiro vetor em uma linha e os do segundo uma linha abaixo.
+            //15. Faça um programa em C que declare um vetor de 20 elementos inteiros, leia os conteúdos do vetor, e copie estes conteúdos para outro vetor,
+            //invertendo sua ordem. Assim, o valor do primeiro elemento do primeiro vetor deve ser o valor do último elemento do segundo vetor, por exemplo.
+            //Mostrar os conteúdos do primeiro vetor em uma linha e os do segundo uma linha abaixo.
+
+            int quantidade = 20;
+            int[] vetor1 = new int[quantidade];
+            int[] vetor2 = new int[quantidade];
+            for (int i = 0; i < quantidade; i++)
+            {
+                Random rnd = new Random();
+                vetor1[i] = rnd.Next(1, 10);
+
+            }
+
+            for (int i = 0; i < quantidade; i++)
+            {
+                vetor2[(quantidade - 1) - i] = vetor1[i];
+
+            }
+            Console.WriteLine("\nDados Vetores");
+            foreach (var item in vetor1) Console.Write(" " + item);
+            Console.WriteLine("\n");
+            foreach (var item in vetor2) Console.Write(" " + item);
 
 
         }
         static void exercise16()
         {
-            //16.	Escreva um algoritmo que leia 2 vetores X[10] e Y[10] e os escreva. Crie, a seguir, um vetor para cada uma das operações:
+            //16.Escreva um algoritmo que leia 2 vetores X[10] e Y[10] e os escreva. Crie, a seguir, um vetor para cada uma das operações:
             //•	A união de X com Y
             //•	A diferença entre X e Y
             //•	A interseção entre X e Y
             //Escreva o vetor resultado de cada uma das operações.
+            int quantidade = 10;
+            int[] vetor1 = new int[quantidade];
+            int[] vetor2 = new int[quantidade];
+            for (int i = 0; i < quantidade; i++)
+            {
+                Random rnd = new Random();
+                vetor1[i] = rnd.Next(1, 10);
+                vetor2[i] = rnd.Next(1, 10);
+
+            }
+            Console.WriteLine("\nVetores: ");
+            foreach (var item in vetor1) Console.Write(" " + item);
+            Console.WriteLine("\n");
+            foreach (var item in vetor2) Console.Write(" " + item);
+
+
+            Console.WriteLine("\n\nA união dos vetores é: ");
+            foreach (var item in vetor1) Console.Write(" " + item);
+            foreach (var item in vetor2) Console.Write(" " + item);
+
+            Console.WriteLine("\n\nA diferença dos vetores é: ");
+            for (int i = 0; i < quantidade - 1; i++)
+            {
+                if (!vetor2.Contains(vetor1[i])) Console.Write(" " + vetor1[i]);
+            }
+
+            Console.WriteLine("\n\nA intersecção dos vetores é: ");
+            for (int i = 0; i < quantidade - 1; i++)
+            {
+                if (vetor2.Contains(vetor1[i])) Console.Write(" " + vetor1[i]);
+            }
+
         }
+        
+        //MPT
         static void exercise17()
         {
-           
+
         }
         static void exercise18()
         {
-            
+
 
         }
         static void exercise19()
         {
-            
+
 
         }
         static void exercise20()
@@ -478,7 +600,7 @@ namespace exerciseList_4
         }
         static void exercise21()
         {
-            
+
         }
         static void exercise22()
         {
@@ -486,21 +608,21 @@ namespace exerciseList_4
         }
         static void exercise23()
         {
-     
+
 
         }
         static void exercise24()
         {
-            
+
         }
         static void exercise25()
         {
-            
+
 
         }
         static void exercise26()
         {
-           
+
 
         }
         static void exercise27()
@@ -509,9 +631,9 @@ namespace exerciseList_4
         }
         static void exercise28()
         {
-            
+
         }
-       
+
     }
 }
 

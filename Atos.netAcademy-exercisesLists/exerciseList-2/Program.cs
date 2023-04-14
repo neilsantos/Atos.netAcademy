@@ -30,7 +30,7 @@ namespace exerciseList_2
                 Console.Clear();
 
                 Console.WriteLine("MENU\n");
-                for (int i = 1; i <= 21; i++)
+                for (int i = 1; i <= 28; i++)
                 {
                     Console.WriteLine(i + " - Exercício " + i);
                 }
@@ -45,146 +45,176 @@ namespace exerciseList_2
                     case 1:
                         Console.Clear();
                         exercise1();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.Clear();
                         exercise2();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 3:
                         Console.Clear();
                         exercise3();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 4:
                         Console.Clear();
                         exercise4();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 5:
                         Console.Clear();
                         exercise5();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 6:
                         Console.Clear();
                         exercise6();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 7:
                         Console.Clear();
                         exercise7();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 8:
                         Console.Clear();
                         exercise8();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 9:
                         Console.Clear();
                         exercise9();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 10:
                         Console.Clear();
                         exercise10();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 11:
                         Console.Clear();
                         exercise11();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 12:
                         Console.Clear();
                         exercise12();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 13:
                         Console.Clear();
                         exercise13();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 14:
                         Console.Clear();
                         exercise14();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 15:
                         Console.Clear();
                         exercise15();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 16:
                         Console.Clear();
                         exercise16();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 17:
                         Console.Clear();
                         exercise17();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 18:
                         Console.Clear();
                         exercise18();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 19:
                         Console.Clear();
                         exercise19();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 20:
                         Console.Clear();
                         exercise20();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 21:
                         Console.Clear();
                         exercise21();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 22:
                         Console.Clear();
                         exercise22();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 23:
                         Console.Clear();
                         exercise23();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 24:
                         Console.Clear();
                         exercise24();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     //case 25:
                     //    Console.Clear();
                     //    exercise25();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                     //    Console.ReadKey();
                     //    break;
                     //case 26:
                     //    Console.Clear();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
+
                     //    exercise26();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                     //    Console.ReadKey();
                     //    break;
                     //case 27:
                     //    Console.Clear();
                     //    exercise27();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                     //    Console.ReadKey();
                     //    break;
                     //case 28:
                     //    Console.Clear();
                     //    exercise28();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                     //    Console.ReadKey();
                     //    break;
                     //case 29:
                     //    Console.Clear();
-                    //    exercise29();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                     //    Console.ReadKey();
                     //    break;
                     default:
@@ -192,8 +222,9 @@ namespace exerciseList_2
                         break;
                 }
             }
+        }
 
-            void exercise1()
+           static void exercise1()
             {
                 //1 - Faça um algoritmo para calcular e mostrar a área de um triângulo a partir dos valores da base e da altura lidos pelo teclado: 
                 //Área do triangulo = (base * altura) / 2;
@@ -207,7 +238,7 @@ namespace exerciseList_2
                 Console.WriteLine("A Area deste triangulo é: " + ((baseTriangulo * alturaTriangulo) / 2));
 
             }
-            void exercise2()
+           static void exercise2()
             {
                 //2 - Faça um algoritmo para ler um número e verificar se ele é par ou ímpar. 
                 Console.WriteLine("Informe o número inteiro");
@@ -215,7 +246,7 @@ namespace exerciseList_2
                 if (numero % 2 == 0) Console.WriteLine("O numero é par");
                 if (numero % 2 != 0) Console.WriteLine("O numero é impar");
             }
-            void exercise3()
+           static void exercise3()
             {
                 //3 - Escrever um algoritmo para ler quatro valores inteiros, calcular a sua média, e escrever na tela os que são superiores à média.
                 int quantidade = 4;
@@ -240,12 +271,12 @@ namespace exerciseList_2
 
 
             }
-            void exercise4()
+           static void exercise4()
             {
                 //4 - Escrever um algoritmo para ler a quantidade de horas aula dadas por dois professores e o valor por hora recebido por cada um deles.
                 //Mostrar na tela qual dos professores tem o maior salário total.
             }
-            void exercise5()
+           static void exercise5()
             {
                 //5 - Escrever um algoritmo para ler duas notas de um aluno e escrever na tela a palavra “Aprovado” 
                 //se a média das duas notas for maior ou igual a 7, 0.
@@ -275,7 +306,7 @@ namespace exerciseList_2
                 Console.WriteLine(mediaFinal >= 5 ? "Aprovado no Exame" : "Reprovado no Exame");
 
             }
-            void exercise6()
+           static void exercise6()
             {
                 //6 - Faça um programa em C# e no Visual Studio para receber o nome (totalmente em maiúsculo), a altura (metros) e o peso (kg) de uma pessoa.
                 //O programa deve calcular o Indice de Massa Corpórea(IMC), exibi - lo ao usuário e informar sua situação conforme a tabela.
@@ -303,7 +334,7 @@ namespace exerciseList_2
 
 
             }
-            void exercise7()
+           static void exercise7()
             {
                 //7 - Faça um programa em C# e no VS para receber uma frase qualquer e uma palavra de pesquisa.
                 //O programa deve avaliar se a palavra aparece na frase, informando o usuário via mensagem, como por
@@ -317,7 +348,7 @@ namespace exerciseList_2
 
                 Console.WriteLine(frase.Contains(palavraDeBusca) ? "A palavra existe na frase" : "A palavra não existe na frase");
             }
-            void exercise8()
+           static void exercise8()
             {
                 //8 - Faça um programa no VS que receba o código, nome, salário base e o total de vendas de um funcionário.
                 //Caso o total de vendas seja acima de R$ 500,00, adicionar ao seu salário final 5 % do total de vendas.
@@ -349,7 +380,7 @@ namespace exerciseList_2
                 }
 
             }
-            void exercise9()
+           static void exercise9()
             {
                 //9 - Faça um programa no VS que receba do usuário 3 valores de glicemia em jejum, representando a medição
                 //diária de um paciente diabético. Para cada valor recebido analisar e informar ao paciente o seguinte:
@@ -379,7 +410,7 @@ namespace exerciseList_2
 
 
             }
-            void exercise10()
+           static void exercise10()
             {
 
                 //10 - Faça um programa no VS que receba dados de dois atletas(nome, idade e altura).
@@ -409,7 +440,7 @@ namespace exerciseList_2
                 Console.WriteLine("\nO Atleta mais Alto:" + "\nNome: " + atletaMaisAlto.nome + "\nIdade: " + atletaMaisAlto.idade + "\nAltura: " + atletaMaisAlto.altura);
 
             }
-            void exercise11()
+           static void exercise11()
             {
                 //11 - Faça um programa no VS que receba uma hora, dividida em 2 variáveis(uma para hora e outra para minutos).
                 //O programa deve exibir se a hora digitada está ou não válida. 
@@ -428,7 +459,7 @@ namespace exerciseList_2
                 }
 
             }
-            void exercise12()
+           static void exercise12()
             {
                 //12 - Elabore um programa em VS que leia as variáveis "codigo" e "numeroHoras", respectivamente código e
                 //número de horas trabalhadas de um operário. Na sequência, calcule o salário sabendo - se que ele ganha
@@ -438,20 +469,20 @@ namespace exerciseList_2
 
 
             }
-            void exercise13()
+           static void exercise13()
             {
                 //13 - Tendo como dado de entrada a altura(h) de uma pessoa, construa um programa no VS que calcule
                 //seu peso ideal, utilizando as seguintes fórmulas:
                 //            Para homens: (72.7 * h) - 58
                 //Para mulheres: (62.1 * h) - 44.7
             }
-            void exercise14()
+           static void exercise14()
             {
                 //14 - Faça um programa que peça o tamanho de um arquivo para download(em MB) e a velocidade de um
                 //link de Internet(em Mbps). Em seguida, calcule e informe o tempo aproximado de download
                 //do arquivo usando este link(em minutos).
             }
-            void exercise15()
+           static void exercise15()
             {
                 //15 - Faça um programa para uma loja de tintas.O programa deverá pedir o tamanho em metros quadrados
                 //da área a ser pintada. Considere que a cobertura da tinta é de 1 litro para cada 3 metros quadrados
@@ -471,7 +502,7 @@ namespace exerciseList_2
                 Console.WriteLine("Será necessário comprar " + qtdlatasFloor + " latas de tinha - Floor");
                 vtotal = qtdlatasCeiling * 80; Console.WriteLine("Custará " + vtotal);
             }
-            void exercise16()
+           static void exercise16()
             {
                 //16 - Escreva um algoritmo que leia o placar de um jogo da primeira fase da copa do Brasil.Caso o time de fora tenha ganho o jogo por mais de 2 gols de diferença, mostre
                 //na tela uma mensagem indicando que o time de fora já se classificou para a próxima fase. Caso contrário, mostre uma mensagem indicando que os dois times irão se
@@ -480,7 +511,7 @@ namespace exerciseList_2
                 //ex2: time da casa 1 x 3 time de fora, mostra "O time de fora já se classificou"
                 //plus: caso ocorra um segundo jogo, leia o placar desse novo jogo e então diga quem passou de fase.
             }
-            void exercise17()
+           static void exercise17()
             {
                 //17 - Faça um algoritmo que leia o tamanho dos lados de um triangulo(lado a, b e c), e então diga se esses lados podem ou não formar um triangulo. Para que os lados
                 //formem um triângulo, todos os lados devem ser menores ou iguais a soma dos outros dois lados. Caso os lados formem um triangulo, diga se o mesmo é equilátero(todos
@@ -506,7 +537,7 @@ namespace exerciseList_2
                     Console.WriteLine("Os 3 lados NAO formam um trinagulo!\n");
 
             }
-            void exercise18()
+           static void exercise18()
             {
                 //18 - Escreva um algoritmo que leia 3 valores pelo teclado e então informe qual o maior deles.
                 int quantidade = 3;
@@ -521,7 +552,7 @@ namespace exerciseList_2
                 }
                 Console.WriteLine("O maior valor dentre os informados é: " + maior);
             }
-            void exercise19()
+           static void exercise19()
             {
                 //19 - Ajuste o exercício 18 de maneira que mostre os valores informados em ordem crescente.
                 int quantidade = 3;
@@ -539,19 +570,19 @@ namespace exerciseList_2
                     Console.WriteLine(valor);
                 }
             }
-            void exercise20()
+           static void exercise20()
             {
                 //20 - Escreva um algoritmo para o jogo de adivinhação do número secreto. O jogador tem 3 chances e recebe dicas do tipo “é maior” ou “é menor”. 
                 //plus: você pode gerar o número de forma randomica(função random c#).
             }
-            void exercise21()
+           static void exercise21()
             {
                 //21 - Crie um programa que permita que o usuário selecione uma unidade de medida de entrada(metros, centímetros, polegadas ou pés) e uma unidade de
                 //medida de saída usando um menu com o comando switch case.O programa deve, em seguida, pedir ao usuário um valor de entrada e converter esse
                 //valor para a unidade de saída selecionada
 
             }
-            void exercise22()
+           static void exercise22()
             {
                 //Escreva um algoritmo que mostre todos os números de 20 a 5.
                 for (int i = 20; i >= 5; i--)
@@ -559,7 +590,7 @@ namespace exerciseList_2
                     Console.WriteLine("I: "+ i);
                 }
             }
-            void exercise23()
+           static void exercise23()
             {
                 //Escreva um algoritmo leia pelo teclado os dois valores inteiros chamados inicio e fim, e então mostre todos os números entre inicio e fim.
                 Console.Write("Informe o valor Inicial: ");
@@ -587,7 +618,7 @@ namespace exerciseList_2
 
                 
             }
-            void exercise24()
+           static void exercise24()
             {
                 //•Escreva um algoritmo leia pelo teclado um valor inteiro chamado x, e então mostre na tela todos os números de 0 a 100, pulando de x em x.
                 Console.Write("Informe o valor para x: ");
@@ -635,6 +666,6 @@ namespace exerciseList_2
 
 
 
-        }
+        
     }
 }

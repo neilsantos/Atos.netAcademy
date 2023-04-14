@@ -38,146 +38,176 @@ namespace exerciseList_2
                     case 1:
                         Console.Clear();
                         exercise1();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 2:
                         Console.Clear();
                         exercise2();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 3:
                         Console.Clear();
                         exercise3();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 4:
                         Console.Clear();
                         exercise4();
+                        Console.WriteLine("\nfim do exercício - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 5:
                         Console.Clear();
                         exercise5();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 6:
                         Console.Clear();
                         exercise6();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 7:
                         Console.Clear();
                         exercise7();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 8:
                         Console.Clear();
                         exercise8();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 9:
                         Console.Clear();
                         exercise9();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 10:
                         Console.Clear();
                         exercise10();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 11:
                         Console.Clear();
                         exercise11();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 12:
                         Console.Clear();
                         exercise12();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 13:
                         Console.Clear();
                         exercise13();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 14:
                         Console.Clear();
                         exercise14();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 15:
                         Console.Clear();
                         exercise15();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 16:
                         Console.Clear();
                         exercise16();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 17:
                         Console.Clear();
                         exercise17();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 18:
                         Console.Clear();
                         exercise18();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 19:
                         Console.Clear();
                         exercise19();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 20:
                         Console.Clear();
                         exercise20();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 21:
                         Console.Clear();
                         exercise21();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 22:
                         Console.Clear();
                         exercise22();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 23:
                         Console.Clear();
                         exercise23();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 24:
                         Console.Clear();
                         exercise24();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 25:
                         Console.Clear();
                         exercise25();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 26:
                         Console.Clear();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
+
                         exercise26();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 27:
                         Console.Clear();
                         exercise27();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     case 28:
                         Console.Clear();
                         exercise28();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
                     //case 29:
                     //    Console.Clear();
-                    //    exercise29();
+                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                     //    Console.ReadKey();
                     //    break;
                     default:
@@ -185,22 +215,7 @@ namespace exerciseList_2
                         break;
                 }
             }
-
-           
-
-
-
-
-
-            
-
-           
-
-            
-
-
-            
-        }/*main*/
+        }
 
         static void exercise1()
         {
@@ -329,7 +344,6 @@ namespace exerciseList_2
         }
 
         //Exercicios repetição parte 2
-
         static void exercise9()
         {
             //1.Faça um programa em VS que solicite um número inteiro positivo ao usuário, validando a entrada de dados
@@ -864,90 +878,7 @@ namespace exerciseList_2
 
             //O final do conjunto de habitantes é reconhecido pelo valor -1 entrada como idade.
         }
-        //void exercise29() 
-        //{
-
-        //}
-        //void exercise30() 
-        //{
-
-        //}
-        //void exercise31() 
-        //{
-
-        //}
-        //void exercise32() 
-        //{
-
-        //}
-        //void exercise33() 
-        //{
-
-        //}
-        //void exercise34() 
-        //{
-
-        //}
-        //void exercise35() 
-        //{
-
-        //}
-        //void exercise36() 
-        //{
-
-        //}
-        //void exercise37() 
-        //{
-
-        //}
-        //void exercise38() 
-        //{
-
-        //}
-        //void exercise39() 
-        //{
-
-        //}
-        //void exercise40() 
-        //{
-
-        //}
-        //void exercise41() 
-        //{
-
-        //}
-        //void exercise42() 
-        //{
-
-        //}
-        //void exercise43() 
-        //{
-
-        //}
-        //void exercise44() 
-        //{
-
-        //}
-        //void exercise45() 
-        //{
-
-        //}
-        //void exercise46() 
-        //{
-
-        //}
-        //void exercise47() 
-        //{
-
-        //}
-        //void exercise48() 
-        //{
-
-        //}
-        //void exercise49() 
-        //{
-
-        //}
+        
 
     }
 }
