@@ -204,90 +204,117 @@
                 }
             }
         }//MAIN
+        static void exercise1(/*available*/)
+        {
 
-        static void exercise1()
-        {
         }
-        static void exercise2()
+        static void exercise2(/*available*/)
         {
+
         }
-        static void exercise3()
+        static void exercise3(/*available*/)
         {
+
         }
-        static void exercise4()
+        static void exercise4(/*available*/)
         {
+
         }
-        static void exercise5()
+        static void exercise5(/*available*/)
         {
+
         }
-        static void exercise6()
+        static void exercise6(/*available*/)
         {
+
         }
-        static void exercise7()
+        static void exercise7(/*available*/)
         {
+
         }
-        static void exercise8()
+        static void exercise8(/*available*/)
         {
+
         }
-        static void exercise9()
+        static void exercise9(/*available*/)
         {
+
         }
-        static void exercise10()
+        static void exercise10(/*available*/)
         {
+
         }
-        static void exercise11()
+        static void exercise11(/*available*/)
         {
+
         }
-        static void exercise12()
+        static void exercise12(/*available*/)
         {
+
         }
-        static void exercise13()
+        static void exercise13(/*available*/)
         {
+
         }
-        static void exercise14()
+        static void exercise14(/*available*/)
         {
+
         }
-        static void exercise15()
+        static void exercise15(/*available*/)
         {
+
         }
-        static void exercise16()
+        static void exercise16(/*available*/)
         {
+
         }
-        static void exercise17()
+        static void exercise17(/*available*/)
         {
+
         }
-        static void exercise18()
+        static void exercise18(/*available*/)
         {
+
         }
-        static void exercise19()
+        static void exercise19(/*available*/)
         {
+
         }
-        static void exercise20()
+        static void exercise20(/*available*/)
         {
+
         }
-        static void exercise21()
+        static void exercise21(/*available*/)
         {
+
         }
-        static void exercise22()
+        static void exercise22(/*available*/)
         {
+
         }
-        static void exercise23()
+        static void exercise23(/*available*/)
         {
+
         }
-        static void exercise24()
+        static void exercise24(/*available*/)
         {
+
         }
-        static void exercise25()
+        static void exercise25(/*available*/)
         {
+
         }
-        static void exercise26()
+        static void exercise26(/*available*/)
         {
+
         }
-        static void exercise27()
+        static void exercise27(/*available*/)
         {
+
         }
-        static void exercise28()
+        static void exercise28(/*available*/)
         {
+
         }
 
     }

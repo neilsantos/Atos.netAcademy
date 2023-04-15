@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Numerics;
 using System.Reflection;
@@ -202,6 +203,7 @@ namespace exercisesList_5
                         break;
                     case 29:
                         Console.Clear();
+                        desafio();
                         Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
@@ -213,10 +215,10 @@ namespace exercisesList_5
         }
 
 
-        static void show<T>(T[,] matriz , string title)
+        static void show<T>(T[,] matriz, string title)
         {
 
-            Console.WriteLine("\n"+title);
+            Console.WriteLine("\n" + title);
             int linha = matriz.GetLength(0);
             int coluna = matriz.GetLength(1);
 
@@ -230,7 +232,7 @@ namespace exercisesList_5
             }
         }
 
-        static void exercise1()
+        static void exercise1(/*done*/)
         {
             //1) Crie uma Matriz 5x3. Na primeira coluna, solicite que o usuário preencha. A 2ª coluna, some 10 aos elementos da 1ª coluna. Na 3º coluna, armazene o dobro dos elementos da 1ª coluna.
 
@@ -261,7 +263,7 @@ namespace exercisesList_5
             }
 
         }
-        static void exercise2()
+        static void exercise2(/*done*/)
         {
             //2) Solicite ao usuário, preencher uma Matriz 3x3
             int dimensao = 3;
@@ -276,10 +278,10 @@ namespace exercisesList_5
                 }
             }
             //Show
-            show(matriz1,"Resultado");
+            show(matriz1, "Resultado");
 
         }
-        static void exercise3()
+        static void exercise3(/*done*/)
         {
             //3) Popule uma matriz 4x4 e mostre os elementos da Diagonal Principal!
             int dimensao = 4;
@@ -294,7 +296,7 @@ namespace exercisesList_5
                 }
             }
 
-            show(matriz1,"Inicial");
+            show(matriz1, "Inicial");
 
             Console.WriteLine("\nDiagonal Principal");
             for (int i = 0; i < (dimensao); i++)
@@ -307,7 +309,7 @@ namespace exercisesList_5
 
 
         }
-        static void exercise4()
+        static void exercise4(/*done*/)
         {
             //4) Popule uma matriz 5x5 e informe:
             //-Quantos números são pares
@@ -333,7 +335,7 @@ namespace exercisesList_5
                 }
             }
 
-            show(matriz1,"Inicial");
+            show(matriz1, "Inicial");
 
             for (int i = 0; i < dimensao; i++)
             {
@@ -355,7 +357,7 @@ namespace exercisesList_5
 
 
         }
-        static void exercise5()
+        static void exercise5(/*done*/)
         {
             //5) Leia duas matrizes 2x3 de números double. 
             //Imprima a soma destas duas matrizes.
@@ -369,8 +371,8 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < coluna; j++)
                 {
-                    matriz1[i, j] = Math.Round(rand.NextDouble(),2);
-                    matriz2[i, j] = Math.Round(rand.NextDouble(),2);
+                    matriz1[i, j] = Math.Round(rand.NextDouble(), 2);
+                    matriz2[i, j] = Math.Round(rand.NextDouble(), 2);
                 }
             }
             show(matriz1, "Matriz 1");
@@ -381,7 +383,7 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < coluna; j++)
                 {
-                    Console.Write("\t" + Math.Round((matriz1[i, j] + matriz2[i, j]),2));
+                    Console.Write("\t" + Math.Round((matriz1[i, j] + matriz2[i, j]), 2));
                 }
                 Console.WriteLine("");
             }
@@ -390,7 +392,7 @@ namespace exercisesList_5
 
 
         }
-        static void exercise6()
+        static void exercise6(/*done*/)
         {
             //6) Gere e imprima uma matriz M 4x4 com valores aleatórios entre 0-9. Após isso determine o maior número da matriz.
             //Random random = new Random();
@@ -408,12 +410,12 @@ namespace exercisesList_5
                     if (matriz1[i, j] > max) max = matriz1[i, j];
                 }
             }
-            show(matriz1,"");
+            show(matriz1, "");
             Console.WriteLine("\nO maior numero da matrix é: " + max);
 
 
         }
-        static void exercise7()
+        static void exercise7(/*done*/)
         {
             //7) Leia duas matrizes A e B com 3x3 elementos. Construir uma matriz C, onde cada elemento de C é a subtração do elemento correspondente de A com B.
             int dimensao = 3;
@@ -433,11 +435,11 @@ namespace exercisesList_5
             }
 
 
-            show(matriz1,"Matriz A");
+            show(matriz1, "Matriz A");
             show(matriz2, "Matriz B");
             show(matriz3, "Matriz C");
         }
-        static void exercise8()
+        static void exercise8(/*done*/)
         {
             //8) Ler uma matriz com 4x4 de inteiros e mostrar os números na ordem direta e inversa a que foram lidos.
             int dimensao = 4;
@@ -451,26 +453,26 @@ namespace exercisesList_5
                     matriz1[i, j] = rand.Next(1, 10);
                 }
             }
-            show(matriz1,"Resultado");
+            show(matriz1, "Resultado");
 
             Console.WriteLine("\n\nInverso");
-            for (int i = dimensao-1; i >= 0; i--)
+            for (int i = dimensao - 1; i >= 0; i--)
             {
-                for (int j = dimensao-1; j >= 0; j--)
+                for (int j = dimensao - 1; j >= 0; j--)
                 {
-                    Console.Write("\t" + matriz1[i,j]);
+                    Console.Write("\t" + matriz1[i, j]);
                 }
                 Console.WriteLine("");
             }
 
         }
-        static void exercise9()
+        static void exercise9(/*done*/)
         {
             //9) Leia uma matriz 3x3.  Em seguida, solicite um número qualquer ao usuário e pesquise na matriz se o número existe.  
             //Caso, seja verdade imprima a mensagem:  “O número existe no vetor” , caso contrário “Número inexistente”.
             int dimensao = 3;
             int[,] matriz1 = new int[dimensao, dimensao];
-            int[] vetor1 = new int[dimensao+dimensao];
+            int[] vetor1 = new int[dimensao + dimensao];
             Random rand = new Random();
 
             for (int i = 0; i < dimensao; i++)
@@ -488,25 +490,86 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < dimensao; j++)
                 {
-                   if(matriz1[i, j] == valor) exist = true;
+                    if (matriz1[i, j] == valor) exist = true;
                 }
             }
-            Console.WriteLine(exist?"Existe":"Não Existe");
+            Console.WriteLine(exist ? "Existe" : "Não Existe");
 
             show(matriz1, "Resultado");
 
         }
-        static void exercise10()
+        static void exercise10(/*done*/)
         {
             //10) Leia duas matrizes A e B de 4x4 elementos, calcule a média dos mesmos, em seguida, diga quantos dos elementos lidos estão abaixo, acima e na média.
+            int dimensao = 4;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            int[,] matriz2 = new int[dimensao, dimensao];
+            List<int> numerosMatriz1 = new List<int>();
+            List<int> numerosMatriz2 = new List<int>();
+            Random rand = new Random();
+
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                    matriz2[i, j] = rand.Next(1, 10);
+                    numerosMatriz1.Add(matriz1[i, j]);
+                    numerosMatriz2.Add(matriz2[i, j]);
+                }
+            }
+            show(matriz1, "Matriz A");
+            show(matriz1, "Matriz B");
+
+            double mediaMatriz1 = numerosMatriz1.Sum() / (dimensao * dimensao);
+            double mediaMatriz2 = numerosMatriz2.Sum() / (dimensao * dimensao);
+
+            var maioresA = numerosMatriz1.Where(x => x > mediaMatriz1);
+            var menoresA = numerosMatriz1.Where(x => x < mediaMatriz1);
+
+            var maioresB = numerosMatriz2.Where(x => x > mediaMatriz2);
+            var menoresB = numerosMatriz2.Where(x => x < mediaMatriz2);
+
+            Console.WriteLine("# RESULTADO #");
+
+            Console.WriteLine("\n[MATRIZ A]");
+            Console.WriteLine("\n1 - Média: " + mediaMatriz1);
+            Console.Write("\n2 - Valores Maiores que média: ");
+            foreach (var item in maioresA) Console.Write(item + " ");
+            Console.WriteLine("\n");
+            Console.Write("3 - Valores menores que média: ");
+            foreach (var item in menoresA) Console.Write(item + " ");
+
+            Console.WriteLine("\n\n[MATRIZ B]");
+            Console.WriteLine("\n1 - Média: " + mediaMatriz2);
+            Console.Write("\n2 - Valores Maiores que média: ");
+            foreach (var item in maioresB) Console.Write(item + " ");
+            Console.WriteLine("\n");
+            Console.Write("3 - Valores menores que média: ");
+            foreach (var item in menoresB) Console.Write(item + " ");
+
+            Console.WriteLine("\n");
+
 
         }
-        static void exercise11()
+        static void exercise11(/*available*/)
         {
             //11) Leia uma matriz A de tipo double de dimenção 3x3, crie uma nova matriz resultante da divisão dos elementos da matriz A pela soma dos seus indices.
+            int dimensao = 3;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            Random rand = new Random();
 
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                }
+            }
+
+            show(matriz1, "Resultado");
         }
-        static void exercise12()
+        static void exercise12(/*done*/)
         {
             //12) Escreva um programa que leia os valores de uma matriz 4x3, e em seguida mostre na tela apenas os valores cuja soma dos índices (i+j) seja um número par.
             int dimensao = 4;
@@ -518,24 +581,23 @@ namespace exercisesList_5
                 for (int j = 0; j < dimensao; j++)
                 {
                     matriz1[i, j] = rand.Next(1, 10);
-                    if((i + j)%2 == 0) Console.WriteLine("i+j="+ (i + j)+": "+ matriz1[i, j]);
+                    if ((i + j) % 2 == 0) Console.WriteLine("i+j=" + (i + j) + ": " + matriz1[i, j]);
                 }
             }
 
             show(matriz1, "Resultado");
         }
-
-        static void exercise13()
+        static void exercise13(/*available*/)
         {
             //13) Escreva um programa que leia uma matriz de ordem 5 (ou seja, 5x5) e verifique se a soma dos elementos da diagonal principal é igual a soma dos elementos da 
             //diagonal secundária.
         }
-        static void exercise14()
+        static void exercise14(/*available*/)
         {
             //14) Escreva um programa que leia uma matriz de ordem 5 e verifique se os elementos da diagonal principal (da esquerda para a direita)
             //são os mesmos da diagonal secundária (direita pra esquerda).
         }
-        static void exercise15()
+        static void exercise15(/*done*/)
         {
             //15) Escreva um programa em C# para ler os valores e somar duas matrizes 4 x 4. Mostrar a matriz resultante.
             int dimensao = 3;
@@ -560,7 +622,7 @@ namespace exercisesList_5
             show(matriz3, "Soma das Matrizes");
 
         }
-        static void exercise16()
+        static void exercise16(/*done*/)
         {
             //16) Escreva um algoritmo para transpor uma matriz 3x4 para outra 4x3. Transpor uma matriz significa transformar suas linhas em colunas e vice-versa.
             int linha = 4;
@@ -588,11 +650,255 @@ namespace exercisesList_5
                 Console.WriteLine("\n");
             }
         }
-        static void exercise17()
+        static void exercise17(/*available*/)
         {
-            //17) Desafio: Fazer um algoritmo que leia uma matriz de 10 linhas por 10 colunas e escreva o elemento minimax, ou seja, o menor elemento da linha onde se encontra o 
-            //maior elemento da matriz. Escreva também a linha e a coluna onde foi encontrado.
+            //17 - Desafio: Fazer um algoritmo que leia uma matriz de 10 linhas por 10 colunas.
+            //Escreva o elemento minimax, ou seja, o menor elemento da linha onde se encontra o maior elemento da matriz.
+            //Escreva também a linha e a coluna onde foi encontrado.
+
+            int dimensao = 10;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            Random rand = new Random();
+
+            int maior = 0;
+            int linhaMaior = 0;
+            int colunaMaior = 0;
+            int linhaMenor = 0;
+            int colunaMenor = 0;
+
+
+            //Preenchendo a matriz e já identificando o maior valor dela e armazenando as coordenadas.
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 100);
+                    if (matriz1[i, j] > maior)
+                    {
+                        maior = matriz1[i, j];
+                        linhaMaior = i;
+                        colunaMaior = j;
+                    }
+
+                }
+            }
+
+            //Buscando o menor valor na linha que contém o maior valor.
+            int menor = 999;
+            for (int i = 0; i < dimensao; i++)
+            {
+                if (matriz1[linhaMaior, i] < menor)
+                {
+                    menor = matriz1[linhaMaior, i];
+                    linhaMenor = linhaMaior;
+                    colunaMenor = i;
+                }
+
+            }
+
+            //Apresentando o resultado do exercício
+
+            Console.WriteLine("\n# RESULTADO # \n");
+            for (int i = -1; i < dimensao; i++)
+            {
+
+                for (int j = -1; j < dimensao; j++)
+                {
+                    //Baita Gambiarra pra printer os Indices junto com a matriz.
+                    //Deve ter uma forma mais decente de fazer isso.
+                    int indiceLinha = j;
+                    if (i < 0)
+                    {
+                        indiceLinha++;
+                        if (indiceLinha < dimensao)
+                        {
+                            Console.Write("\t(" + (indiceLinha + 1) + ")");
+                        }
+
+                    }
+                    else
+                    {
+                        if (j < 0)
+                        {
+
+                            Console.Write("(" + (i + 1) + ") ");
+                        }
+                        else
+                        {
+                            //PRINTANDO A MATRIZ
+
+                            if (i == linhaMaior && j == colunaMaior)
+                            {
+                                Console.BackgroundColor = ConsoleColor.DarkRed;
+                                Console.Write("\t" + "[" + matriz1[i, j] + "]");
+                                Console.BackgroundColor = ConsoleColor.Black;
+
+                            }
+                            else if (i == linhaMenor && j == colunaMenor)
+                            {
+                                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                                Console.Write("\t" + "[" + matriz1[i, j] + "]");
+                                Console.BackgroundColor = ConsoleColor.Black;
+                            }
+                            else
+                            {
+                                Console.Write("\t" + matriz1[i, j]);
+                            }
+                            //PRINTANDO A MATRIZ
+
+                        }
+
+                    }
+                }
+                Console.WriteLine("\n");
+            }
+
+            Console.BackgroundColor = ConsoleColor.DarkRed;
+            Console.Write("Maior: " + maior);
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.Write(" | indice: " + "(" + (linhaMaior + 1) + " x " + (colunaMaior + 1) + ")");
+            Console.WriteLine("\n");
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
+            Console.Write("Menor: " + menor);
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.WriteLine(" | indice: " + "(" + (linhaMenor + 1) + " x " + (colunaMenor + 1) + ")");
+
         }
+
+        static void desafio()
+        {
+            //17 - Desafio: Fazer um algoritmo que leia uma matriz de 10 linhas por 10 colunas.
+            //Escreva o elemento minimax, ou seja, o menor elemento da linha onde se encontra o maior elemento da matriz.
+            //Escreva também a linha e a coluna onde foi encontrado.
+
+            int dimensao = 10;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            Random rand = new Random();
+            List<int> numerosEmLinha = new List<int>();
+
+            //int maior = 0;
+            //int linhaMaior = 0;
+            //int colunaMaior = 0;
+            //int linhaMenor = 0;
+            //int colunaMenor = 0;
+
+          
+
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 100);
+                    numerosEmLinha.Add(matriz1[i, j]);
+
+                }
+            }
+
+            show(matriz1,"");
+
+            var maiorValor = numerosEmLinha.Max();
+            var indice = numerosEmLinha.IndexOf(maiorValor);
+
+            var linhas = numerosEmLinha.Count() / dimensao;
+
+            for (int i = 0; i < numerosEmLinha.Count(); i++)
+            {
+                for (int j = 0; j < linhas; j++)
+                {
+
+                }
+            }
+
+            Console.WriteLine("Maior Valor: " + maiorValor);
+            Console.WriteLine("Indice: " + indice);
+
+            //for (int i = 0; i < numerosEmLinha.Count(); i++)
+            //{
+            //    Console.WriteLine(i +" - "+ numerosEmLinha[i]);
+            //}
+            ////Buscando o menor valor na linha que contém o maior valor.
+            //int menor = 999;
+            //for (int i = 0; i < dimensao; i++)
+            //{
+            //    if (matriz1[linhaMaior, i] < menor)
+            //    {
+            //        menor = matriz1[linhaMaior, i];
+            //        linhaMenor = linhaMaior;
+            //        colunaMenor = i;
+            //    }
+
+            //}
+
+            //Apresentando o resultado do exercício
+
+            //Console.WriteLine("\n# RESULTADO # \n");
+            //for (int i = -1; i < dimensao; i++)
+            //{
+
+            //    for (int j = -1; j < dimensao; j++)
+            //    {
+            //        //Baita Gambiarra pra printer os Indices junto com a matriz.
+            //        //Deve ter uma forma mais decente de fazer isso.
+            //        int indiceLinha = j;
+            //        if (i < 0)
+            //        {
+            //            indiceLinha++;
+            //            if (indiceLinha < dimensao)
+            //            {
+            //                Console.Write("\t(" + (indiceLinha + 1) + ")");
+            //            }
+
+            //        }
+            //        else
+            //        {
+            //            if (j < 0)
+            //            {
+
+            //                Console.Write("(" + (i + 1) + ") ");
+            //            }
+            //            else
+            //            {
+            //                //PRINTANDO A MATRIZ
+
+            //                if (i == linhaMaior && j == colunaMaior)
+            //                {
+            //                    Console.BackgroundColor = ConsoleColor.DarkRed;
+            //                    Console.Write("\t" + "[" + matriz1[i, j] + "]");
+            //                    Console.BackgroundColor = ConsoleColor.Black;
+
+            //                }
+            //                else if (i == linhaMenor && j == colunaMenor)
+            //                {
+            //                    Console.BackgroundColor = ConsoleColor.DarkBlue;
+            //                    Console.Write("\t" + "[" + matriz1[i, j] + "]");
+            //                    Console.BackgroundColor = ConsoleColor.Black;
+            //                }
+            //                else
+            //                {
+            //                    Console.Write("\t" + matriz1[i, j]);
+            //                }
+            //                //PRINTANDO A MATRIZ
+
+            //            }
+
+            //        }
+            //    }
+            //    Console.WriteLine("\n");
+            //}
+
+            //Console.BackgroundColor = ConsoleColor.DarkRed;
+            //Console.Write("Maior: " + maior);
+            //Console.BackgroundColor = ConsoleColor.Black;
+            //Console.Write(" | indice: " + "(" + (linhaMaior + 1) + " x " + (colunaMaior + 1) + ")");
+            //Console.WriteLine("\n");
+            //Console.BackgroundColor = ConsoleColor.DarkBlue;
+            //Console.Write("Menor: " + menor);
+            //Console.BackgroundColor = ConsoleColor.Black;
+            //Console.WriteLine(" | indice: " + "(" + (linhaMenor + 1) + " x " + (colunaMenor + 1) + ")");
+
+        }
+
+        //MPT
         static void exercise18()
         {
         }
