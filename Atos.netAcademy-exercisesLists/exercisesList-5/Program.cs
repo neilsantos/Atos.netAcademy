@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Diagnostics;
+using System.Numerics;
 using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Xml.Serialization;
@@ -212,8 +213,10 @@ namespace exercisesList_5
         }
 
 
-        static void show<T>(T[,] matriz)
+        static void show<T>(T[,] matriz , string title)
         {
+
+            Console.WriteLine("\n"+title);
             int linha = matriz.GetLength(0);
             int coluna = matriz.GetLength(1);
 
@@ -226,7 +229,6 @@ namespace exercisesList_5
                 Console.WriteLine("\n");
             }
         }
-
 
         static void exercise1()
         {
@@ -274,7 +276,7 @@ namespace exercisesList_5
                 }
             }
             //Show
-            show(matriz1);
+            show(matriz1,"Resultado");
 
         }
         static void exercise3()
@@ -292,7 +294,7 @@ namespace exercisesList_5
                 }
             }
 
-            show(matriz1);
+            show(matriz1,"Inicial");
 
             Console.WriteLine("\nDiagonal Principal");
             for (int i = 0; i < (dimensao); i++)
@@ -331,7 +333,7 @@ namespace exercisesList_5
                 }
             }
 
-            show(matriz1);
+            show(matriz1,"Inicial");
 
             for (int i = 0; i < dimensao; i++)
             {
@@ -371,10 +373,8 @@ namespace exercisesList_5
                     matriz2[i, j] = Math.Round(rand.NextDouble(),2);
                 }
             }
-            Console.WriteLine("Matriz 1");
-            show(matriz1);
-            Console.WriteLine("\nMatriz 2");
-            show(matriz2);
+            show(matriz1, "Matriz 1");
+            show(matriz2, "Matriz 2");
 
             Console.WriteLine("\n\nSoma");
             for (int i = 0; i < linha; i++)
@@ -408,7 +408,7 @@ namespace exercisesList_5
                     if (matriz1[i, j] > max) max = matriz1[i, j];
                 }
             }
-            show(matriz1);
+            show(matriz1,"");
             Console.WriteLine("\nO maior numero da matrix é: " + max);
 
 
@@ -416,8 +416,10 @@ namespace exercisesList_5
         static void exercise7()
         {
             //7) Leia duas matrizes A e B com 3x3 elementos. Construir uma matriz C, onde cada elemento de C é a subtração do elemento correspondente de A com B.
-            int dimensao = 4;
+            int dimensao = 3;
             int[,] matriz1 = new int[dimensao, dimensao];
+            int[,] matriz2 = new int[dimensao, dimensao];
+            int[,] matriz3 = new int[dimensao, dimensao];
             Random rand = new Random();
 
             for (int i = 0; i < (dimensao); i++)
@@ -425,20 +427,74 @@ namespace exercisesList_5
                 for (int j = 0; j < (dimensao); j++)
                 {
                     matriz1[i, j] = rand.Next(1, 10);
+                    matriz2[i, j] = rand.Next(1, 10);
+                    matriz3[i, j] = (matriz1[i, j] - matriz2[i, j]);
                 }
             }
 
-            show(matriz1);
+
+            show(matriz1,"Matriz A");
+            show(matriz2, "Matriz B");
+            show(matriz3, "Matriz C");
         }
         static void exercise8()
         {
             //8) Ler uma matriz com 4x4 de inteiros e mostrar os números na ordem direta e inversa a que foram lidos.
+            int dimensao = 4;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            Random rand = new Random();
+
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                }
+            }
+            show(matriz1,"Resultado");
+
+            Console.WriteLine("\n\nInverso");
+            for (int i = dimensao-1; i >= 0; i--)
+            {
+                for (int j = dimensao-1; j >= 0; j--)
+                {
+                    Console.Write("\t" + matriz1[i,j]);
+                }
+                Console.WriteLine("");
+            }
 
         }
         static void exercise9()
         {
             //9) Leia uma matriz 3x3.  Em seguida, solicite um número qualquer ao usuário e pesquise na matriz se o número existe.  
             //Caso, seja verdade imprima a mensagem:  “O número existe no vetor” , caso contrário “Número inexistente”.
+            int dimensao = 3;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            int[] vetor1 = new int[dimensao+dimensao];
+            Random rand = new Random();
+
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                }
+            }
+
+            Console.WriteLine("\nEscolha um valor de busca na matriz");
+            int valor = int.Parse(Console.ReadLine());
+            bool exist = false;
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                   if(matriz1[i, j] == valor) exist = true;
+                }
+            }
+            Console.WriteLine(exist?"Existe":"Não Existe");
+
+            show(matriz1, "Resultado");
+
         }
         static void exercise10()
         {
@@ -453,7 +509,20 @@ namespace exercisesList_5
         static void exercise12()
         {
             //12) Escreva um programa que leia os valores de uma matriz 4x3, e em seguida mostre na tela apenas os valores cuja soma dos índices (i+j) seja um número par.
+            int dimensao = 4;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            Random rand = new Random();
 
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                    if((i + j)%2 == 0) Console.WriteLine("i+j="+ (i + j)+": "+ matriz1[i, j]);
+                }
+            }
+
+            show(matriz1, "Resultado");
         }
 
         static void exercise13()
@@ -464,18 +533,60 @@ namespace exercisesList_5
         static void exercise14()
         {
             //14) Escreva um programa que leia uma matriz de ordem 5 e verifique se os elementos da diagonal principal (da esquerda para a direita)
-            //são os mesmos da diagonal 
-            //secundária (direita pra esquerda).
+            //são os mesmos da diagonal secundária (direita pra esquerda).
         }
         static void exercise15()
         {
             //15) Escreva um programa em C# para ler os valores e somar duas matrizes 4 x 4. Mostrar a matriz resultante.
+            int dimensao = 3;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            int[,] matriz2 = new int[dimensao, dimensao];
+            int[,] matriz3 = new int[dimensao, dimensao];
+            Random rand = new Random();
+
+            for (int i = 0; i < (dimensao); i++)
+            {
+                for (int j = 0; j < (dimensao); j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                    matriz2[i, j] = rand.Next(1, 10);
+                    matriz3[i, j] = (matriz1[i, j] + matriz2[i, j]);
+                }
+            }
+
+
+            show(matriz1, "Matriz A");
+            show(matriz2, "Matriz B");
+            show(matriz3, "Soma das Matrizes");
 
         }
         static void exercise16()
         {
             //16) Escreva um algoritmo para transpor uma matriz 3x4 para outra 4x3. Transpor uma matriz significa transformar suas linhas em colunas e vice-versa.
+            int linha = 4;
+            int coluna = 3;
+            int[,] matriz1 = new int[linha, coluna];
+            Random rand = new Random();
 
+            for (int i = 0; i < linha; i++)
+            {
+                for (int j = 0; j < coluna; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                }
+            }
+
+            show(matriz1, "Resultado");
+
+            Console.WriteLine("Transpostos");
+            for (int i = 0; i < coluna; i++)
+            {
+                for (int j = 0; j < linha; j++)
+                {
+                    Console.Write("\t" + matriz1[j, i]);
+                }
+                Console.WriteLine("\n");
+            }
         }
         static void exercise17()
         {
