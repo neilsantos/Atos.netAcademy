@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Diagnostics;
 using System.Reflection;
 using System.Runtime.ConstrainedExecution;
@@ -211,7 +212,7 @@ namespace exercisesList_5
         }
 
 
-        static void show(int[,] matriz)
+        static void show<T>(T[,] matriz)
         {
             int linha = matriz.GetLength(0);
             int coluna = matriz.GetLength(1);
@@ -225,6 +226,7 @@ namespace exercisesList_5
                 Console.WriteLine("\n");
             }
         }
+
 
         static void exercise1()
         {
@@ -261,13 +263,13 @@ namespace exercisesList_5
         {
             //2) Solicite ao usuário, preencher uma Matriz 3x3
             int dimensao = 3;
-            int[,] matriz1 = new int[dimensao, dimensao];  
+            int[,] matriz1 = new int[dimensao, dimensao];
 
             for (int i = 0; i < (dimensao); i++)
             {
                 for (int j = 0; j < (dimensao); j++)
                 {
-                    Console.Write("linha " + (i+1) + " x " + "Coluna " + (j+1) +": ");
+                    Console.Write("linha " + (i + 1) + " x " + "Coluna " + (j + 1) + ": ");
                     matriz1[i, j] = int.Parse(Console.ReadLine());
                 }
             }
@@ -286,7 +288,7 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < (dimensao); j++)
                 {
-                    matriz1[i, j] = rand.Next(1,10);
+                    matriz1[i, j] = rand.Next(1, 10);
                 }
             }
 
@@ -297,7 +299,7 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < (dimensao); j++)
                 {
-                    if(i==j) Console.Write(" " + matriz1[i, j]);
+                    if (i == j) Console.Write(" " + matriz1[i, j]);
                 }
             }
 
@@ -335,11 +337,11 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < dimensao; j++)
                 {
-                    if(matriz1[i, j]%2 == 0) par++;
-                    if(matriz1[i, j]%2 != 0) impar++;
-                    if(matriz1[i, j] > 0) positivo++;
-                    if(matriz1[i, j] < 0) negativo++;
-                    if(matriz1[i, j] == 0) zeros++;
+                    if (matriz1[i, j] % 2 == 0) par++;
+                    if (matriz1[i, j] % 2 != 0) impar++;
+                    if (matriz1[i, j] > 0) positivo++;
+                    if (matriz1[i, j] < 0) negativo++;
+                    if (matriz1[i, j] == 0) zeros++;
                 }
             }
 
@@ -355,6 +357,38 @@ namespace exercisesList_5
         {
             //5) Leia duas matrizes 2x3 de números double. 
             //Imprima a soma destas duas matrizes.
+            int linha = 2;
+            int coluna = 3;
+            double[,] matriz1 = new double[linha, coluna];
+            double[,] matriz2 = new double[linha, coluna];
+            Random rand = new Random();
+
+            for (int i = 0; i < linha; i++)
+            {
+                for (int j = 0; j < coluna; j++)
+                {
+                    matriz1[i, j] = Math.Round(rand.NextDouble(),2);
+                    matriz2[i, j] = Math.Round(rand.NextDouble(),2);
+                }
+            }
+            Console.WriteLine("Matriz 1");
+            show(matriz1);
+            Console.WriteLine("\nMatriz 2");
+            show(matriz2);
+
+            Console.WriteLine("\n\nSoma");
+            for (int i = 0; i < linha; i++)
+            {
+                for (int j = 0; j < coluna; j++)
+                {
+                    Console.Write("\t" + Math.Round((matriz1[i, j] + matriz2[i, j]),2));
+                }
+                Console.WriteLine("");
+            }
+
+
+
+
         }
         static void exercise6()
         {
@@ -364,16 +398,19 @@ namespace exercisesList_5
             int dimensao = 4;
             int[,] matriz1 = new int[dimensao, dimensao];
             Random rand = new Random();
+            int max = 0;
 
-            for (int i = 0; i < (dimensao); i++)
+            for (int i = 0; i < dimensao; i++)
             {
-                for (int j = 0; j < (dimensao); j++)
+                for (int j = 0; j < dimensao; j++)
                 {
-                    matriz1[i, j] = rand.Next(1, 10);
+                    matriz1[i, j] = rand.Next(1, 9);
+                    if (matriz1[i, j] > max) max = matriz1[i, j];
                 }
             }
-
             show(matriz1);
+            Console.WriteLine("\nO maior numero da matrix é: " + max);
+
 
         }
         static void exercise7()
