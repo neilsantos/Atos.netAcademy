@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
-using System.Numerics;
-using System.Reflection;
-using System.Runtime.ConstrainedExecution;
-using System.Xml.Serialization;
-
-namespace exercisesList_5
+﻿namespace exercisesList_5
 {
     internal class Program
     {
@@ -226,7 +217,7 @@ namespace exercisesList_5
             {
                 for (int j = 0; j < coluna; j++)
                 {
-                    Console.Write("\t" + matriz[i, j]); ;
+                    Console.Write("\t" + matriz[i, j]);
                 }
                 Console.WriteLine("\n");
             }
@@ -552,22 +543,34 @@ namespace exercisesList_5
 
 
         }
-        static void exercise11(/*available*/)
+        static void exercise11(/*done*/)
         {
-            //11) Leia uma matriz A de tipo double de dimenção 3x3, crie uma nova matriz resultante da divisão dos elementos da matriz A pela soma dos seus indices.
+            //11) Leia uma matriz A de tipo double de dimenção 3x3,
+            //crie uma nova matriz resultante da divisão dos elementos da matriz A pela soma dos seus indices.
             int dimensao = 3;
-            int[,] matriz1 = new int[dimensao, dimensao];
+            double[,] matriz1 = new double[dimensao, dimensao];
+            double[,] matriz2 = new double[dimensao, dimensao];
             Random rand = new Random();
 
             for (int i = 0; i < dimensao; i++)
             {
                 for (int j = 0; j < dimensao; j++)
                 {
-                    matriz1[i, j] = rand.Next(1, 10);
+                    matriz1[i, j] = Math.Round(rand.NextDouble(),2);
+                    if((i + j) > 0)
+                    {
+                        matriz2[i, j] = Math.Round(matriz1[i, j] / (i + j),2);
+                    }
+                    else
+                    {
+                        matriz2[i, j] = Math.Round((matriz1[i, j] / rand.NextDouble()), 2);
+                    }
+
                 }
             }
 
-            show(matriz1, "Resultado");
+            show(matriz1, "Matriz A");
+            show(matriz2, "Resultado");
         }
         static void exercise12(/*done*/)
         {
@@ -587,15 +590,78 @@ namespace exercisesList_5
 
             show(matriz1, "Resultado");
         }
-        static void exercise13(/*available*/)
+        static void exercise13(/*done*/)
         {
             //13) Escreva um programa que leia uma matriz de ordem 5 (ou seja, 5x5) e verifique se a soma dos elementos da diagonal principal é igual a soma dos elementos da 
             //diagonal secundária.
+            int dimensao = 5;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            List<int> diagonalPrincial = new List<int>();
+            List<int> diagonalSecundaria = new List<int>();
+            Random rand = new Random();
+
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                    if (i == j) diagonalPrincial.Add(matriz1[i, j]);
+                }
+            }
+
+            show(matriz1, "Resultado");
+
+            Console.WriteLine("\nDiagonal Principal");
+            foreach (int i in diagonalPrincial)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine("\nSoma diagonal principal: " + diagonalPrincial.Sum());
+           
+            Console.WriteLine("\n\ndiagonalSecundaria");
+            int somaDiagonalSecundaria = 0;
+            for (int i = dimensao - 1; i >= 0; i--)
+            {
+                Console.Write(matriz1[i, (dimensao - 1) - i]);
+                somaDiagonalSecundaria += matriz1[i, (dimensao - 1) - i];
+            }
+            Console.WriteLine("\nSoma diagonal principal: " + somaDiagonalSecundaria);
+
+
         }
-        static void exercise14(/*available*/)
+        static void exercise14(/*done*/)
         {
             //14) Escreva um programa que leia uma matriz de ordem 5 e verifique se os elementos da diagonal principal (da esquerda para a direita)
             //são os mesmos da diagonal secundária (direita pra esquerda).
+            int dimensao = 5;
+            int[,] matriz1 = new int[dimensao, dimensao];
+            List<int> diagonalPrincial = new List<int>();
+            List<int> diagonalSecundaria = new List<int>();
+            Random rand = new Random();
+
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+                    if (i == j) diagonalPrincial.Add(matriz1[i, j]);
+                }
+            }
+
+            show(matriz1, "Resultado");
+
+            Console.WriteLine("\nDiagonal Principal");
+            foreach (int i in diagonalPrincial)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine("\ndiagonalSecundaria");
+            for (int i = dimensao - 1; i >= 0; i--)
+            {
+                Console.Write(matriz1[i, (dimensao - 1) - i]); 
+            }
+
+
         }
         static void exercise15(/*done*/)
         {
@@ -650,7 +716,7 @@ namespace exercisesList_5
                 Console.WriteLine("\n");
             }
         }
-        static void exercise17(/*available*/)
+        static void exercise17(/*done*/)
         {
             //17 - Desafio: Fazer um algoritmo que leia uma matriz de 10 linhas por 10 colunas.
             //Escreva o elemento minimax, ou seja, o menor elemento da linha onde se encontra o maior elemento da matriz.
@@ -771,46 +837,46 @@ namespace exercisesList_5
             //Escreva o elemento minimax, ou seja, o menor elemento da linha onde se encontra o maior elemento da matriz.
             //Escreva também a linha e a coluna onde foi encontrado.
 
-            int dimensao = 10;
-            int[,] matriz1 = new int[dimensao, dimensao];
-            Random rand = new Random();
-            List<int> numerosEmLinha = new List<int>();
+            //int dimensao = 10;
+            //int[,] matriz1 = new int[dimensao, dimensao];
+            //Random rand = new Random();
+            //List<int> numerosEmLinha = new List<int>();
 
-            //int maior = 0;
-            //int linhaMaior = 0;
-            //int colunaMaior = 0;
-            //int linhaMenor = 0;
-            //int colunaMenor = 0;
+            ////int maior = 0;
+            ////int linhaMaior = 0;
+            ////int colunaMaior = 0;
+            ////int linhaMenor = 0;
+            ////int colunaMenor = 0;
 
-          
 
-            for (int i = 0; i < dimensao; i++)
-            {
-                for (int j = 0; j < dimensao; j++)
-                {
-                    matriz1[i, j] = rand.Next(1, 100);
-                    numerosEmLinha.Add(matriz1[i, j]);
 
-                }
-            }
+            //for (int i = 0; i < dimensao; i++)
+            //{
+            //    for (int j = 0; j < dimensao; j++)
+            //    {
+            //        matriz1[i, j] = rand.Next(1, 100);
+            //        numerosEmLinha.Add(matriz1[i, j]);
 
-            show(matriz1,"");
+            //    }
+            //}
 
-            var maiorValor = numerosEmLinha.Max();
-            var indice = numerosEmLinha.IndexOf(maiorValor);
+            //show(matriz1,"");
 
-            var linhas = numerosEmLinha.Count() / dimensao;
+            //var maiorValor = numerosEmLinha.Max();
+            //var indice = numerosEmLinha.IndexOf(maiorValor);
 
-            for (int i = 0; i < numerosEmLinha.Count(); i++)
-            {
-                for (int j = 0; j < linhas; j++)
-                {
+            //var linhas = numerosEmLinha.Count() / dimensao;
 
-                }
-            }
+            //for (int i = 0; i < numerosEmLinha.Count(); i++)
+            //{
+            //    for (int j = 0; j < linhas; j++)
+            //    {
 
-            Console.WriteLine("Maior Valor: " + maiorValor);
-            Console.WriteLine("Indice: " + indice);
+            //    }
+            //}
+
+            //Console.WriteLine("Maior Valor: " + maiorValor);
+            //Console.WriteLine("Indice: " + indice);
 
             //for (int i = 0; i < numerosEmLinha.Count(); i++)
             //{
