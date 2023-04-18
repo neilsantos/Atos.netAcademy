@@ -2,14 +2,15 @@
 {
     internal class Program
     {
-        
+
         static void jogo()
         {
             int dimensao = 3;
             char[,] tabuleiro = new char[dimensao, dimensao];
             char jogador = 'X';
             int movimentosRestantes = 9;
-            int linha, coluna;
+            int linha = -1;
+            int coluna = -1;
 
             // Iniciando a matriz
             for (int i = 0; i < 3; i++)
@@ -23,25 +24,37 @@
             while (movimentosRestantes > 0)
             {
                 Console.Clear();
-                mostrar(tabuleiro);
 
                 //Receber coordenadas do usuário
-                Console.WriteLine("\n\nVez do Jogador " + jogador + ": ");
+                bool isOk = false;
+                while (!isOk)
+                {
+                    Console.Clear();
+                    mostrar(tabuleiro);
+                    Console.WriteLine("\n\nVez do Jogador " + jogador + ": ");
+                    Console.Write("Digite a Linha (1 2 3): ");
+                    try { linha = int.Parse(Console.ReadLine()) - 1; }
+                    catch (System.FormatException) { mensagem("Precisa Informar um valor para a linha."); continue; }
+                    if ((linha < 0 || linha > 2)) { mensagem("Linha Inválida!"); } else { isOk = true; }
 
-                Console.Write("Digite a Linha (1 2 3): ");
-                try { linha = int.Parse(Console.ReadLine()) - 1; }
-                catch (System.FormatException) { mensagem("Precisa Informar um valor para a linha."); continue; }
-                if ((linha < 0 || linha > 2)) { mensagem("Linha Inválida!"); continue; }
+                }
 
-                Console.Write("Digite a Coluna (1 2 3): ");
-                try { coluna = int.Parse(Console.ReadLine()) - 1; }
-                catch (System.FormatException) { mensagem("Precisa Informar um valor para a linha."); continue; }
-                if ((coluna < 0 || coluna > 2)) { mensagem("Coluna Inválida!"); continue; }
+                isOk = false;
+                while (!isOk)
+                {
+                    Console.Clear();
+                    mostrar(tabuleiro);
+                    Console.WriteLine("\n\nVez do Jogador " + jogador + ": ");
+                    Console.Write("Digite a Coluna (1 2 3): ");
+                    try { coluna = int.Parse(Console.ReadLine()) - 1; }
+                    catch (System.FormatException) { mensagem("Precisa Informar um valor para a linha."); continue; }
+                    if ((coluna < 0 || coluna > 2)) { mensagem("Coluna Inválida!"); } else { isOk = true; }
+                }
 
 
                 // Verificar se o tabuleiro está vazio naquele local
                 if (tabuleiro[linha, coluna] != '-') { mensagem("## Movimento Inválido posição ocupada! ##"); continue; }
-                
+
                 //Anotando valor no tabuleiro
                 tabuleiro[linha, coluna] = jogador;
 
@@ -78,11 +91,11 @@
         static void mensagem(string texto)
         {
             Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("\n## "+ texto +" ##");
+            Console.WriteLine("\n## " + texto + " ##");
             Console.BackgroundColor = ConsoleColor.Black;
             Thread.Sleep(2000);
         }
-        static void mostrar(char [,] matriz)
+        static void mostrar(char[,] matriz)
         {
             int dimensao = matriz.GetLength(0);
             for (int i = -1; i < dimensao; i++)
@@ -142,4 +155,3 @@
 }
 
 
-           
