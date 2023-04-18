@@ -31,12 +31,13 @@
                 Console.Write("Digite a Linha (1 2 3): ");
                 try { linha = int.Parse(Console.ReadLine()) - 1; }
                 catch (System.FormatException) { mensagem("Precisa Informar um valor para a linha."); continue; }
-                if ((linha < 0 || linha > 2)) mensagem("Linha Inválida!");
+                if ((linha < 0 || linha > 2)) { mensagem("Linha Inválida!"); continue; }
 
                 Console.Write("Digite a Coluna (1 2 3): ");
                 try { coluna = int.Parse(Console.ReadLine()) - 1; }
                 catch (System.FormatException) { mensagem("Precisa Informar um valor para a linha."); continue; }
-                if ((coluna < 0 || coluna > 2)) mensagem("Coluna Inválida!");
+                if ((coluna < 0 || coluna > 2)) { mensagem("Coluna Inválida!"); continue; }
+
 
                 // Verificar se o tabuleiro está vazio naquele local
                 if (tabuleiro[linha, coluna] != '-') { mensagem("## Movimento Inválido posição ocupada! ##"); continue; }
