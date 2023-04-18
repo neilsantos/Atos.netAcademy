@@ -194,7 +194,7 @@
                         break;
                     case 29:
                         Console.Clear();
-                        desafio();
+                        //desafio();
                         Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
@@ -831,142 +831,10 @@
 
         }
 
-        static void desafio()
-        {
-            //17 - Desafio: Fazer um algoritmo que leia uma matriz de 10 linhas por 10 colunas.
-            //Escreva o elemento minimax, ou seja, o menor elemento da linha onde se encontra o maior elemento da matriz.
-            //Escreva também a linha e a coluna onde foi encontrado.
-
-            //int dimensao = 10;
-            //int[,] matriz1 = new int[dimensao, dimensao];
-            //Random rand = new Random();
-            //List<int> numerosEmLinha = new List<int>();
-
-            ////int maior = 0;
-            ////int linhaMaior = 0;
-            ////int colunaMaior = 0;
-            ////int linhaMenor = 0;
-            ////int colunaMenor = 0;
-
-
-
-            //for (int i = 0; i < dimensao; i++)
-            //{
-            //    for (int j = 0; j < dimensao; j++)
-            //    {
-            //        matriz1[i, j] = rand.Next(1, 100);
-            //        numerosEmLinha.Add(matriz1[i, j]);
-
-            //    }
-            //}
-
-            //show(matriz1,"");
-
-            //var maiorValor = numerosEmLinha.Max();
-            //var indice = numerosEmLinha.IndexOf(maiorValor);
-
-            //var linhas = numerosEmLinha.Count() / dimensao;
-
-            //for (int i = 0; i < numerosEmLinha.Count(); i++)
-            //{
-            //    for (int j = 0; j < linhas; j++)
-            //    {
-
-            //    }
-            //}
-
-            //Console.WriteLine("Maior Valor: " + maiorValor);
-            //Console.WriteLine("Indice: " + indice);
-
-            //for (int i = 0; i < numerosEmLinha.Count(); i++)
-            //{
-            //    Console.WriteLine(i +" - "+ numerosEmLinha[i]);
-            //}
-            ////Buscando o menor valor na linha que contém o maior valor.
-            //int menor = 999;
-            //for (int i = 0; i < dimensao; i++)
-            //{
-            //    if (matriz1[linhaMaior, i] < menor)
-            //    {
-            //        menor = matriz1[linhaMaior, i];
-            //        linhaMenor = linhaMaior;
-            //        colunaMenor = i;
-            //    }
-
-            //}
-
-            //Apresentando o resultado do exercício
-
-            //Console.WriteLine("\n# RESULTADO # \n");
-            //for (int i = -1; i < dimensao; i++)
-            //{
-
-            //    for (int j = -1; j < dimensao; j++)
-            //    {
-            //        //Baita Gambiarra pra printer os Indices junto com a matriz.
-            //        //Deve ter uma forma mais decente de fazer isso.
-            //        int indiceLinha = j;
-            //        if (i < 0)
-            //        {
-            //            indiceLinha++;
-            //            if (indiceLinha < dimensao)
-            //            {
-            //                Console.Write("\t(" + (indiceLinha + 1) + ")");
-            //            }
-
-            //        }
-            //        else
-            //        {
-            //            if (j < 0)
-            //            {
-
-            //                Console.Write("(" + (i + 1) + ") ");
-            //            }
-            //            else
-            //            {
-            //                //PRINTANDO A MATRIZ
-
-            //                if (i == linhaMaior && j == colunaMaior)
-            //                {
-            //                    Console.BackgroundColor = ConsoleColor.DarkRed;
-            //                    Console.Write("\t" + "[" + matriz1[i, j] + "]");
-            //                    Console.BackgroundColor = ConsoleColor.Black;
-
-            //                }
-            //                else if (i == linhaMenor && j == colunaMenor)
-            //                {
-            //                    Console.BackgroundColor = ConsoleColor.DarkBlue;
-            //                    Console.Write("\t" + "[" + matriz1[i, j] + "]");
-            //                    Console.BackgroundColor = ConsoleColor.Black;
-            //                }
-            //                else
-            //                {
-            //                    Console.Write("\t" + matriz1[i, j]);
-            //                }
-            //                //PRINTANDO A MATRIZ
-
-            //            }
-
-            //        }
-            //    }
-            //    Console.WriteLine("\n");
-            //}
-
-            //Console.BackgroundColor = ConsoleColor.DarkRed;
-            //Console.Write("Maior: " + maior);
-            //Console.BackgroundColor = ConsoleColor.Black;
-            //Console.Write(" | indice: " + "(" + (linhaMaior + 1) + " x " + (colunaMaior + 1) + ")");
-            //Console.WriteLine("\n");
-            //Console.BackgroundColor = ConsoleColor.DarkBlue;
-            //Console.Write("Menor: " + menor);
-            //Console.BackgroundColor = ConsoleColor.Black;
-            //Console.WriteLine(" | indice: " + "(" + (linhaMenor + 1) + " x " + (colunaMenor + 1) + ")");
-
-        }
-
         //MPT
         static void exercise18()
         {
+
         }
         static void exercise19()
         {

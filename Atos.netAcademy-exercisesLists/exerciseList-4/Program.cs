@@ -404,9 +404,9 @@ namespace exerciseList_4
             int[] aux = new int[quantidade];
             for (int i = 0; i < quantidade; i++)
             {
-                aux[i] = vetor1.Max();
-                int index = Array.IndexOf(vetor1, vetor1.Max());
-                vetor1[index] = 0;
+                aux[i] = vetor1.Min();
+                int index = Array.IndexOf(vetor1, vetor1.Min());
+                vetor1[index] = 9999;
             }
 
             Console.WriteLine("\n\nOrdenado: ");
