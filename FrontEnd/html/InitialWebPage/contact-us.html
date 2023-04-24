@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+</head>
+
+<!-- 
+Sobre a página inicial que o professor Fabrício pediu na semana passada, criar uma outra página com um  um formulário com  os seguintes campos:
+
+Nome (campo de texto obrigatório) - OK
+E-mail (campo de texto obrigatório) - OK
+Senha (campo de senha obrigatório) - OK
+Sexo (campo de seleção obrigatório com opções "Masculino", "Feminino" e "Outro") - OK
+Data de nascimento (campo de data obrigatório) - OK
+Interesses (checkboxes com as opções "Esportes", "Música", "Cinema", "Viagem" e "Tecnologia") - OK
+Textarea para inserir uma mensagem.
+Deverá possuir um botão de enviar e limpar.
+
+Faça a navegação de volta a página principal. -->
+
+
+
+<body>
+    <div>
+        <h1>Dados de contato do usuário</h1>
+        <form>
+            <table>
+                <!-- Nome Completo -->
+                <tr>
+                    <td><label for="nome-completo">Nome Completo</label></td>
+                    <td><input type="text" name="nome-completo" id="nome-completo" required></td>
+                </tr>
+
+                <!-- Email -->
+                <tr>
+                    <td><label for="email">E-mail</label></td>
+                    <td> <input type="email" name="email" id="email" required></td>
+                </tr>
+
+                <!-- Senha -->
+                <tr>
+                    <td><label for="senha">Senha</label></td>
+                    <td><input type="password" name="senha" id="senha" required></td>
+                </tr>
+
+                <!-- Sexo -->
+                <tr>
+                    <td><label for="sexo">Sexo:</label></td>
+                    <td><input type="radio" name="sexo" id="sexo" value="masculino" required="required">Masculino</td>
+                    <td><input type="radio" name="sexo" id="sexo" value="feminino" required="required">Feminino</td>
+                    <td><input type="radio" name="sexo" id="sexo" value="outro" required="required">Outro</td>
+                </tr>
+
+                <!-- Data de Nascimento -->
+                <tr>
+                    <td><label for="data-nascimento">Data de Nascimento</label></td>
+                    <td><input type="text" name="data-nascimento" id="data-nascimento" required></td>
+                </tr>
+
+                <!-- Interesses -->
+                <tr>
+                    <td><label for="interesses">Interesses:</label></td>
+                    <td><input type="checkbox" name="interesses" id="interesses-esportes" value="esportes">Esportes</td>
+                    <td><input type="checkbox" name="interesses" id="interesses-musica" value="musica">Música</td>
+                    <td><input type="checkbox" name="interesses" id="interesses-cinema" value="cinema">Cinema</td>
+                    <td><input type="checkbox" name="interesses" id="interesses-viagem" value="viagem">Viagem</td>
+                    <td><input type="checkbox" name="interesses" id="interesses-tecnologia"
+                            value="tecnologia">Tecnologia
+                    </td>
+                </tr>
+                <!-- Sobre você -->
+                <tr>
+                    <td><label for="mensagem">Sobre Você:</label></td>
+                    <td><textarea id="mensagem" name="mensagem"></textarea></td>
+                </tr>
+
+                <!-- Botões de enviar -->
+                <tr>
+                    <td><br></td>
+                </tr>
+
+                <tr>
+                    <td><button type="submit"> &#10004; Enviar</button></td>
+                    <td> <button type="reset">&#10006; Limpar</button></td>
+                </tr>
+            </table>
+        </form>
+
+        <br>
+        <button><a style="text-decoration: none;" href="index.html"> &#8592; Voltar</a></button>
+    </div>
+
+</body>
+
+</html>

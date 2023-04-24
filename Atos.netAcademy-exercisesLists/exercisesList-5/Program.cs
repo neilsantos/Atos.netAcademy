@@ -834,7 +834,20 @@
         //MPT
         static void exercise18()
         {
+            int dimensao = 3;
+            int[,] matriz1 = { { 1, 2, 3 }, { 4, 5, 6 }, { 4, 5, 6 } };
+            Random rand = new Random();
 
+            for (int i = 0; i < dimensao; i++)
+            {
+                for (int j = 0; j < dimensao; j++)
+                {
+                    matriz1[i, j] = rand.Next(1, 10);
+
+                }
+            }
+
+            show(matriz1, "Resultado");
         }
         static void exercise19()
         {
