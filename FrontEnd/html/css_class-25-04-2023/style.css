@@ -1,0 +1,31 @@
+body {
+    /* background-color: #d9a8a8; */
+    background-image: url(https://images.freeimages.com/images/large-previews/a3b/website-rays-background-pattern-1637863.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* background-attachment: ; */
+}
+
+#container {
+    background-color: burlywood;
+}
+
+#h1principal {
+    background-color: aquamarine;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    font-variant: normal;
+
+}
+
+.classe1 {
+    color: blue;
+    text-decoration: underline;
+    text-indent: 30px;
+    font-size: 1.5em;
+    text-align: justify;
+    font-variant: small-caps;
+}
+
