@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+
+    <script>
+        // var professor = {
+        //     nome:'Neil',
+        //     sobrenome:'Angelo'
+        // }
+        // var nomeCompleto = '';
+        // for(p in professor){
+        //     nomeCompleto += professor[p] + ' ';
+        // }
+        // alert(nomeCompleto)
+
+        // for (let index = 1; index <= 10; index++) {
+        //     if (index % 2 != 0)
+        //         console.log(index)
+        // }
+        // var soma = 0;
+        // for (let index = 1; index <= 100; index++) {
+        //     soma += index;
+        // }
+        // console.log('Soma: ', soma)
+        var cliques = 0;
+        function contaClique() {
+            cliques += 1;
+            if (cliques <= 5) {
+                // alert(cliques)
+                var el = document.getElementById("contaClique")
+                el.innerHTML = cliques
+            } else {
+                alert("Você atingiu o máximo de cliques, use o reset para zerar a contagem")
+            }
+
+        }
+        function reset() {
+            cliques = 0;
+            var el = document.getElementById("contaClique")
+            el.innerHTML = cliques
+        }
+
+    </script>
+
+    <script src="./assets/js/script.js"></script>
+
+</head>
+
+<body>
+    <!-- JavaScript
+    <h2>Contagem:</h2>
+    <p id="contaClique">-</p>
+    <br>
+    <button onclick="contaClique()">Contar Cliques</button>
+    <button onclick="reset()">Resetar</button> -->
+    <h3>Nomes</h3>
+    <table>
+        <tr>
+            <td><label for="name">Nome:</label></td>
+            <td><input type="text" id="name" name="name"></td>
+        </tr>
+
+        <tr>
+            <td><label for="age">Idade:</label></td>
+            <td><input type="text" id="age" name="age"></td>
+        </tr>
+    </table>
+    <button onclick="mostrarNomes()">Clique</button>
+
+    <h2 id="result">Aguardando...</h2>
+
+    <script>
+        function mostrarNomes() {
+            var name = document.getElementById('name').value;
+            var age = document.getElementById('age').value;
+            var el = document.getElementById('result')
+            // if (name != '' && age != '')
+            //     el.innerHTML = name + ' tem ' + age + ' anos.'
+            // if (age > 18)
+            //     el.innerHTML = name + ' é maior de idade '
+            el.innerHTML = (parseInt(name) + parseInt(age))
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+var teste2 = "Hello! 2";
