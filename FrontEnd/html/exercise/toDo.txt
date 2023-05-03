@@ -4,15 +4,15 @@ requisitos (ou reutilize uma já desenvolvida que possua no mínimo 4 páginas h
 [OK] - Página inicial: crie uma página inicial que apresente uma breve introdução ao site e tenha um menu de navegação com
 links para outras páginas do site.
 
-[ ] - Página "Sobre": crie uma página "Sobre" que inclua informações sobre o criador do site e sua finalidade.
+[-] - Página "Sobre": crie uma página "Sobre" que inclua informações sobre o criador do site e sua finalidade.
 
-[ ] - Página "Contato": crie uma página "Contato" que inclua um formulário de contato básico com campos para nome, email e
+[OK] - Página "Contato": crie uma página "Contato" que inclua um formulário de contato básico com campos para nome, email e
 mensagem. Após clicar em enviar, será encaminhada para uma página onde aparecerá a mensagem que foi enviada e terá a
 possibilidade de voltar para a página inicial.
 
 [OK] - Página "Galeria": crie uma página "Galeria" que inclua uma galeria de imagens relacionadas ao tema do site.
 
-[ ] - Em alguma das páginas deve existir uma tabela onde apresente dados, por exemplo, dados comparativos de modelos de
+[OK] - Em alguma das páginas deve existir uma tabela onde apresente dados, por exemplo, dados comparativos de modelos de
 algum aparelho.
 
 [OK] - Além disso, o menu de navegação deverá existir em todas as páginas para que possibilite a navegação completa em todas as
