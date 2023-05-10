@@ -11,6 +11,7 @@ namespace POO
         public string marca { get; set; }
         public string modelo { get; set; }
         public string anoFabricacao { get; set; }
+        public Motor motor { get; set; }
 
         public Carro(string marca, string modelo, string anoFabricacao)
         {

@@ -309,7 +309,7 @@ namespace POO
 
 
         }
-        static void exercise4(/*available*/)
+        static void exercise4(/*done*/)
         {
             //Criar uma classe chamada Aluno com 3 construtores:
             //O primeiro recebe o nome e a matrícula do aluno.
@@ -323,7 +323,7 @@ namespace POO
             Aluno Aluno3 = new Aluno("Neil Angelo", "19/01/1994", "02/05/2023");
 
         }
-        static void exercise5(/*available*/)
+        static void exercise5(/*done*/)
         {
             //Crie uma classe ContaCorrente que obedeça à descrição abaixo:
             //A classe possui o atributo saldo do tipo double
@@ -388,47 +388,169 @@ namespace POO
             }
 
         }
-        static void exercise6(/*available*/)
+        static void exercise6(/*done*/)
         {
+            //Crie uma classe chamada Pessoa que tenha as propriedades Nome e Idade. Utilize o encapsulamento para garantir 
+            //que o nome não seja vazio e que a idade seja maior que zero.
+
+            try
+            {
+                Pessoa pessoa1 = new Pessoa("", 29);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            try
+            {
+                Pessoa pessoa2 = new Pessoa("Neil Angelo", 0);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
-        static void exercise7(/*available*/)
+        static void exercise7(/*done*/)
         {
+            //Crie uma classe chamada Conta que tenha as propriedades Número, Saldo e Limite.Utilize o encapsulamento para
+            //garantir que o saldo nunca seja menor que zero e que o limite seja positivo e que o Número da conta não possa
+            //ser alterado.
+            Conta conta1 = new Conta("123456",250,1000);
+            
+            //conta1.NumeroConta = 1;
+
+            try
+            {
+                Conta conta2 = new Conta("123456", -2, 1000);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            try
+            {
+                Conta conta2 = new Conta("123456", 10, -2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
         }
-        static void exercise8(/*available*/)
+        static void exercise8(/*done*/)
         {
+            //Crie classes chamadas Fabricante e Produto. Fabricante que tenha as propriedades Nome, Endereço e Cidade. 
+            //Produto que tenha as propriedades Nome, Fabricante e Preco. Utilize o encapsulamento para garantir que o nome não
+            //seja vazio e que o preço seja positivo.
+            Fabricante fabricante1 = new Fabricante("Fab1","end","Cidade");
+
+            try
+            {
+                Produto produto1 = new Produto("", fabricante1, 255.8);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+            try
+            {
+                Produto produto2 = new Produto("Prod", fabricante1, -2);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
 
         }
         static void exercise9(/*available*/)
         {
-
+            //Crie uma classe chamada Livro que tenha as propriedades Titulo e Autor (outra classe). Utilize o encapsulamento 
+            //para garantir que o título e o autor não sejam vazios.
         }
         static void exercise10(/*available*/)
         {
-
+            //Crie uma classe chamada Aluno que tenha as propriedades Nome e Matricula. Utilize o encapsulamento para garantir 
+            //que o nome não seja vazio (utilize função nativa) e que a matrícula seja positiva.
         }
-        static void exercise11(/*available*/)
+        static void exercise11(/*almostDone*/)
         {
+            //Crie uma classe chamada ContaBancaria que tenha as propriedades NumeroConta, Titular, Saldo e Limite. Crie também
+            //um método chamado Depositar, que recebe um valor e adiciona ao saldo da conta, e um método Sacar, que recebe um 
+            //valor e verifica se o saldo é suficiente para a operação.
+            double limitePre = 500;
+            string titular = "Neil Angelo";
+            ContaBancaria conta = new ContaBancaria(titular, limitePre);
+
+
+            bool continuar = false;
+            while (!continuar)
+            {
+                Console.Clear();
+                Console.WriteLine("### BANCO ###\n\n");
+                Console.WriteLine("SEU SALDO: " + conta.Saldo);
+                Console.WriteLine("SEU LIMITE: " + conta.Limite + "\n\n");
+
+                Console.WriteLine("Escolha uma opção: ");
+                Console.WriteLine("1 - Depositar");
+                Console.WriteLine("2 - Sacar");
+                Console.WriteLine("0 - Sair");
+
+                int opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 0:
+                        continuar = !continuar;
+                        Console.WriteLine("FIM");
+                        break;
+                    case 1:
+                        Console.Write("\nInforme o valor a ser Depositado: ");
+                        var valorDeposito = double.Parse(Console.ReadLine());
+                        bool statusDeposito = conta.Depositar(valorDeposito);
+                        Console.WriteLine(statusDeposito ? "Saque Efetuado com Sucesso" : "Você não possui saldo suficiente");
+
+                        break;
+                    case 2:
+                        Console.Write("\nInforme o valor a ser Sacado: ");
+                        var valorSaque = double.Parse(Console.ReadLine());
+                        bool statusSaque = conta.Sacar(valorSaque);
+                        Console.WriteLine(statusSaque ? "Saque Efetuado com Sucesso": "Você não possui saldo suficiente");
+                        
+                        break;
+                }
+            }
 
         }
         static void exercise12(/*available*/)
         {
-
+            //Crie uma classe chamada Animal que tenha as propriedades Nome, Especie e Idade. Crie também um método chamado
+            //EmitirSom, que imprime na tela o som do animal.
         }
         static void exercise13(/*available*/)
         {
+            //11 - Crie uma classe "Aluno" com os atributos "nome", "nota1", "nota2" e "nota3". Os atributos devem ser privados e
+            //acessados através de propriedades. Em seguida, crie um método para calcular a média e verificar se o aluno está aprovado 
+            //ou reprovado (se a nota for maior ou igual a 6, está aprovado, senão está reprovado).
 
         }
         static void exercise14(/*available*/)
         {
-
+            //12 - Crie uma classe "Carro" com os atributos "modelo", "ano" e "velocidade". Em seguida, crie um método para acelerar o carro
+            //(aumentando a velocidade em 10) e outro para frear o carro (diminuindo a velocidade em 10, mas nunca deixando a 
+            //velocidade negativa).
         }
         static void exercise15(/*available*/)
         {
-
+            //13 - Crie uma classe autor. Em seguida, crie uma classe "Livro" com os atributos "titulo" e "autor". O atributo autor, deve ser 
+            //uma instancia de uma classe Autor. Crie um método para exibir as informações do livro.
         }
         static void exercise16(/*available*/)
         {
-
+            //14 - Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de realizar as seguintes operações:
+            //  void armazenaPessoa(String nome, int idade, float altura);
+            //void removePessoa(String nome);
+            //Pessoa buscaPessoa(String nome); // retorna a pessoa com o nome informado
+            //void imprimeAgenda(); // imprime os dados de todas as pessoas da agenda
         }
         static void exercise17(/*available*/)
         {
@@ -481,4 +603,21 @@ namespace POO
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
