@@ -12,7 +12,7 @@
 
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
+  <script src="./assets/js/mask.js"></script>
 
 </head>
 
@@ -22,7 +22,6 @@
   </div>
   <div class="container">
     <main>
-
       <!-- Titulo -->
       <div class="py-5 text-center">
         <h2>Exercício 10</h2>
@@ -65,34 +64,35 @@
         <div class="col-md-3">
 
           <label for="inputEmail4" class="form-label" id="cpf-cnpj">CPF</label>
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" id="document" onkeypress="mascara(this, cpf)" maxlength="14">
 
         </div>
 
         <div class="col-6">
-          <label for="inputAddress" class="form-label">Data Nascimento</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="dd/mm/aaaa">
+          <label for="inputBday" class="form-label">Data Nascimento</label>
+          <input type="text" class="form-control" id="inputBday" placeholder="dd/mm/aaaa"
+            onkeypress="mascara(this, mdata)" maxlength="10">
         </div>
 
 
         <!-- Endereço -->
         <div class="col-6">
           <label for="inputAddress" class="form-label">Endereço</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <input type="text" class="form-control" id="inputAddress" placeholder="Av. Antonio Nogueira, 521">
         </div>
 
         <div class="col-md-3">
           <label for="inputZip" class="form-label">CEP</label>
-          <input type="text" class="form-control" id="inputZip">
+          <input type="text" class="form-control" id="inputZip" onkeypress="mascara(this, cep)" maxlength="9">
         </div>
         <div class="col-md-3">
-          <label for="inputZip" class="form-label">Telefone</label>
-          <input type="text" class="form-control" id="inputZip">
+          <label for="input-fone" class="form-label">Telefone</label>
+          <input type="text" class="form-control" id="input-fone" onkeypress="mascara(this, telefone)" maxlength="15">
         </div>
 
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Email </label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <label for="inputEmail" class="form-label">Email </label>
+          <input type="email" class="form-control" id="inputEmail">
         </div>
 
         <div class="col-12">
@@ -104,12 +104,25 @@
   </div>
   <script>
     function changeField(type) {
-      var doc_field = document.getElementById('cpf-cnpj');
+      var lable = document.getElementById('cpf-cnpj');
+      var dDay_field = document.getElementById('inputBday');
+      var doc_input = document.getElementById('document');
+
       if (type == 'fisica') {
-        doc_field.innerHTML = "CPF"
+        doc_input.value = ""
+        lable.innerHTML = "CPF"
+        dDay_field.disabled = false;
+        doc_input.setAttribute("onkeypress", "mascara(this, cpf)")
+        doc_input.setAttribute("maxlength", "14")
+
       }
       if (type == 'juridica') {
-        doc_field.innerHTML = "CNPJ"
+        doc_input.value = ""
+        lable.innerHTML = "CNPJ"
+        dDay_field.disabled = true;
+        doc_input.setAttribute("onkeypress", "mascara(this, cnpj)")
+        doc_input.setAttribute("maxlength", "18")
+
       }
     }
   </script>
