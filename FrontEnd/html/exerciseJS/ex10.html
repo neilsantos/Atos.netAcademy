@@ -96,13 +96,16 @@
         </div>
 
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Registrar</button>
+          <button type="reset" class="btn btn-primary" onclick="alert('Dados enviados')"><i class="bi bi-send-fill"></i>
+            Registrar</button>
         </div>
       </form>
+
     </main>
 
   </div>
   <script>
+
     function changeField(type) {
       var lable = document.getElementById('cpf-cnpj');
       var dDay_field = document.getElementById('inputBday');
