@@ -8,26 +8,26 @@ namespace POO
 {
     internal class Aluno
     {
-        public string nome { get; set; }
-        public string matricula { get; set; }
-        public string dataNascimento { get; set; }
-        public string ingressouEm { get; set; }
+        public string Nome { get; set; } = string.Empty;
+        public string Matricula { get; set; } = string.Empty;
+        public string DataNascimento { get; set; } = string.Empty;
+        public string IngressouEm { get; set; } = string.Empty;
 
         public Aluno(string nome, string matricula)
         {
-            this.nome = nome;
-            this.matricula = matricula;
+            this.Nome = nome;
+            this.Matricula = matricula;
            
         }
         public Aluno(string dataNascimento)
         {
-            this.dataNascimento = dataNascimento;
+            this.DataNascimento = dataNascimento;
         }
         public Aluno(string nome, string dataNascimento, string ingressouEm)
         {
-            this.nome = nome;
-            this.dataNascimento = dataNascimento;
-            this.ingressouEm = ingressouEm;
+            this.Nome = nome;
+            this.DataNascimento = dataNascimento;
+            this.IngressouEm = ingressouEm;
         }
     }
 }

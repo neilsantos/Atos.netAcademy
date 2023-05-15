@@ -108,24 +108,24 @@ namespace POO
                         Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
                         Console.ReadKey();
                         break;
-                    //case 14:
-                    //    Console.Clear();
-                    //    exercise14();
-                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
-                    //    Console.ReadKey();
-                    //    break;
-                    //case 15:
-                    //    Console.Clear();
-                    //    exercise15();
-                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
-                    //    Console.ReadKey();
-                    //    break;
-                    //case 16:
-                    //    Console.Clear();
-                    //    exercise16();
-                    //    Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
-                    //    Console.ReadKey();
-                    //    break;
+                    case 14:
+                        Console.Clear();
+                        exercise14();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
+                        Console.ReadKey();
+                        break;
+                    case 15:
+                        Console.Clear();
+                        exercise15();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
+                        Console.ReadKey();
+                        break;
+                    case 16:
+                        Console.Clear();
+                        exercise16();
+                        Console.WriteLine("\nfim do exercício! - Pressione qualquer tecla para retornar ao menu");
+                        Console.ReadKey();
+                        break;
                     //case 17:
                     //    Console.Clear();
                     //    exercise17();
@@ -462,15 +462,50 @@ namespace POO
             }
 
         }
-        static void exercise9(/*available*/)
+        static void exercise9(/*done*/)
         {
-            //Crie uma classe chamada Livro que tenha as propriedades Titulo e Autor (outra classe). Utilize o encapsulamento 
+            //Crie uma classe chamada Livro que tenha as propriedades Titulo e Autor. Utilize o encapsulamento 
             //para garantir que o título e o autor não sejam vazios.
+            try
+            {
+                Livro livro1 = new Livro("","Titulo");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+
+            try
+            {
+                Livro livro1 = new Livro("Nome", "");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
-        static void exercise10(/*available*/)
+        static void exercise10(/*done*/)
         {
             //Crie uma classe chamada Aluno que tenha as propriedades Nome e Matricula. Utilize o encapsulamento para garantir 
             //que o nome não seja vazio (utilize função nativa) e que a matrícula seja positiva.
+
+            try
+            {
+                Aluno2 Aluno2 = new Aluno2(-1, "Nome");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
+
+            try
+            {
+                Aluno2 Aluno3 = new Aluno2(123456,"");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+            }
         }
         static void exercise11(/*almostDone*/)
         {
@@ -521,37 +556,77 @@ namespace POO
             }
 
         }
-        static void exercise12(/*available*/)
+        static void exercise12(/*done*/)
         {
             //Crie uma classe chamada Animal que tenha as propriedades Nome, Especie e Idade. Crie também um método chamado
             //EmitirSom, que imprime na tela o som do animal.
+            Animal animal = new Animal("THEO", "Cachorro", 20);
+            Console.WriteLine(animal.EmitirSom());
         }
-        static void exercise13(/*available*/)
+        static void exercise13(/*done*/)
         {
-            //11 - Crie uma classe "Aluno" com os atributos "nome", "nota1", "nota2" e "nota3". Os atributos devem ser privados e
+            //Crie uma classe "Aluno" com os atributos "nome", "nota1", "nota2" e "nota3". Os atributos devem ser privados e
             //acessados através de propriedades. Em seguida, crie um método para calcular a média e verificar se o aluno está aprovado 
             //ou reprovado (se a nota for maior ou igual a 6, está aprovado, senão está reprovado).
-
+            Aluno3 aluno3 = new Aluno3();
+            aluno3.Nota1 = 3;
+            aluno3.Nota2 = 3;
+            aluno3.Nota3 = 6;
+            var status = aluno3.isAproved();
+            Console.WriteLine(status? "Aprovado":"Reprovado");
         }
-        static void exercise14(/*available*/)
+        static void exercise14(/*done*/)
         {
-            //12 - Crie uma classe "Carro" com os atributos "modelo", "ano" e "velocidade". Em seguida, crie um método para acelerar o carro
+            //Crie uma classe "Carro" com os atributos "modelo", "ano" e "velocidade". Em seguida, crie um método para acelerar o carro
             //(aumentando a velocidade em 10) e outro para frear o carro (diminuindo a velocidade em 10, mas nunca deixando a 
             //velocidade negativa).
+            Carro2 carro2 = new Carro2(1994, "Honda Civic");
+            bool continuar = false;
+
+            while (!continuar)
+            {
+                Console.Clear();
+                Console.WriteLine("### CARRO ###\n\n");
+                Console.WriteLine("Velocidade: " + carro2.Velocidade);
+
+                Console.WriteLine("\nEscolha uma opção: ");
+                Console.WriteLine("1 - ACELERAR");
+                Console.WriteLine("2 - FREAR");
+                Console.WriteLine("0 - Sair");
+
+                int opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+                    case 0:
+                        continuar = !continuar;
+                        Console.WriteLine("FIM");
+                        break;
+                    case 1:
+                        carro2.Acelerar();
+                        break;
+                    case 2:
+                        carro2.Frear();
+                        break;
+                }
+            }
         }
-        static void exercise15(/*available*/)
+        static void exercise15(/*done*/)
         {
             //13 - Crie uma classe autor. Em seguida, crie uma classe "Livro" com os atributos "titulo" e "autor". O atributo autor, deve ser 
             //uma instancia de uma classe Autor. Crie um método para exibir as informações do livro.
+            Livro2 livro2 = new Livro2("Neil","Auto Biografia");
+            livro2.Mostrar();
         }
         static void exercise16(/*available*/)
         {
             //14 - Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de realizar as seguintes operações:
-            //  void armazenaPessoa(String nome, int idade, float altura);
+            //void armazenaPessoa(String nome, int idade, float altura);
             //void removePessoa(String nome);
             //Pessoa buscaPessoa(String nome); // retorna a pessoa com o nome informado
             //void imprimeAgenda(); // imprime os dados de todas as pessoas da agenda
         }
+
         static void exercise17(/*available*/)
         {
 
