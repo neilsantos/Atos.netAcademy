@@ -23,22 +23,38 @@ namespace FileRead
         {
             Nome = nome;
             DataNascimento = dataNascimento;
+            gerarEmail();
         }
+
         public void gerarEmail()
         {
             try
             {
-
+                string[] linha = Nome.Split();
+                if (linha.Length == 1)
+                {
+                    Email = linha[0].ToLower() + "@ufn.edu.br";
+                }
+                else
+                {
+                    Email = linha[linha.Length - 1].ToLower() + "_" + linha[0].ToLower() + "@ufn.edu.br";
+                }
             }
             catch (Exception)
             {
-
-                throw;
+                Email = "not-informed";
             }
         }
+
         public override string ToString()
         {
-            return Nome + ":" + Email;
+            return Nome + " : " + Email;
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return obj is Pessoa pessoa &&
+                   Email == pessoa.Email;
         }
     }
 }

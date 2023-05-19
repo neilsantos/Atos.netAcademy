@@ -1,4 +1,17 @@
 
+--[  ] 1. Relacione as entidades e seus respectivos atributos para este banco de dados;
+
+--[  ] 2. Crie o modelo conceitual desde banco de dados;
+
+--[  ] 3. Crie o modelo lógico deste banco de dados;
+
+
+--[ OK ] 4. Crie o comando SQL para a criação do banco de dados BIBLIOTECA;
+
+CREATE TABLE biblioteca
+
+--[ OK ] 5. Crie o comando SQL para a criação das tabelas solicitadas;
+
 CREATE TABLE CATEGORIA
 (
 	ID INTEGER NOT NULL PRIMARY KEY IDENTITY,
@@ -38,3 +51,99 @@ CREATE TABLE LIVROAUTOR
 	FOREIGN KEY (FK_LIVRO) REFERENCES LIVRO(ISBN),
 	FOREIGN KEY (FK_AUTOR) REFERENCES AUTOR(ID),
 );
+
+--[ OK ] 6. Crie o comando SQL para inserção dos referidos dados em todas as tabelas;
+
+INSERT INTO AUTOR
+VALUES
+('CLARICE LISPECTOR','BR'),
+('MACHADO DE ASSIS','BR'),
+('MANUEL BANDEIRA','BR'),
+('GUIMARÃES ROSA','BR');
+SELECT * FROM AUTOR
+
+
+INSERT INTO CATEGORIA
+VALUES
+('ROMANCE'),
+('ROMANCE PSICOLÓGICO'),
+('FICÇÃO'),
+('DESCONHECIDO'),
+('POESIA');
+SELECT * FROM CATEGORIA
+
+
+INSERT INTO EDITORA
+VALUES
+('ROCCO'),
+('LIVRARIA GARNIER'),
+('TIPOGRAFIA NACIONAL'),
+('ITAPUCA'),
+('GLOBAL EDITORA'),
+('COMPANHIA DE BOLSO'),
+('COMPANHIA DAS LETRAS');
+SELECT * FROM EDITORA
+
+INSERT INTO LIVRO
+VALUES
+('56939934547','A HORA DA ESTRELA',1977,5,19),
+('7755381996292','ÁGUA VIVA',1973,5,20),
+('6062913929650','FELICIDADE CLANDESTINA',1971,5,21),
+('4211826520800','TODOS OS CONTOS',2015,5,21),
+('4565067189400','DOM CASMURRO',1899,6,19),
+('6857819927470','MEMÓRIAS PÓSTUMAS DE BRÁS CUBAS',1881,7,19),
+('1184388656594','LIVRARIA GARNIER',1891,6,21),
+('2017497816732','A CARTOMANTE',2020,8,21),
+('0273429680915','MEUS POEMAS PREFERIDOS',2013,9,22),
+('5760115012193','PARA QUERER BEM',2013,9,22),
+('9851908668164','SENTIMENTO DO MUNDO',2012,10,22),
+('8920006830590','ANTOLOGIA POÉTICA',2013,9,23),
+('7815407863160','GRANDE SERTÃO',2019,11,21),
+('8921116830590','PRIMEIRAS ESTÓRIAS',2019,9,21),
+('2017495816732','SAGARANA',2019,9,21),
+('4567567189400','NOITES DO SERTÃO',2021,9,21);
+SELECT * FROM LIVRO
+
+INSERT INTO LIVROAUTOR
+VALUES
+('56939934547',1),
+('7755381996292',1),
+('6062913929650',1),
+('4211826520800',1),
+('4565067189400',2),
+('6857819927470',2),
+('1184388656594',2),
+('2017497816732',2),
+('0273429680915',3),
+('5760115012193',3),
+('9851908668164',3),
+('8920006830590',3),
+('7815407863160',4),
+('8921116830590',4),
+('2017495816732',4),
+('4567567189400',4);
+SELECT * FROM LIVROAUTOR
+
+--[ OK ] 7. Crie uma consulta para relacionar todos os dados disponíveis de todos os livros existentes na biblioteca em ordem alfabética de título;
+SELECT * FROM LIVRO
+order by TITULO ASC
+--[ OK ] 8. Crie uma consulta para relacionar todos os dados disponíveis de todos os livros existentes na biblioteca en alfabética de Autor;
+SELECT * FROM LIVRO
+INNER JOIN LIVROAUTOR ON (LIVRO.ISBN = LIVROAUTOR.FK_LIVRO)
+INNER JOIN AUTOR ON (LIVROAUTOR.FK_AUTOR = AUTOR.ID)
+order by AUTOR.NOME ASC
+--[  ] 9. Crie uma consulta para relacionar todos os dados disponíveis dos livros da categoria de literatura Juvenil e de ano;
+
+--[  ] 10. Crie uma consulta para relacionar todos os dados disponíveis dos livros de humor ou ficção científica con 2000 e 2010.
+
+
+
+
+
+INSERT INTO LIVRO
+VALUES
+
+
+
+
+
