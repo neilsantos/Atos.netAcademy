@@ -125,19 +125,131 @@ VALUES
 SELECT * FROM LIVROAUTOR
 
 --[ OK ] 7. Crie uma consulta para relacionar todos os dados disponíveis de todos os livros existentes na biblioteca em ordem alfabética de título;
+
+select LIVRO.ISBN,LIVRO.TITULO,LIVRO.ANO_PUBLICACAO, CATEGORIA.TIPO_CATEGORIA as 'CATEGORIA',EDITORA.NOME as 'EDITORA' from livro
+inner join categoria
+on livro.fk_categoria = categoria.id
+inner join editora
+on livro.fk_editora = editora.id
+order by titulo;
+
 SELECT * FROM LIVRO
 order by TITULO ASC
+
+-- Criando relacionamento:
+SELECT 
+LIVRO.ISBN,
+LIVRO.TITULO,
+LIVRO.ANO_PUBLICACAO,
+EDITORA.NOME  AS 'EDITORA',
+CATEGORIA.TIPO_CATEGORIA AS 'CATEGORIA'
+FROM 
+LIVRO, EDITORA, CATEGORIA
+WHERE 
+LIVRO.FK_EDITORA = EDITORA.ID
+AND 
+LIVRO.FK_CATEGORIA = CATEGORIA.ID
+
+order by LIVRO.TITULO ASC
+
 --[ OK ] 8. Crie uma consulta para relacionar todos os dados disponíveis de todos os livros existentes na biblioteca en alfabética de Autor;
-SELECT * FROM LIVRO
-INNER JOIN LIVROAUTOR ON (LIVRO.ISBN = LIVROAUTOR.FK_LIVRO)
-INNER JOIN AUTOR ON (LIVROAUTOR.FK_AUTOR = AUTOR.ID)
+
+SELECT LIVRO.ISBN, LIVRO.TITULO, LIVRO.ANO_PUBLICACAO FROM LIVRO
+INNER JOIN
+LIVROAUTOR ON (LIVRO.ISBN = LIVROAUTOR.FK_LIVRO) 
+INNER JOIN 
+AUTOR ON (LIVROAUTOR.FK_AUTOR = AUTOR.ID ) 
 order by AUTOR.NOME ASC
+
+-- alternativa
+
+SELECT 
+LIVRO.ISBN,
+LIVRO.TITULO, 
+LIVRO.ANO_PUBLICACAO, 
+EDITORA.NOME as 'Editora', 
+CATEGORIA.TIPO_CATEGORIA as 'Categoria',
+AUTOR.NOME
+
+FROM 
+LIVRO,
+EDITORA,
+CATEGORIA,
+LIVROAUTOR,
+AUTOR
+
+WHERE
+LIVRO.FK_CATEGORIA = EDITORA.ID
+and 
+LIVRO.FK_CATEGORIA = CATEGORIA.id
+and
+LIVROAUTOR.FK_LIVRO = LIVRO.ISBN
+and
+LIVROAUTOR.FK_AUTOR = AUTOR.ID
+order by 
+AUTOR.NOME
+
 --[  ] 9. Crie uma consulta para relacionar todos os dados disponíveis dos livros da categoria de literatura Juvenil e de ano;
+
+SELECT * FROM LIVROS
+
+
+-- alternativa
+
+SELECT 
+LIVRO.ISBN,
+LIVRO.TITULO, 
+LIVRO.ANO_PUBLICACAO, 
+EDITORA.NOME as 'Editora', 
+CATEGORIA.TIPO_CATEGORIA as 'Categoria',
+AUTOR.NOME
+
+FROM 
+LIVRO,
+EDITORA,
+CATEGORIA,
+LIVROAUTOR,
+AUTOR
+
+WHERE
+LIVRO.FK_CATEGORIA = EDITORA.ID
+and 
+LIVRO.FK_CATEGORIA = CATEGORIA.ID
+and
+LIVROAUTOR.FK_LIVRO = LIVRO.ISBN
+and
+LIVROAUTOR.FK_AUTOR = AUTOR.ID
+order by 
+AUTOR.NOME
+
 
 --[  ] 10. Crie uma consulta para relacionar todos os dados disponíveis dos livros de humor ou ficção científica con 2000 e 2010.
 
 
-
+SELECT
+LIVRO.ISBN,
+LIVRO.TITULO, 
+LIVRO.ANO_PUBLICACAO, 
+EDITORA.NOME 'Editora', 
+CATEGORIA.TIPO_CATEGORIA as 'Categoria',
+AUTOR.NOME
+FROM
+LIVRO, EDITORA, CATEGORIA, LIVROAUTOR, AUTOR
+WHERE
+LIVRO.fk_editora = editora.id
+AND
+livro.fk_categoria = CATEGORIA.id
+AND
+LIVROAUTOR.fk_livro = LIVRO.isbn
+AND
+LIVROAUTOR.fk_autor = AUTOR.id
+AND
+(CATEGORIA.tipo_categoria like '%humor%'
+OR
+CATEGORIA.tipo_categoria like '%fic%fica')
+and 
+YEAR(LIVRO.ano_publicacao) 
+between 2000 and 2010
 
 
 INSERT INTO LIVRO
