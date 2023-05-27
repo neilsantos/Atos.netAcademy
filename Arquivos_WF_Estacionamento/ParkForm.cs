@@ -5,11 +5,14 @@ using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Arquivos_WF_Estacionamento.Model;
 using Arquivos_WF_Estacionamento.Repository;
+using System.Globalization;
 
 namespace Arquivos_WF_Estacionamento
 {
     public partial class ParkForm : Form
     {
+        Veiculo[] vagas = new Veiculo[50];
+
         public ParkForm()
         {
             InitializeComponent();
@@ -17,6 +20,7 @@ namespace Arquivos_WF_Estacionamento
 
         private void ParkForm_Load(object sender, EventArgs e)
         {
+            data();
             var show = new ListViewInfo();
             var file = new FileManager();
             bool isOK = file.ReadFromFile(out string[]? result);
@@ -92,6 +96,25 @@ namespace Arquivos_WF_Estacionamento
             MessageBox.Show(item);
 
 
+        }
+        public void data()
+        {
+            CultureInfo culture = new CultureInfo("pt-BR");
+            DateTimeFormatInfo dtfi = culture.DateTimeFormat;
+
+            int dia = DateTime.Now.Day;
+            int ano = DateTime.Now.Year;
+            string mes = culture.TextInfo.ToTitleCase(dtfi.GetMonthName(DateTime.Now.Month));
+            string diasemana = culture.TextInfo.ToTitleCase(dtfi.GetDayName(DateTime.Now.DayOfWeek));
+            string data = diasemana + ", " + dia + " de " + mes + " de " + ano;
+            LabelData.Text = data;
+
+
+        }
+
+        private void TimerHora_Tick(object sender, EventArgs e)
+        {
+            LabelHora.Text = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }

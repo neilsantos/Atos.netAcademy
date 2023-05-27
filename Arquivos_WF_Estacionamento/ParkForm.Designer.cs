@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             BtnOut = new Button();
             listViewInfo = new ListView();
             Placa = new ColumnHeader();
@@ -45,6 +46,9 @@
             menuStrip1 = new MenuStrip();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
             valoresToolStripMenuItem = new ToolStripMenuItem();
+            LabelData = new Label();
+            TimerHora = new System.Windows.Forms.Timer(components);
+            LabelHora = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -178,14 +182,39 @@
             // valoresToolStripMenuItem
             // 
             valoresToolStripMenuItem.Name = "valoresToolStripMenuItem";
-            valoresToolStripMenuItem.Size = new Size(180, 22);
+            valoresToolStripMenuItem.Size = new Size(111, 22);
             valoresToolStripMenuItem.Text = "Valores";
+            // 
+            // LabelData
+            // 
+            LabelData.AutoSize = true;
+            LabelData.Location = new Point(848, 548);
+            LabelData.Name = "LabelData";
+            LabelData.Size = new Size(153, 15);
+            LabelData.TabIndex = 13;
+            LabelData.Text = "Sábado, 27 de Maio de 2023";
+            // 
+            // TimerHora
+            // 
+            TimerHora.Enabled = true;
+            TimerHora.Tick += TimerHora_Tick;
+            // 
+            // LabelHora
+            // 
+            LabelHora.AutoSize = true;
+            LabelHora.Location = new Point(1007, 548);
+            LabelHora.Name = "LabelHora";
+            LabelHora.Size = new Size(49, 15);
+            LabelHora.TabIndex = 14;
+            LabelHora.Text = "13:26:25";
             // 
             // ParkForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1080, 572);
+            Controls.Add(LabelHora);
+            Controls.Add(LabelData);
             Controls.Add(button2);
             Controls.Add(textBox2);
             Controls.Add(textBox1);
@@ -228,5 +257,8 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
         private ToolStripMenuItem valoresToolStripMenuItem;
+        private Label LabelData;
+        private System.Windows.Forms.Timer TimerHora;
+        private Label LabelHora;
     }
 }
