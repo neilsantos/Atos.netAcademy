@@ -21,12 +21,12 @@ namespace Arquivos_WF_Estacionamento
             var file = new FileManager();
             bool isOK = file.ReadFromFile(out string[]? result);
 
-            if(!isOK)
+            if (!isOK)
             {
                 MessageBox.Show("Arquivo Não encontrado, verifique o caminho da base de dados!");
                 this.Close();
             }
-            
+
             bool isValid;
             if (result == null)
                 return;
@@ -52,8 +52,7 @@ namespace Arquivos_WF_Estacionamento
         private void BtnIn_Click(object sender, EventArgs e)
         {
 
-            var m = new RegisterForm();
-            m.Show();
+
 
         }
 
@@ -70,10 +69,29 @@ namespace Arquivos_WF_Estacionamento
                 return;
             }
             //Incluir ConfirmationBOX
-          
-            MessageBox.Show(item) ;
 
-            
+            MessageBox.Show(item);
+
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string? item;
+            try
+            {
+                item = listViewInfo.SelectedItems[0].Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Precisa selecionar um item da lista primeiro!");
+                return;
+            }
+            //Incluir ConfirmationBOX
+
+            MessageBox.Show(item);
+
+
         }
     }
 }
