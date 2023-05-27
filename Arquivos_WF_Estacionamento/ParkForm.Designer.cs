@@ -39,28 +39,30 @@
             // 
             // BtnIn
             // 
-            BtnIn.Location = new Point(845, 176);
+            BtnIn.Location = new Point(22, 28);
             BtnIn.Name = "BtnIn";
             BtnIn.Size = new Size(92, 36);
             BtnIn.TabIndex = 0;
             BtnIn.Text = "Dar Entrada";
             BtnIn.UseVisualStyleBackColor = true;
+            BtnIn.Click += BtnIn_Click;
             // 
             // BtnOut
             // 
-            BtnOut.Location = new Point(943, 176);
+            BtnOut.Location = new Point(964, 496);
             BtnOut.Name = "BtnOut";
             BtnOut.Size = new Size(92, 36);
             BtnOut.TabIndex = 1;
             BtnOut.Text = "Dar Saída";
             BtnOut.UseVisualStyleBackColor = true;
+            BtnOut.Click += BtnOut_Click;
             // 
             // listViewInfo
             // 
-            listViewInfo.Columns.AddRange(new ColumnHeader[] { modo, placa, dateIn, dateOut });
-            listViewInfo.Location = new Point(615, 41);
+            listViewInfo.Columns.AddRange(new ColumnHeader[] { placa, modo, dateIn, dateOut });
+            listViewInfo.Location = new Point(521, 28);
             listViewInfo.Name = "listViewInfo";
-            listViewInfo.Size = new Size(405, 117);
+            listViewInfo.Size = new Size(535, 229);
             listViewInfo.TabIndex = 2;
             listViewInfo.UseCompatibleStateImageBehavior = false;
             listViewInfo.View = View.Details;

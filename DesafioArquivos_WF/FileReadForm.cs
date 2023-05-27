@@ -5,14 +5,14 @@ namespace DesafioArquivos_WF
 {
     public partial class FileReadForm : Form
     {
-        private readonly List<Student> Students;
+        private readonly List<Student> People;
         string[]? _data;
         private int _studentsQuantity = 0;
 
         public FileReadForm()
         {
             InitializeComponent();
-            Students = new List<Student>();
+            People = new List<Student>();
             _data = new string[0];
         }
         private void FileReadForm_Load(object sender, EventArgs e)
@@ -77,21 +77,21 @@ namespace DesafioArquivos_WF
                         var aluno = line.Split("-");
                         Student Student = new Student();
 
-                        Student.PersonalInformation.Nome = aluno[1];
-                        Student.PersonalInformation.Telefone = aluno[2];
-                        Student.PersonalInformation.Cidade = aluno[3];
-                        Student.PersonalInformation.RG = aluno[4];
-                        Student.PersonalInformation.CPF = aluno[5];
+                        Student.Nome = aluno[1];
+                        Student.Telefone = aluno[2];
+                        Student.Cidade = aluno[3];
+                        Student.RG = aluno[4];
+                        Student.CPF = aluno[5];
 
-                        Students.Add(Student);
+                        People.Add(Student);
                     }
                     if (line[0] == 'Y')
                     {
-                        var ultimoAluno = Students.Last();
-                        var dadosAlunoCurso = line.Split("-");
-                        ultimoAluno.Matricula = dadosAlunoCurso[1];
-                        ultimoAluno.CodigoCurso = int.Parse(dadosAlunoCurso[2]);
-                        ultimoAluno.NomeCurso = dadosAlunoCurso[3];
+                        var lastStudent = People.Last();
+                        var studentData = line.Split("-");
+                        lastStudent.Matricula = studentData[1];
+                        lastStudent.CodigoCurso = int.Parse(studentData[2]);
+                        lastStudent.NomeCurso = studentData[3];
                         _studentsQuantity++;
                     }
 
@@ -103,33 +103,33 @@ namespace DesafioArquivos_WF
         }
         private void ShowData()
         {
-            foreach (var student in Students)
+            foreach (var person in People)
             {
-                if (student.CodigoCurso == 0)
+                if (person.CodigoCurso == 0)
                 {
-                    txtbox_output.AppendText("Nome: " + student.PersonalInformation.Nome + Environment.NewLine);
-                    txtbox_output.AppendText("Telefone: " + student.PersonalInformation.Telefone + Environment.NewLine);
-                    txtbox_output.AppendText("Cidade: " + student.PersonalInformation.Cidade + Environment.NewLine);
-                    txtbox_output.AppendText("RG: " + student.PersonalInformation.RG + Environment.NewLine);
-                    txtbox_output.AppendText("CPF: " + student.PersonalInformation.CPF + Environment.NewLine);
+                    txtbox_output.AppendText("Nome: " + person.Nome + Environment.NewLine);
+                    txtbox_output.AppendText("Telefone: " + person.Telefone + Environment.NewLine);
+                    txtbox_output.AppendText("Cidade: " + person.Cidade + Environment.NewLine);
+                    txtbox_output.AppendText("RG: " + person.RG + Environment.NewLine);
+                    txtbox_output.AppendText("CPF: " + person.CPF + Environment.NewLine);
                     txtbox_output.AppendText(Environment.NewLine);
                     txtbox_output.AppendText("[ SEM DADOS DE ESTUDANTE ]" + Environment.NewLine);
                     txtbox_output.AppendText("---------------------------" + Environment.NewLine);
                 }
                 else
                 {
-                    txtbox_output.AppendText("Nome: " + student.PersonalInformation.Nome + Environment.NewLine);
-                    txtbox_output.AppendText("Telefone: " + student.PersonalInformation.Telefone + Environment.NewLine);
-                    txtbox_output.AppendText("Cidade: " + student.PersonalInformation.Cidade + Environment.NewLine);
-                    txtbox_output.AppendText("RG: " + student.PersonalInformation.RG + Environment.NewLine);
-                    txtbox_output.AppendText("CPF: " + student.PersonalInformation.CPF + Environment.NewLine);
-                    txtbox_output.AppendText("Matricula: " + student.Matricula + Environment.NewLine);
-                    txtbox_output.AppendText("Codigo do Curso: " + student.CodigoCurso + Environment.NewLine);
-                    txtbox_output.AppendText("Nome do Curso: " + student.NomeCurso + Environment.NewLine);
+                    txtbox_output.AppendText("Nome: " + person.Nome + Environment.NewLine);
+                    txtbox_output.AppendText("Telefone: " + person.Telefone + Environment.NewLine);
+                    txtbox_output.AppendText("Cidade: " + person.Cidade + Environment.NewLine);
+                    txtbox_output.AppendText("RG: " + person.RG + Environment.NewLine);
+                    txtbox_output.AppendText("CPF: " + person.CPF + Environment.NewLine);
+                    txtbox_output.AppendText("Matricula: " + person.Matricula + Environment.NewLine);
+                    txtbox_output.AppendText("Codigo do Curso: " + person.CodigoCurso + Environment.NewLine);
+                    txtbox_output.AppendText("Nome do Curso: " + person.NomeCurso + Environment.NewLine);
                     txtbox_output.AppendText("---------------------------" + Environment.NewLine);
                 }
             }
-            labelPersonCount.Text = (Students.Count() - _studentsQuantity).ToString();
+            labelPersonCount.Text = (People.Count() - _studentsQuantity).ToString();
             labelStudentCount.Text = _studentsQuantity.ToString();
         }
         private void buttonReset_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace DesafioArquivos_WF
             labelStudentCount.Text = "-";
             labelPersonCount.Text = "-";
             _studentsQuantity = 0;
-            Students.Clear();
+            People.Clear();
             txtbox_output.Text = string.Empty;
             BtnReadFile.Enabled = true;
         }

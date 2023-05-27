@@ -9,7 +9,7 @@ namespace DesafioArquivos_WF
     public class Person
     {
 
-        public string Nome { get; set; } = "John Doe"; 
+        public string Nome { get; set; } = string.Empty;
         public string Telefone { get; set; } = string.Empty;
         public string Cidade { get; set; } = string.Empty;
         public string RG { get; set; } = string.Empty;

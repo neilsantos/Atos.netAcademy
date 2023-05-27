@@ -1,0 +1,17 @@
+
+#FROM LISTVIEW ITEM
+
+        public List<ListViewInfo> buildListViewInfo(string[] data)
+        {
+            List<ListViewInfo> infos = new List<ListViewInfo>();
+            foreach (string line in data)
+            {
+                if (line.Split(":")[0] == "id")
+                    continue;
+
+                string[] item = line.Split(";");
+                infos.Add(new ListViewInfo(item[0], item[5], item[1], item[2]));
+
+            }
+            return infos;
+        }

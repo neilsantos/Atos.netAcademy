@@ -1,4 +1,10 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Reflection.Metadata;
+using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Arquivos_WF_Estacionamento.Model;
+using Arquivos_WF_Estacionamento.Repository;
 
 namespace Arquivos_WF_Estacionamento
 {
@@ -10,24 +16,70 @@ namespace Arquivos_WF_Estacionamento
         }
 
         private void ParkForm_Load(object sender, EventArgs e)
-        {   
-            List<ListViewInfo> infos = new List<ListViewInfo>();
-            string[] item = new string[4];
-            for (int i = 0; i < 10; i++)
+        {
+            var show = new ListViewInfo();
+            var file = new FileManager();
+            bool isOK = file.ReadFromFile(out string[]? result);
+
+            if(!isOK)
             {
-                infos.Add(new ListViewInfo("ENTRADA","PLACA","ENTRADA","SAIDA"));
+                MessageBox.Show("Arquivo Não encontrado, verifique o caminho da base de dados!");
+                this.Close();
             }
-            foreach (ListViewInfo info in infos)
+            
+            bool isValid;
+            if (result == null)
+                return;
+            else
             {
-                item[0] = info.Modo.ToString();
-                item[1] = info.Placa.ToString();
-                item[2] = info.Entrada.ToString();
-                item[3] = info.Saida.ToString();
-                listViewInfo.Items.Add(new ListViewItem(item));
+                isValid = file.VerifyDataBaseIntegrity(result);
             }
+
+            if (!isValid)
+            {
+                MessageBox.Show("Arquivo Invalido!");
+                return;
+            }
+            FileManager fileManager = new FileManager();
+            fileManager.ReadFromFile(out var _data);
+
+            RepositoryVeiculo repositorioVeiculo = new RepositoryVeiculo();
+            var veiculos = repositorioVeiculo.ToObject(_data);
+
+            show.populateListView(veiculos, listViewInfo);
+        }
+
+        private void BtnIn_Click(object sender, EventArgs e)
+        {
+
+            var m = new RegisterForm();
+            m.Show();
+
+        }
+
+        private void BtnOut_Click(object sender, EventArgs e)
+        {
+            string? item;
+            try
+            {
+                item = listViewInfo.SelectedItems[0].Text;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Precisa selecionar um item da lista primeiro!");
+                return;
+            }
+            //Incluir ConfirmationBOX
+          
+            MessageBox.Show(item) ;
+
+            
         }
     }
 }
 
-
+//string datetime = "26/02/2023 16:16:13";
+//var date = DateTime.Parse(datetime);
+//string time = "01:00:00";
+//TimeSpan timeSpan = TimeSpan.Parse(time);
 
