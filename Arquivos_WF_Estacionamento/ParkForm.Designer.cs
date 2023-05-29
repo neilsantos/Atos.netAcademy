@@ -38,10 +38,10 @@
             button1 = new Button();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            LabelTempo = new Label();
             numericUpDown1 = new NumericUpDown();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            LableModelo = new TextBox();
+            LablePlaca = new TextBox();
             button2 = new Button();
             menuStrip1 = new MenuStrip();
             configuraçõesToolStripMenuItem = new ToolStripMenuItem();
@@ -49,15 +49,19 @@
             LabelData = new Label();
             TimerHora = new System.Windows.Forms.Timer(components);
             LabelHora = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // BtnOut
             // 
-            BtnOut.Location = new Point(964, 263);
+            BtnOut.Location = new Point(971, 446);
             BtnOut.Name = "BtnOut";
-            BtnOut.Size = new Size(92, 23);
+            BtnOut.Size = new Size(92, 25);
             BtnOut.TabIndex = 1;
             BtnOut.Text = "Dar Saída";
             BtnOut.UseVisualStyleBackColor = true;
@@ -66,9 +70,9 @@
             // listViewInfo
             // 
             listViewInfo.Columns.AddRange(new ColumnHeader[] { Placa, Modelo, DataEntrada, DataSaida });
-            listViewInfo.Location = new Point(416, 28);
+            listViewInfo.Location = new Point(423, 139);
             listViewInfo.Name = "listViewInfo";
-            listViewInfo.Size = new Size(640, 229);
+            listViewInfo.Size = new Size(640, 259);
             listViewInfo.TabIndex = 2;
             listViewInfo.UseCompatibleStateImageBehavior = false;
             listViewInfo.View = View.Details;
@@ -98,9 +102,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(833, 263);
+            button1.Location = new Point(840, 446);
             button1.Name = "button1";
-            button1.Size = new Size(125, 23);
+            button1.Size = new Size(125, 25);
             button1.TabIndex = 3;
             button1.Text = "Mais Informações";
             button1.UseVisualStyleBackColor = true;
@@ -109,59 +113,60 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(47, 84);
+            label1.Location = new Point(57, 202);
             label1.Name = "label1";
-            label1.Size = new Size(35, 15);
+            label1.Size = new Size(38, 17);
             label1.TabIndex = 5;
             label1.Text = "Placa";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(47, 116);
+            label2.Location = new Point(57, 238);
             label2.Name = "label2";
-            label2.Size = new Size(48, 15);
+            label2.Size = new Size(54, 17);
             label2.TabIndex = 6;
             label2.Text = "Modelo";
             // 
-            // label3
+            // LabelTempo
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(47, 144);
-            label3.Name = "label3";
-            label3.Size = new Size(43, 15);
-            label3.TabIndex = 7;
-            label3.Text = "Tempo";
+            LabelTempo.AutoSize = true;
+            LabelTempo.Location = new Point(57, 270);
+            LabelTempo.Name = "LabelTempo";
+            LabelTempo.Size = new Size(48, 17);
+            LabelTempo.TabIndex = 7;
+            LabelTempo.Text = "Tempo";
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(123, 142);
+            numericUpDown1.Location = new Point(133, 267);
             numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(120, 23);
-            numericUpDown1.TabIndex = 8;
+            numericUpDown1.Size = new Size(120, 25);
+            numericUpDown1.TabIndex = 12;
             // 
-            // textBox1
+            // LableModelo
             // 
-            textBox1.Location = new Point(123, 110);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(120, 23);
-            textBox1.TabIndex = 9;
+            LableModelo.Location = new Point(133, 230);
+            LableModelo.Name = "LableModelo";
+            LableModelo.Size = new Size(120, 25);
+            LableModelo.TabIndex = 11;
             // 
-            // textBox2
+            // LablePlaca
             // 
-            textBox2.Location = new Point(123, 81);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(120, 23);
-            textBox2.TabIndex = 10;
+            LablePlaca.Location = new Point(133, 199);
+            LablePlaca.Name = "LablePlaca";
+            LablePlaca.Size = new Size(120, 25);
+            LablePlaca.TabIndex = 10;
             // 
             // button2
             // 
-            button2.Location = new Point(305, 119);
+            button2.Location = new Point(316, 230);
             button2.Name = "button2";
-            button2.Size = new Size(40, 38);
-            button2.TabIndex = 11;
+            button2.Size = new Size(40, 43);
+            button2.TabIndex = 13;
             button2.Text = "->";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // menuStrip1
             // 
@@ -188,9 +193,9 @@
             // LabelData
             // 
             LabelData.AutoSize = true;
-            LabelData.Location = new Point(848, 548);
+            LabelData.Location = new Point(848, 528);
             LabelData.Name = "LabelData";
-            LabelData.Size = new Size(153, 15);
+            LabelData.Size = new Size(178, 17);
             LabelData.TabIndex = 13;
             LabelData.Text = "Sábado, 27 de Maio de 2023";
             // 
@@ -202,33 +207,77 @@
             // LabelHora
             // 
             LabelHora.AutoSize = true;
-            LabelHora.Location = new Point(1007, 548);
+            LabelHora.Location = new Point(1007, 528);
             LabelHora.Name = "LabelHora";
-            LabelHora.Size = new Size(49, 15);
+            LabelHora.Size = new Size(56, 17);
             LabelHora.TabIndex = 14;
             LabelHora.Text = "13:26:25";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(950, 43);
+            label3.Name = "label3";
+            label3.Size = new Size(113, 17);
+            label3.TabIndex = 15;
+            label3.Text = "Vagas Disponiveis";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(821, 43);
+            label4.Name = "label4";
+            label4.Size = new Size(106, 17);
+            label4.TabIndex = 16;
+            label4.Text = "Vagas Ocupadas";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(870, 68);
+            label5.Name = "label5";
+            label5.Size = new Size(13, 17);
+            label5.TabIndex = 17;
+            label5.Text = "-";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(1007, 68);
+            label6.Name = "label6";
+            label6.Size = new Size(13, 17);
+            label6.TabIndex = 18;
+            label6.Text = "-";
+            // 
             // ParkForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1080, 572);
+            ClientSize = new Size(1080, 559);
+            ControlBox = false;
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(LabelHora);
             Controls.Add(LabelData);
             Controls.Add(button2);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(LablePlaca);
+            Controls.Add(LableModelo);
             Controls.Add(numericUpDown1);
-            Controls.Add(label3);
+            Controls.Add(LabelTempo);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(listViewInfo);
             Controls.Add(BtnOut);
             Controls.Add(menuStrip1);
+            Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             MainMenuStrip = menuStrip1;
+            MaximizeBox = false;
             Name = "ParkForm";
-            Text = "Form1";
+            ShowIcon = false;
+            Text = "Estacionamento";
             Load += ParkForm_Load;
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             menuStrip1.ResumeLayout(false);
@@ -249,10 +298,10 @@
         private Button button1;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label LabelTempo;
         private NumericUpDown numericUpDown1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox LableModelo;
+        private TextBox LablePlaca;
         private Button button2;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem configuraçõesToolStripMenuItem;
@@ -260,5 +309,9 @@
         private Label LabelData;
         private System.Windows.Forms.Timer TimerHora;
         private Label LabelHora;
+        private Label label3;
+        private Label label4;
+        private Label label5;
+        private Label label6;
     }
 }

@@ -142,6 +142,5 @@ namespace DesafioArquivos_WF
             BtnReadFile.Enabled = true;
         }
 
-
     }
 }

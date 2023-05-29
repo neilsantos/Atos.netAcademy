@@ -6,27 +6,18 @@ using System.Threading.Tasks;
 
 namespace Arquivos_WF_Estacionamento.Model
 {
-    internal class Veiculo
+    public class Veiculo
     {
-        public string placa { get; set; } = string.Empty;
-        public DateTime Entrada { get; set; }
-        public DateTime Saida { get; set; }
-        public TimeSpan TempoPermanecia { get; set; }
-        public double ValorCobrado { get; set; }
+        public string Placa { get; set; } = string.Empty;
+        public string Modelo { get; set; }
 
         public Veiculo() { }
 
-        public Veiculo(string placa,
-                       DateTime entrada,
-                       DateTime saida,
-                       TimeSpan tempoPermanecia,
-                       double valorCobrado)
+        public Veiculo(string placa, string modelo)
         {
-            this.placa = placa;
-            Entrada = entrada;
-            Saida = saida;
-            TempoPermanecia = tempoPermanecia;
-            ValorCobrado = valorCobrado;
+            Placa = placa;
+            Modelo = modelo;
+           
         }
     }
 }

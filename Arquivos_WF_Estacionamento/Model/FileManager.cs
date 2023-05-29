@@ -26,7 +26,7 @@ namespace Arquivos_WF_Estacionamento.Model
         public bool ReadFromFile(out string[]? _data)
         {
             string sCurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string sFile = Path.Combine(sCurrentDirectory, @"..\..\..\database\database");
+            string sFile = Path.Combine(sCurrentDirectory, @"..\..\..\infraestrutura\database\database");
             string filePath = Path.GetFullPath(sFile);
             try
             {

@@ -15,3 +15,9 @@
             }
             return infos;
         }
+
+
+//string datetime = "26/02/2023 16:16:13";
+//var date = DateTime.Parse(datetime);
+//string time = "01:00:00";
+//TimeSpan timeSpan = TimeSpan.Parse(time);

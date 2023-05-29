@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace Arquivos_WF_Estacionamento.Interfaces
 {
     internal interface IRepository
-    {   
-        
-         void Create() { }
-         void Read() { }
-         void Update() { }
-         void Delete() { }
+    {
+
+        void Create();
+        void Read();
+        void Update();
+        void Delete();
     }
 }
