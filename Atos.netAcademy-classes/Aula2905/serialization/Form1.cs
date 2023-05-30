@@ -1,3 +1,4 @@
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Xml.Serialization;
 
 namespace serialization
@@ -11,25 +12,24 @@ namespace serialization
 
         private void BtnSerialization_Click(object sender, EventArgs e)
         {
+            FileStream fs = new FileStream(@"C:\Teste\InputText.data", FileMode.OpenOrCreate);
+            BinaryFormatter bf = new BinaryFormatter();
+            string mensagem = TextBoxInput.Text;
+            bf.Serialize(fs, mensagem);
+            fs.Close();
 
         }
 
         private void BtnDSerialization_Click(object sender, EventArgs e)
         {
+            FileStream fs = new FileStream(@"C:\Teste\InputText.data", FileMode.Open);
+            BinaryFormatter bf = new BinaryFormatter();
 
+            string msgDesserializada = (string)bf.Deserialize(fs);
+            TextBoxOutput.Text = msgDesserializada;
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void BtnSerializationPerson_Click(object sender, EventArgs e)
         {
             Pessoa p = new Pessoa();
             p.nome = TextBoxNome.Text;
@@ -40,8 +40,20 @@ namespace serialization
             XmlSerializer xml = new XmlSerializer(typeof(Pessoa));
 
             xml.Serialize(fs, p);
-
+            fs.Close();
             MessageBox.Show("Serializado em XML");
+        }
+
+        private void BtnDesserialization2_Click(object sender, EventArgs e)
+        {
+            XmlSerializer xml = new XmlSerializer(typeof(Pessoa));
+            StreamReader reader = new StreamReader(@"C:\Teste\pessoal.xml");
+            Pessoa p;
+            p = (Pessoa)xml.Deserialize(reader);
+            TextBoxDesserializationPerson.AppendText(p.nome.ToString());
+            TextBoxDesserializationPerson.AppendText(p.idade.ToString());
+            TextBoxDesserializationPerson.AppendText(p.salario.ToString());
+
         }
     }
 }

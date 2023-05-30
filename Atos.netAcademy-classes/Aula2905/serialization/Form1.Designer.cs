@@ -38,7 +38,9 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            button1 = new Button();
+            BtnSerializationPerson = new Button();
+            BtnDesserialization2 = new Button();
+            TextBoxDesserializationPerson = new TextBox();
             SuspendLayout();
             // 
             // TextBoxInput
@@ -97,7 +99,6 @@
             TextBoxSalario.Name = "TextBoxSalario";
             TextBoxSalario.Size = new Size(100, 23);
             TextBoxSalario.TabIndex = 6;
-            TextBoxSalario.TextChanged += textBox3_TextChanged;
             // 
             // label1
             // 
@@ -125,24 +126,43 @@
             label3.Size = new Size(42, 15);
             label3.TabIndex = 9;
             label3.Text = "Salario";
-            label3.Click += label3_Click;
             // 
-            // button1
+            // BtnSerializationPerson
             // 
-            button1.Location = new Point(639, 173);
-            button1.Name = "button1";
-            button1.Size = new Size(144, 23);
-            button1.TabIndex = 10;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            BtnSerializationPerson.Location = new Point(639, 173);
+            BtnSerializationPerson.Name = "BtnSerializationPerson";
+            BtnSerializationPerson.Size = new Size(144, 23);
+            BtnSerializationPerson.TabIndex = 10;
+            BtnSerializationPerson.Text = "Serializar Pessoa";
+            BtnSerializationPerson.UseVisualStyleBackColor = true;
+            BtnSerializationPerson.Click += BtnSerializationPerson_Click;
+            // 
+            // BtnDesserialization2
+            // 
+            BtnDesserialization2.Location = new Point(892, 68);
+            BtnDesserialization2.Name = "BtnDesserialization2";
+            BtnDesserialization2.Size = new Size(144, 23);
+            BtnDesserialization2.TabIndex = 11;
+            BtnDesserialization2.Text = "Deserializar Pessoa";
+            BtnDesserialization2.UseVisualStyleBackColor = true;
+            BtnDesserialization2.Click += BtnDesserialization2_Click;
+            // 
+            // TextBoxDesserializationPerson
+            // 
+            TextBoxDesserializationPerson.Location = new Point(892, 105);
+            TextBoxDesserializationPerson.Multiline = true;
+            TextBoxDesserializationPerson.Name = "TextBoxDesserializationPerson";
+            TextBoxDesserializationPerson.Size = new Size(144, 91);
+            TextBoxDesserializationPerson.TabIndex = 12;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1137, 450);
-            Controls.Add(button1);
+            Controls.Add(TextBoxDesserializationPerson);
+            Controls.Add(BtnDesserialization2);
+            Controls.Add(BtnSerializationPerson);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -171,6 +191,8 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Button button1;
+        private Button BtnSerializationPerson;
+        private Button BtnDesserialization2;
+        private TextBox TextBoxDesserializationPerson;
     }
 }
