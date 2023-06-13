@@ -15,12 +15,11 @@ namespace HomeManager.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View("~/Views/login/login.cshtml");
         }
-
-        public IActionResult Privacy()
+        public IActionResult Login()
         {
-            return View();
+            return View("~/Views/login/login.cshtml");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
