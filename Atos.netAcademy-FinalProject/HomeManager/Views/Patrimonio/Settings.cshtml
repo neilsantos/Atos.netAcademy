@@ -1,0 +1,128 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+       <div class="row">
+       <div class="col-md-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Marcas</h3>
+                    </div>
+
+                    <div class=" mt-3 px-4">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Itens</th>
+                                    <th>Registros</th>
+                                    <th style="width: 40px">%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    Random rnd = new Random();
+                                    for (int i = 1; i < 5; i++)
+                                    {
+                                        int num = rnd.Next(10,100);
+                                        <tr>
+                                            <td>@i.</td>
+                                            <td>Samsung</td>
+                                            <td>
+                                                <div class=" mt-2 progress progress-xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: @num%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">@num%</span></td>
+                                        </tr>
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-horizontal">
+                        <div class="card-body" id="nova-marca" style="display:none;">
+                          
+                               <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Marca</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Username">
+                                </div>
+                               
+                        </div>
+                        <div class="card-footer">
+                            <button id="submit" class="btn btn-success float-right" onclick="document.getElementById('nova-marca').removeAttribute('style'); document.getElementById('submit').innerHTML='Enviar'">Nova Marca</button>
+                        </div>
+
+                    </div>
+                </div>
+       </div>
+            <div class="col-md-6">
+                <div class="card card-info">
+                    <div class="card-header">
+                        <h3 class="card-title">Categorias</h3>
+                    </div>
+
+                    <div class=" mt-3 px-4">
+                        <table class="table table-sm">
+                            <thead>
+                                <tr>
+                                    <th style="width: 10px">#</th>
+                                    <th>Itens</th>
+                                    <th>Registros</th>
+                                    <th style="width: 40px">%</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    Random rnd2 = new Random();
+                                    for (int i = 1; i < 5; i++)
+                                    {
+                                        int num2 = rnd.Next(10, 100);
+                                        <tr>
+                                            <td>@i.</td>
+                                            <td>Eletrônicos</td>
+                                            <td>
+                                                <div class=" mt-2 progress progress-xs">
+                                                    <div class="progress-bar progress-bar-danger" style="width: @num2%"></div>
+                                                </div>
+                                            </td>
+                                            <td><span class="badge bg-success">@num2%</span></td>
+                                        </tr>
+
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="form-horizontal">
+                        <div class="card-body" id="nova-categoria" style="display:none;">
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Categoria</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Username">
+                            </div>
+
+                        </div>
+                        <div class="card-footer">
+                            <button id="submit" class="btn btn-success float-right" onclick="document.getElementById('nova-categoria').removeAttribute('style'); document.getElementById('submit').innerHTML='Enviar'">Nova Categoria</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+       </div>
+    </div>
+</section>
+

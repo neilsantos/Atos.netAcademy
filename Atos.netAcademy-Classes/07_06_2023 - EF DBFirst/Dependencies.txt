@@ -1,0 +1,4 @@
+NuGet\Install-Package Microsoft.EntityFrameworkCore -Version 7.0.5
+NuGet\Install-Package Microsoft.EntityFrameworkCore.Tools -Version 7.0.5
+NuGet\Install-Package Microsoft.EntityFrameworkCore.SqlServer -Version 7.0.5
+NuGet\Install-Package Microsoft.EntityFrameworkCore.Proxies -Version 7.0.5

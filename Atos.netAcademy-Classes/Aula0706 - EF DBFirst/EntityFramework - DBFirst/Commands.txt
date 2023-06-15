@@ -1,4 +1,0 @@
-Scaffold-DbContext "Data Source=localhost; Initial Catalog=DBFirst; User ID=USUARIO; password=NEILSANTOS; language=Portuguese; trusted_connection=true; encrypt=false;"
-Provider: Microsoft.EntityFrameworkCore.SqlServer
-
-Scaffold-DbContext "Data Source=localhost; Initial Catalog=ExAlunoCurso; User ID=USUARIO; password=NEILSANTOS; language=Portuguese; trusted_connection=true; encrypt=false;"
