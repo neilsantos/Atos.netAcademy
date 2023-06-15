@@ -84,6 +84,8 @@ namespace ConsumoApi
             }
             
         }
+
+       
         static async void CadastrarPessoas(string baseUrl)
         {
             Pessoa novaPessoa = new Pessoa();
@@ -94,12 +96,32 @@ namespace ConsumoApi
 
             Console.WriteLine("Retorno: " + respostaPost.StatusCode);
         }
-        static void AlterarPessoas(string baseUrl)
+        static async void AlterarPessoas(string baseUrl)
+        {
+            //await Console.Out.WriteLineAsync();
+            Console.WriteLine("Digite o ID a ser Alterado");
+            int idalterar = int.Parse(Console.ReadLine());
+            
+            Console.WriteLine("Escolha o Novo Nome");
+            string nome = Console.ReadLine();
+
+            Pessoa pessoa = new Pessoa() {Nome = nome};
+
+            HttpClient client = new HttpClient();
+            HttpResponseMessage resposta = await client.PutAsJsonAsync(baseUrl + "Pessoa/pessoas/"+ idalterar, pessoa);
+            var url = baseUrl + "Pessoa/pessoas" + idalterar;
+            Console.WriteLine("Retorno: " + resposta.StatusCode);
+        }
+        static async void ExcluirPessoas(string baseUrl)
         {
 
-        }
-        static void ExcluirPessoas(string baseUrl)
-        {
+            Console.WriteLine("Digite o ID para ser excluido: ");
+            int idP = int.Parse(Console.ReadLine());
+
+            HttpClient clienteDelete = new HttpClient();
+            HttpResponseMessage respostaDelete = await clienteDelete.DeleteAsync(baseUrl + "Pessoa/pessoas/" + idP);
+
+            Console.WriteLine("Retorno: " + respostaDelete.StatusCode);
 
         }
     }
