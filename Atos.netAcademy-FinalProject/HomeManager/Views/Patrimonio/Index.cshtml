@@ -1,36 +1,52 @@
-﻿@page
-@model Apresentacao.Views.Patrimonio.IndexModel
-@{
-    
+﻿@{
+    ViewData["PageHeader"] = "General";
+    ViewData["Title"] = "Patrimony > " + ViewData["PageHeader"];
 }
-<!-- Main content -->
-<script>
-    
-    let state = true;
-    function changeIconView() {
-        let icon = document.getElementById('change-view-icon');
-        if(state){
-            icon.removeAttribute("class")
-            icon.setAttribute("class", "fas fa-th")
-        }else{
-            icon.removeAttribute("class")
-            icon.setAttribute("class", "fas fa-bars")
-        }
-        state = !state;
-    }
-    function changeView(){
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $("#patrimony").attr("class", "nav-item menu-open");
+            $("#patrimony-link").attr("class", "nav-link active");
+            $("#general").attr("class", "nav-link active");
+        })
+    </script>
 
-    }
-</script>
+    <script>
+
+        let state = true;
+        function changeIconView() {
+            let icon = document.getElementById('change-view-icon');
+            if (state) {
+                icon.removeAttribute("class")
+                icon.setAttribute("class", "fas fa-th")
+            } else {
+                icon.removeAttribute("class")
+                icon.setAttribute("class", "fas fa-bars")
+            }
+            state = !state;
+        }
+        function changeView() {
+
+        }
+    </script>
+}
+
+
 <section class="content">
     <div class="container-fluid">
-        <!--VIEW 1-->
         <div class="row">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-10">
+                <button id="submit" class="btn btn-success float-right" onclick="location.href='@Url.Action("NewProduct", "Patrimonio")'"> <i class="fas fa-plus"></i> Novo Produto</button>
+            </div>
+        </div>
+        </div>
+        <!--VIEW 1-->
+        <div class="row mt-3">
             <div class="col">
                 <div class="card">
                     <div class="card-header d-flex p-0">
-                        
-                        <!--<h3 class="card-title p-3">&nbsp;</h3>-->
                         <ul class="nav nav-pills mr-auto p-2">
                             <li class="nav-item"><a class="nav-link mr-3" href="#" onclick="changeIconView()"><i id="change-view-icon" class="fas fa-bars"></i></a></li>
                             <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab">Todos</a></li>
@@ -45,7 +61,7 @@
                             <div class="tab-pane active" id="tab_1">
                                <div class="row">
                                     @{
-                                        for (int i = 0; i < 20; i++)
+                                        for (int i = 0; i < 5; i++)
                                         {
                                             <div class="col-md-3">
                                                 <div class="card">

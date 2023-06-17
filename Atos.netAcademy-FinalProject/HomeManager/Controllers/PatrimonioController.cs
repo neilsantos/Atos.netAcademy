@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Microsoft.AspNetCore.Mvc.ViewEngines;
 
 namespace Apresentacao.Controllers
 {
@@ -13,5 +15,11 @@ namespace Apresentacao.Controllers
         {
             return View();
         }
+
+        public IActionResult NewProduct()
+        {
+            return View();
+        }
+
     }
 }

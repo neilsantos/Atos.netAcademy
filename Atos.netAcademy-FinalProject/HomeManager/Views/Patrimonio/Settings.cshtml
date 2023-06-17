@@ -1,8 +1,18 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿
 @{
+    ViewData["PageHeader"] = "Settings";
+    ViewData["Title"] = "Patrimony > " + ViewData["PageHeader"];
 }
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $("#patrimony").attr("class", "nav-item menu-open");
+            $("#patrimony-link").attr("class", "nav-link active");
+            $("#settings").attr("class", "nav-link active");
+        })
+    </script>
+    }
 
 <!-- Main content -->
 <section class="content">

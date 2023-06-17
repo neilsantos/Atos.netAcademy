@@ -1,18 +1,30 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.AspNetCore.Mvc.ViewEngines;
 
 namespace HomeManager.Controllers
 {
     public class DashboardController : Controller
     {
-        public IActionResult DashboardGeral()
+        public IActionResult GeneralDashboard()
         {
-            return View("~/Views/dashboard/GeralIndex.cshtml");
+            return View();
         }
-        public IActionResult PatrimonioDashboard()
+        public IActionResult PatrimonyDashboard()
         {   
 
-            return View("~/Views/dashboard/PatrimonioIndex.cshtml");
+            return View();
+        }
+        public IActionResult FinancialDashboard()
+        {
+            ViewData["PageName"] = "Financial Dashboard";
+            return View("~/views/shared/UnderConstruction.cshtml");
+        }
+
+        public int[] Grafico()
+        {
+            int[] valores = new int[]{ 10, };
+            return valores;
         }
 
 

@@ -88,7 +88,7 @@ namespace Dominio.Entidades;
        
         }
 
-        public float Total => Acessorios.Sum(x => x.Valor) + Valor;
+        public double Total => Acessorios.Sum(x => x.Valor) + Valor;
 
     }
 

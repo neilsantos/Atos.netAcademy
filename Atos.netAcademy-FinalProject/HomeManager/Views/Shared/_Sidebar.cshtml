@@ -21,7 +21,7 @@
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-            <div class="border-top border-secondary mb-1"></div>
+            <li class="border-top border-secondary mb-1"></li>
 
             <!-- Dashboard Menu -->
             <li id="dashboard" class="nav-item menu-closed">
@@ -33,39 +33,38 @@
                 <ul class="nav nav-treeview">
                     <!-- Dashboard Geral -->
                     <li class="nav-item">
-                        <a id="dashboard-geral" href="/dashboard/DashboardGeral" class="nav-link">
+                        <a id="general-dashboard" href="@Url.Action("GeneralDashboard", "Dashboard")" class="nav-link">
                             <i class="far fa-window-restore nav-icon"></i>
-                            <p>Dash Geral</p>
+                            <p>General Dash</p>
+                            
                             
                         </a>
                     </li>
                     <!-- Dashboard Patrimonio -->
                     <li class=" nav-item">
-                        <a id="dashboard-patrimonio" href="/dashboard/PatrimonioDashboard" class="nav-link">
+                        <a id="patrimony-dashboard" href="@Url.Action("PatrimonyDashboard", "Dashboard")" class="nav-link">
                             <i class="fab fa-fort-awesome nav-icon"></i>
-                            <p>Dash Patrimônio</p>
+                            <p>Patrimony Dash</p>
                         </a>
                     </li>
                     <!-- Dashboard Financeiro -->
                     <li class=" nav-item">
-                        <a id="dashboard-financeiro" href="#" class="nav-link">
+                       
+                        <a id="financial-dashboard" href="@Url.Action("FinancialDashboard", "Dashboard")" class="nav-link">
                             <i class="fas fa-dollar-sign nav-icon"></i>
-                            <p>Dash Financeiro <span class="right badge badge-primary">building</span></p>
+                            <p>Financial Dash<span class="right badge badge-primary">building</span></p>
                             
                         </a>
                     </li>
                 </ul>
             </li>
 
-            <!-- Submenu Example 
-            <li class="nav-item">
-                <a href="#" class="nav-link"><i class="nav-icon fas fa-th"></i> <p> Colecionáveis</p> </a>
-            </li>-->
-            <div class="border-top border-secondary"></div>
+            
+            <li class="border-top border-secondary"></li>
 
-            <!-- Submenu Example -->
-            <li class="nav-item">
-                <a href="#" class="nav-link">
+            <!-- Patrimony -->
+            <li id="patrimony"class="nav-item">
+                <a id="patrimony-link" href="#" class="nav-link">
                     <i class="nav-icon fas fa-clipboard-list"></i>
                     <p>Patrimony<i class="right fas fa-angle-left"></i></p>
                 </a>
@@ -73,21 +72,25 @@
                 <ul class="nav nav-treeview">
                    
                     <li class="nav-item">
-                        <a href="/Patrimonio/Index" class="nav-link">
-                            <i class="fas fa-stream nav-icon"></i>
-                            <p>General</p>
+                        <a id="general" href="@Url.Action("Index", "Patrimonio")" class="nav-link">
+                         <i class="fas fa-stream nav-icon"></i>
+                         <p>General</p>
                         </a>
                     </li>
+                   
 
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a id="collectible" href="#" class="nav-link">
                             <i class="fas fa-th nav-icon"></i>
-                            <p>Collectibles</p>
+                            <p>
+                                Collectibles
+                                <span class="right badge badge-primary">Building</span> 
+                            </p>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="/Patrimonio/Settings" class="nav-link">
+                        <a id="settings" href="@Url.Action("Settings", "Patrimonio")" class="nav-link">
                             <i class="fas fa-cog nav-icon"></i>
                             <p>Settings</p>
                         </a>
@@ -97,33 +100,33 @@
                 </ul>
             </li>
             <!-- Farmácia -->
-            <div class="border-top border-secondary"></div>
+            <li class="border-top border-secondary"></li>
             <li class="nav-item">
                 <div class=" mt-1 d-flex"></div>
                 <a href="#" class="nav-link"> <i class="nav-icon fas fa-briefcase-medical"></i><p> Farmácia <span class="right badge badge-primary">Building</span></p></a>
             </li>
 
-            <div class="border-top border-secondary"></div>
+            <li class="border-top border-secondary"></li>
              <!-- /Farmácia -->
 
              <!-- Mercado -->
-            <div class="border-top border-secondary"></div>
+            <li class="border-top border-secondary"></li>
             <li class="nav-item">
                 <div class=" mt-1 d-flex"></div>
                 <a href="#" class="nav-link"><i class="nav-icon fas fa-store"></i><p> Supermarket <span class="right badge badge-primary">Building</span></p></a>
             </li>
              <!-- /Mercado -->
 
-            <div class="border-top border-secondary"></div>
+            <li class="border-top border-secondary"></li>
 
             
 
             <!-- Settings -->
-            <div class="border-top border-secondary"></div>
+            <li class="border-top border-secondary"></li>
 
             <li class="nav-item">
                 <div class=" mt-1 d-flex"></div>
-                <a href="/Settings/Index" class="nav-link"> <i class="nav-icon fas fa-cog"></i> <p> Settings</p></a>
+                <a id="main-settings" href="/Settings/Index" class="nav-link"> <i class="nav-icon fas fa-cog"></i> <p> Settings</p></a>
             </li>
         </ul>
     </nav>

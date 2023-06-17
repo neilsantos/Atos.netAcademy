@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,14 +8,13 @@
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="~/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/plugins/fontawesome-free-6.4.0/css/all.min.css">
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="~/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="~/theme/css/adminlte.min.css">
 
-   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -104,11 +103,11 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <h4 class="m-0"></h4>
-          </div><!-- /.col -->
+          </div>
           
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
+        </div>
+      </div>
+    </div> 
     <!-- /.content-header -->
             @RenderBody()
   </div>
@@ -153,16 +152,38 @@
 
 
     @await RenderSectionAsync("Scripts", required: false)
-<script >
-        $('#dashboard-link').click(function(){
-            console.log($(this).parents('#dashboard').attr('class'))
-            if ($(this).parents('#dashboard').attr('class') == 'nav-item menu-is-opening menu-open')
-                $(this).attr("class", "nav-link")
-            else
-                $(this).attr("class", "nav-link active")
+<script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
+
+
+    <script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
+    <script src="~/plugins/moneymask/mask.min.js"></script>
+    <script>
+        $(function () {
+
+            $('[data-mask]').inputmask()
+
+            let im = new Inputmask({
+                alias: 'currency',
+                prefix: 'R$ ',
+                radixPoint: ',',
+                groupSeparator: '.',
+                numericInput: true,
+                onBeforeMask: function (value, opts) {
+
+                },
+            })
+
+
+            let moneyField = document.getElementById('money');
+            im.mask(moneyField)
+
+            let moneyHackyField = document.getElementById('money_hacky');
+            let value = moneyHackyField.value
+            im.mask(moneyHackyField)
+            moneyHackyField.value = Number(value)
+         
         })
 
-        
     </script>
 </body>
 </html>
