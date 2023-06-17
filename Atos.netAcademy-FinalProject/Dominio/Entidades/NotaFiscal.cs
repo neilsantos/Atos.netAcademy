@@ -8,8 +8,8 @@ namespace Dominio.Entidades
 {
     internal class NotaFiscal
     {
-        public string Local { get; set; }
-        public string Numero { get; set; }
+        public string Local { get; set; } = "Url não informado";
+        public string Numero { get; set; } = "Número não informado";
         public int IdProduto { get; set; }
     }
 }

@@ -13,11 +13,114 @@
 
 <div class="content">
     <div class="container-fluid">
+
+        <!-- #### GRAFICOS  #####-->
+        <div class="row">
+
+            
+            <!-- Donut Chart -->
+            <div class="col">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title">Contagem por Categorias</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                <canvas id="contagem-categoria" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%; display: block; width: 377px;" width="377" height="250" class="chartjs-render-monitor"></canvas>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="d-flex">
+                                    <p class="d-flex flex-column">
+                                        <span class="text-bold text-lg">$18,230.00</span>
+                                        <span>Sales Over Time</span>
+                                    </p>
+                                    <p class="ml-auto d-flex flex-column text-right">
+                                        <span class="text-success">
+                                            <i class="fas fa-arrow-up"></i> 33.1%
+                                        </span>
+                                        <span class="text-muted">Since last month</span>
+                                    </p>
+                                </div>
+
+                                <div class="position-relative mb-4">
+                                    <div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+                                    <canvas id="sales-chart" height="200" style="display: block; width: 452px; height: 200px;" width="452" class="chartjs-render-monitor"></canvas>
+                                </div>
+                                <div class="d-flex flex-row justify-content-end">
+                                    <span class="mr-2">
+                                        <i class="fas fa-square text-primary"></i> This year
+                                    </span>
+                                    <span>
+                                        <i class="fas fa-square text-gray"></i> Last year
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="card-footer">
+                        <div class="row">
+                            <div class="col-sm-3 col-6">
+                                <div class="description-block border-right">
+                                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
+                                    <h5 class="description-header">$35,210.43</h5>
+                                    <span class="description-text">Eletrônico</span>
+                                </div>
+
+                            </div>
+                            <div class="col-sm-2 col-6">
+                                <div class="description-block border-right">
+                                    <span class="description-percentage text-success"><i class="fas fa-caret-up "></i> 17%</span>
+                                    <h5 class="description-header">$35,210.43</h5>
+                                    <span class="description-text">Móveis</span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-2 col-6">
+                                <div class="description-block border-right">
+                                    <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
+                                    <h5 class="description-header">$10,390.90</h5>
+                                    <span class="description-text">Eletrodoméstico</span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-2 col-6">
+                                <div class="description-block border-right">
+                                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
+                                    <h5 class="description-header">$24,813.53</h5>
+                                    <span class="description-text">Colecionáveis</span>
+                                </div>
+
+                            </div>
+
+                            <div class="col-sm-2 col-12">
+                                <div class="description-block">
+                                    <span class="description-percentage text-success"><i class="fas fa-dollar-sign fa-sm"></i> 100%</span>
+                                    <h5 class="description-header">$35,210.43</h5>
+                                    <span class="description-text">TOTAL</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            
+       
+            
+        </div>
+        <!-- /.row -->
+        <!-- #### END GRAFICOS  #####-->
+
         <div class="row">
 
             <!--Lado Esquerdo-->
             <div class="col-lg-6">
-               
 
             <!--Item 1 - ITENS -->
                 <div class="card">
@@ -85,48 +188,6 @@
                     </div>
                 </div>
                 <!-- /.Item 1 - ITENS -->
-                
-                
-            <!--Item 2 - Grafico-->
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Online Store Visitors</h3>
-                            <a href="javascript:void(0);">View Report</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">820</span>
-                                <span>Visitors Over Time</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 12.5%
-                                </span>
-                                <span class="text-muted">Since last week</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-
-                        <div class="position-relative mb-4">
-                            <canvas id="visitors-chart" height="200"></canvas>
-                        </div>
-
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> This Week
-                            </span>
-
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Last Week
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.Item 2 - Grafico -->
-
             </div>
             <!-- /.Lado Esquerdo -->
             
@@ -198,53 +259,160 @@
                         <button type="submit" class="btn btn-default bg-gradient-success float-right">Cadastrar um Novo</button>
                     </div>
                 </div>
-               
                 <!-- /.Item 1 -->
-
-                <!--Item 2-->
-                <div class="card">
-                    <div class="card-header border-0">
-                        <div class="d-flex justify-content-between">
-                            <h3 class="card-title">Sales</h3>
-                            <a href="javascript:void(0);">View Report</a>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex">
-                            <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">$18,230.00</span>
-                                <span>Sales Over Time</span>
-                            </p>
-                            <p class="ml-auto d-flex flex-column text-right">
-                                <span class="text-success">
-                                    <i class="fas fa-arrow-up"></i> 33.1%
-                                </span>
-                                <span class="text-muted">Since last month</span>
-                            </p>
-                        </div>
-                        <!-- /.d-flex -->
-
-                        <div class="position-relative mb-4">
-                            <canvas id="sales-chart" height="200"></canvas>
-                        </div>
-
-                        <div class="d-flex flex-row justify-content-end">
-                            <span class="mr-2">
-                                <i class="fas fa-square text-primary"></i> This year
-                            </span>
-
-                            <span>
-                                <i class="fas fa-square text-gray"></i> Last year
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.Item 2-->
-            
             </div>
             <!-- /.Lado Direito -->
         </div>
         <!-- /.row -->
+
+
+       
     </div>
     <!-- /.container-fluid -->
 </div>
+<!-- ChartJS -->
+@*<script src="~/plugins/jquery/jquery.min.js"></script>*@
+<script src="~/plugins/chart.js/Chart.min.js"></script>
+
+
+<script>
+    $(function () {
+
+        var graphic_1 = $('#contagem-categoria').get(0).getContext('2d')
+        var graphic_1_data = { 
+            labels: [
+                'Eletrônicos',
+                'Móveis',
+                'Eetrodomésticos',
+                'Colecionáveis'
+            ],
+            datasets: [
+                {data: [50, 5, 5, 15],
+                    backgroundColor: [
+                        '#f56954', 
+                        '#00a65a',
+                        '#f39c12',
+                        '#00c0ef',
+                        
+                    ]
+                }
+            ]
+        }
+        
+        
+        
+        //Create pie or douhnut chart
+        // You can switch between pie and douhnut using the method below.
+        var donutOptions = {maintainAspectRatio: false,responsive: true,}
+        new Chart(graphic_1, {
+            type: 'doughnut',
+            data: graphic_1_data,
+            options: donutOptions
+        })
+       
+
+    })
+   
+ 
+</script>
+
+<script>
+    $(function () {
+        'use strict'
+
+        var ticksStyle = {
+            fontColor: '#495057',
+            fontStyle: 'bold'
+        }
+
+        var mode = 'index'
+        var intersect = true
+
+        var $salesChart = $('#sales-chart')
+        // eslint-disable-next-line no-unused-vars
+        var salesChart = new Chart($salesChart, {
+            type: 'bar',
+            data: {
+                labels: [
+                    'Eletrônicos',
+                    'Móveis',
+                    'Eetrodomésticos',
+                    'Colecionáveis'
+                ],
+                datasets: [
+                    {
+                        data: [1500, 2000, 1800, 15000],
+                        backgroundColor: [
+                            '#f56954',
+                            '#00a65a',
+                            '#f39c12',
+                            '#00c0ef',
+
+                        ],
+                        borderColor: '#007bff',
+
+                    }
+                    //{
+                    //  backgroundColor: '#007bff',
+                    //  borderColor: '#007bff',
+                    //  data: [1000, 2000, 3000, 2500, 2700, 2500, 3000]
+                    //},
+                    //{
+                    //  backgroundColor: '#ced4da',
+                    //  borderColor: '#ced4da',
+                    //  data: [700, 1700, 2700, 2000, 1800, 1500, 2000]
+                    //}
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                tooltips: {
+                    mode: mode,
+                    intersect: intersect
+                },
+                hover: {
+                    mode: mode,
+                    intersect: intersect
+                },
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        // display: false,
+                        
+                        gridLines: {
+                            display: true,
+                            lineWidth: '4px',
+                            color: 'rgba(0, 0, 0, .2)',
+                            zeroLineColor: 'transparent'
+                        },
+                        ticks: $.extend({
+                            beginAtZero: true,
+
+                            // Include a dollar sign in the ticks
+                            callback: function (value) {
+                                if (value >= 1000) {
+                                    value /= 1000
+                                    value += 'k'
+                                }
+
+                                return '$' + value
+                            }
+                        }, ticksStyle)
+                    }],
+                    xAxes: [{
+                        barPercentage: 0.2,
+                        display: true,
+                        gridLines: {
+                            display: true
+                        },
+                        ticks: ticksStyle
+                    }]
+                }
+            }
+        })
+
+        
+    })
+</script>

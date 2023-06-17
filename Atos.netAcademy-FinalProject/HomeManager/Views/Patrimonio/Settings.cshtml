@@ -22,6 +22,7 @@
                                     <th>Itens</th>
                                     <th>Registros</th>
                                     <th style="width: 40px">%</th>
+                                    <th style="width: 15px"><i class="far fa-minus-square"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,6 +40,7 @@
                                                 </div>
                                             </td>
                                             <td><span class="badge bg-success">@num%</span></td>
+                                            <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
                                         </tr>
 
                                     }
@@ -54,7 +56,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">Marca</span>
                                     </div>
-                                    <input type="text" class="form-control" placeholder="Username">
+                                    <input type="text" class="form-control" placeholder="Ex: Sony">
                                 </div>
                                
                         </div>
@@ -65,7 +67,7 @@
                     </div>
                 </div>
        </div>
-            <div class="col-md-6">
+       <div class="col-md-6">
                 <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Categorias</h3>
@@ -79,6 +81,7 @@
                                     <th>Itens</th>
                                     <th>Registros</th>
                                     <th style="width: 40px">%</th>
+                                    <th style="width: 15px"><i class="far fa-minus-square"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -96,6 +99,8 @@
                                                 </div>
                                             </td>
                                             <td><span class="badge bg-success">@num2%</span></td>
+                                            <td><a href="#"><i class="fas fa-trash-alt"></i></a></td>
+
                                         </tr>
 
                                     }
@@ -111,12 +116,12 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Categoria</span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" class="form-control" placeholder="ex: Colecionáveis">
                             </div>
 
                         </div>
                         <div class="card-footer">
-                            <button id="submit" class="btn btn-success float-right" onclick="document.getElementById('nova-categoria').removeAttribute('style'); document.getElementById('submit').innerHTML='Enviar'">Nova Categoria</button>
+                            <button id="submit2" class="btn btn-success float-right" onclick="document.getElementById('nova-categoria').removeAttribute('style'); document.getElementById('submit2').innerHTML='Enviar'">Nova Categoria</button>
                         </div>
 
                     </div>
