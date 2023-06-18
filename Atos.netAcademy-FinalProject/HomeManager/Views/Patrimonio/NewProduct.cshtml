@@ -3,12 +3,39 @@
     ViewData["PageHeader"] = "New Product";
     ViewData["Title"] = "Patrimony > " + ViewData["PageHeader"];
 }
-<script src="~/plugins/jquery/jquery.min.js"></script>
+@section scripts
+    {
+    <script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
 
-<script>
-    
-</script>
+    <script>
+        $(function () {
 
+            $('[data-mask]').inputmask()
+
+            let im = new Inputmask({
+                alias: 'currency',
+                prefix: 'R$ ',
+                radixPoint: ',',
+                groupSeparator: '.',
+                numericInput: true,
+                onBeforeMask: function (value, opts) {
+
+                },
+            })
+
+
+            let moneyField = document.getElementById('money');
+            im.mask(moneyField)
+
+            let moneyHackyField = document.getElementById('money_hacky');
+            let value = moneyHackyField.value
+            im.mask(moneyHackyField)
+            moneyHackyField.value = Number(value)
+
+        })
+
+    </script>
+}
 
 <div class="row justify-content-center">
     <div class="col-md-8 flex-column center">
@@ -40,7 +67,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">R$</span>
                             </div>
-                            <input type="text" class="form-control" id="money" name="money" type="tel">
+                            <input type="text" class="form-control" id="money" name="money">
                         </div>
                     </div> <!--Price -->
                     <div class="col-md-6">

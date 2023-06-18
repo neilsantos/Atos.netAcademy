@@ -11,6 +11,132 @@
             $("#patrimony-dashboard").attr("class", "nav-link active");
         })
     </script>
+
+
+    <script src="~/plugins/chart.js/Chart.min.js"></script>
+    <script>
+        $(function () {
+            var graphic_1 = $('#contagem-categoria').get(0).getContext('2d')
+            var graphic_1_data = {
+                labels: [
+                    'Eletrônicos',
+                    'Móveis',
+                    'Eetrodomésticos',
+                    'Colecionáveis'
+                ],
+                datasets: [
+                    {
+                        data: [50, 5, 5, 15],
+                        backgroundColor: [
+                            '#f56954',
+                            '#00a65a',
+                            '#f39c12',
+                            '#00c0ef',
+
+                        ]
+                    }
+                ]
+            }
+            var donutOptions = { maintainAspectRatio: false, responsive: true, }
+            new Chart(graphic_1, {
+                type: 'doughnut',
+                data: graphic_1_data,
+                options: donutOptions
+            })
+        })
+    </script>
+
+    <script>
+        $(function () {
+            'use strict'
+
+            var ticksStyle = {
+                fontColor: '#495057',
+                fontStyle: 'bold'
+            }
+
+            var mode = 'index'
+            var intersect = true
+
+            var $salesChart = $('#sales-chart')
+            var salesChart = new Chart($salesChart, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Eletrônicos',
+                        'Móveis',
+                        'Eetrodomésticos',
+                        'Colecionáveis',
+                        'Acessórios'
+                    ],
+                    datasets: [
+                        {
+                            data: [15207, 4270, 6470, 15000,900],
+                            backgroundColor: [
+                                '#f56954',
+                                '#00a65a',
+                                '#f39c12',
+                                '#00c0ef',
+                                '#e7a612',
+                            ],
+                            borderColor: '#007bff',
+
+                        }
+                        
+                    ]
+                },
+                options: {
+                    maintainAspectRatio: false,
+                    tooltips: {
+                        mode: mode,
+                        intersect: intersect
+                    },
+                    hover: {
+                        mode: mode,
+                        intersect: intersect
+                    },
+                    legend: {
+                        display: false
+                    },
+                    scales: {
+                        yAxes: [{
+                            // display: false,
+
+                            gridLines: {
+                                display: true,
+                                lineWidth: '4px',
+                                color: 'rgba(0, 0, 0, .2)',
+                                zeroLineColor: 'transparent'
+                            },
+                            ticks: $.extend({
+                                beginAtZero: true,
+
+                                // Include a dollar sign in the ticks
+                                callback: function (value) {
+                                    if (value >= 1000) {
+                                        value /= 1000
+                                        value += 'k'
+                                    }
+
+                                    return '$' + value
+                                }
+                            }, ticksStyle)
+                        }],
+                        xAxes: [{
+                            barPercentage: 0.2,
+                            display: true,
+                            gridLines: {
+                                display: true
+                            },
+                            ticks: ticksStyle
+                        }]
+                    }
+                }
+            })
+
+
+        })
+    </script>
 }
 
 
@@ -286,149 +412,4 @@
     </div>
     <!-- /.container-fluid -->
 </div>
-<!-- ChartJS -->
-@*<script src="~/plugins/jquery/jquery.min.js"></script>*@
-<script src="~/plugins/chart.js/Chart.min.js"></script>
 
-
-<script>
-    $(function () {
-
-        var graphic_1 = $('#contagem-categoria').get(0).getContext('2d')
-        var graphic_1_data = { 
-            labels: [
-                'Eletrônicos',
-                'Móveis',
-                'Eetrodomésticos',
-                'Colecionáveis'
-            ],
-            datasets: [
-                {data: [50, 5, 5, 15],
-                    backgroundColor: [
-                        '#f56954', 
-                        '#00a65a',
-                        '#f39c12',
-                        '#00c0ef',
-                        
-                    ]
-                }
-            ]
-        }
-        
-        
-        
-        //Create pie or douhnut chart
-        // You can switch between pie and douhnut using the method below.
-        var donutOptions = {maintainAspectRatio: false,responsive: true,}
-        new Chart(graphic_1, {
-            type: 'doughnut',
-            data: graphic_1_data,
-            options: donutOptions
-        })
-       
-
-    })
-   
- 
-</script>
-
-<script>
-    $(function () {
-        'use strict'
-
-        var ticksStyle = {
-            fontColor: '#495057',
-            fontStyle: 'bold'
-        }
-
-        var mode = 'index'
-        var intersect = true
-
-        var $salesChart = $('#sales-chart')
-        // eslint-disable-next-line no-unused-vars
-        var salesChart = new Chart($salesChart, {
-            type: 'bar',
-            data: {
-                labels: [
-                    'Eletrônicos',
-                    'Móveis',
-                    'Eetrodomésticos',
-                    'Colecionáveis'
-                ],
-                datasets: [
-                    {
-                        data: [15207, 4270, 6470, 15000],
-                        backgroundColor: [
-                            '#f56954',
-                            '#00a65a',
-                            '#f39c12',
-                            '#00c0ef',
-
-                        ],
-                        borderColor: '#007bff',
-
-                    }
-                    //{
-                    //  backgroundColor: '#007bff',
-                    //  borderColor: '#007bff',
-                    //  data: [1000, 2000, 3000, 2500, 2700, 2500, 3000]
-                    //},
-                    //{
-                    //  backgroundColor: '#ced4da',
-                    //  borderColor: '#ced4da',
-                    //  data: [700, 1700, 2700, 2000, 1800, 1500, 2000]
-                    //}
-                ]
-            },
-            options: {
-                maintainAspectRatio: false,
-                tooltips: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                hover: {
-                    mode: mode,
-                    intersect: intersect
-                },
-                legend: {
-                    display: false
-                },
-                scales: {
-                    yAxes: [{
-                        // display: false,
-                        
-                        gridLines: {
-                            display: true,
-                            lineWidth: '4px',
-                            color: 'rgba(0, 0, 0, .2)',
-                            zeroLineColor: 'transparent'
-                        },
-                        ticks: $.extend({
-                            beginAtZero: true,
-
-                            // Include a dollar sign in the ticks
-                            callback: function (value) {
-                                if (value >= 1000) {
-                                    value /= 1000
-                                    value += 'k'
-                                }
-
-                                return '$' + value
-                            }
-                        }, ticksStyle)
-                    }],
-                    xAxes: [{
-                        barPercentage: 0.2,
-                        display: true,
-                        gridLines: {
-                            display: true
-                        },
-                        ticks: ticksStyle
-                    }]
-                }
-            }
-        })
-
-        
-    })
-</script>

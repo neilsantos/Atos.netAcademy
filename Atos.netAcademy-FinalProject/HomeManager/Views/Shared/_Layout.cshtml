@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@ViewData["Title"]</title>
+  <title>@ViewData["Title"]</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="~/plugins/fontawesome-free-6.4.0/css/all.min.css">
-
+  <link rel="stylesheet" href="~/plugins/fontawesome-free-6.4.0/css/all.min.css">
+    <!--summernote-->
+    <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.min.css">
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="~/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- Theme style -->
@@ -128,62 +129,16 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="~/plugins/jquery/jquery.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/theme/js/adminlte.js"></script>
 
-
-<!-- jQuery -->
-<script src="~/plugins/jquery/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="~/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- overlayScrollbars -->
 <script src="~/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
-<!-- AdminLTE App -->
-<script src="~/theme/js/adminlte.js"></script>
+@await RenderSectionAsync("Scripts", required: false)
 
-<!-- PAGE PLUGINS -->
-<!-- jQuery Mapael
-<script src="~/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
-<script src="~/plugins/raphael/raphael.min.js"></script>
-<script src="~/plugins/jquery-mapael/jquery.mapael.min.js"></script>
-    <script src="~/plugins/jquery-mapael/maps/usa_states.min.js"></script> -->
-
-
-
-
-
-    @await RenderSectionAsync("Scripts", required: false)
-<script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
-
-
-    <script src="~/plugins/inputmask/jquery.inputmask.min.js"></script>
-    <script src="~/plugins/moneymask/mask.min.js"></script>
-    <script>
-        $(function () {
-
-            $('[data-mask]').inputmask()
-
-            let im = new Inputmask({
-                alias: 'currency',
-                prefix: 'R$ ',
-                radixPoint: ',',
-                groupSeparator: '.',
-                numericInput: true,
-                onBeforeMask: function (value, opts) {
-
-                },
-            })
-
-
-            let moneyField = document.getElementById('money');
-            im.mask(moneyField)
-
-            let moneyHackyField = document.getElementById('money_hacky');
-            let value = moneyHackyField.value
-            im.mask(moneyHackyField)
-            moneyHackyField.value = Number(value)
-         
-        })
-
-    </script>
 </body>
 </html>
